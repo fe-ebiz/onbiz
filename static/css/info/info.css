@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* 공통 css */
+@import url(http://static.onbiz.co.kr/css/reset.css); 
+
+
+/*카테고리 영역*/
+.category > ul li {position: relative; float: left; width: 50%; height: 80px; top:0; text-align: center; background: #444444; color: #fff; cursor: pointer;}
+.category h3 {font-size: 24px; margin-top: 6px;}
+.category > ul li.on {top: -10px; height: 90px; background: #FF9000;}
+.category > ul li.on h3 {margin-top: 16px;}
+.category p {margin-top: 5px;}
+/*업종 선택*/
+.st_wrap {position: relative;}
+.st_wrap .selectBox {display: block; margin: 5px auto 0;}
+.st_wrap .selectBox .s_btn {width: 100%; text-align: left; text-indent: 15px; height: 36px; font-size: 15px;
+}
+.st_wrap p {text-align: center; font-size: 14px; color: #555; letter-spacing: -1px; margin: 12px 0 17px;}
+
+/*컨테이너 영역*/
+#container {position: relative; padding: 40px 40px 30px; background: #F9F9F9; box-sizing: border-box; border: 1px solid #ddd;}
+#container h3 {position: absolute; top: 0; left: 0; letter-spacing: -1px;}
+#container ul {position: relative; width: 432px; margin: 0 auto; left: -58px;}
+#container li {margin-top: 9px; color: #888;}
+#container li:first-child {margin-top: 0px;}
+#container li > label {display: inline-block; font-size: 15px; width: 120px; text-indent: 10px; color: #333;}
+#container li > input {width: 307px; height: 36px; border: 1px solid #a9a9a9; text-indent: 15px; font-size: 15px;}
+#container li > input:focus {color: #333; border: 2px solid #ff9000; outline: none;}
+#container .m_jm span, #container .l_snum span {display: inline-block; width: 17px; text-align: center; font-weight: 800;}
+#container .mng_jm {width: 142px;}
+#container .m_jm input:last-child {width: 40px; margin-right: 5px;}
+#container .mTxt {padding-left: 120px; font-size: 14px; letter-spacing: -1px; margin: 5px 0 12px;}
+#container .m_adr input[type=text] {width: 185px; margin-right: -6px;}
+#container .m_adr a {display: inline-block; width: 123px; height: 36px; vertical-align: middle; line-height: 2.4em; border: 1px solid #a9a9a9; font-size: 14px; color: #222; text-align: center;
+  background: #ffffff; 
+  background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%); 
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#efefef 100%); 
+  background: linear-gradient(to bottom,  #ffffff 0%,#efefef 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); 
+}
+#container .m_emt {margin-top: -1px;}
+#container .m_emt input {width: 307px;}
+
+#container .l_snum input:nth-child(2) {width: 90px;}
+#container .l_snum input:nth-child(4) {width: 60px;}
+#container .l_snum input:nth-child(6) {width: 123px;}
+
+#container > section > p {position: absolute; width: 432px; left: 50%; margin-left: -274px; top: -32px; text-align: right;}
+
+#container section:nth-child(2) {display: none;}
+
+#container .refund {position: absolute; top: 25px; left: 676px; width: 288px; height: 332px; border: 1px solid #ddd; background: #fff; padding: 0 10px;}
+#container .refund h3 {position: relative; width: 100%; text-align: center; margin-top: 25px;}
+#container .refund p {letter-spacing: -1px;}
+#container .refund h3 + p {font-size: 14px; text-align: center; margin-top: 5px; color: #4a4a4a;}
+#container .refund ul {width: 100%; left: 0; margin-top: 10px;}
+#container .refund label {width: 70px; text-align: left; text-indent: 0;}
+#container .refund input {width: 191px;}
+#container .refund .selectBox {display: inline-block; width: 191px;}
+#container .refund .selectBox input {width: 100%;}
+#container .refund .selectBox input + i {color: #333;}
+#container .refund .selectBox ul {position: absolute; margin-top: 0;}
+#container .refund .selectBox ul li {color: #222;}
+#container .refund > p {font-size: 13px; line-height: 1.4em; color: #4a4a4a;}
+#container .refund > p:nth-child(4) {margin-top: 10px;}
+#container .refund > p:last-child {margin-top: 5px;}
+
+/*다음단계 버튼*/
+.nBtn {position: relative; display: block; margin: 15px auto; width: 268px; height: 56px; background: #ff9000; color: #fff; font-size: 20px; font-weight: 700; border-radius: 4px; text-align: center; line-height: 3em;}
+.nBtn i {position: absolute; right: 50%; margin-right: -110px; top: 50%; margin-top: -15px; font-size: 30px;}
+
+/*pie - ie8 border-radius작동 적용*/
+.nBtn {behavior: url("http://static.onbiz.co.kr/js/pie/PIE.htc");}
+
+/*모바일 디자인 미디어 쿼리*/
+@media all and (max-width: 767px){
+  
+}

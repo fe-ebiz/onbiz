@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+	<title>Onbiz Office</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="title" content="온비즈오피스">
+	<meta name="Description" content="가상오피스 1인실에서 80평까지 분할임대, 삼성역 풀옵션 Onbiz Office">
+	<meta name="keywords" content="가상오피스, 80평, 분할임대, 삼성역, 풀옵션,Onbiz Office">
+	<meta name="viewport" content="width=320, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<!-- facebook -->
+	<meta property="og:title" content="온비즈오피스">
+	<meta property="og:url" content="http://onbiz.co.kr">
+	<meta property="og:image" content="http://img.onbiz.co.kr/images/og_onbiz.jpg">
+	<meta property="Description" content="가상오피스 1인실에서 80평까지 분할임대, 삼성역 풀옵션 Onbiz Office">
+	<!-- twitter -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="http://onbiz.co.kr">
+	<meta name="twitter:title" content="온비즈오피스">
+	<meta name="twitter:description" content="가상오피스 1인실에서 80평까지 분할임대, 삼성역 풀옵션 Onbiz Office">
+	<meta name="twitter:image" content="http://img.onbiz.co.kr/images/og_onbiz.jpg">
+	<link rel="canonical" href="http://onbiz.co.kr">
+	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+	<link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/swiper.3.4.1.min.css" type="text/css">
+	<link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/reset_m.css" type="text/css">
+	
+	
+	<!--170922 css경로변경-->
+	<link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/common_renewal_m.css" type="text/css">
+	<link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/complete/complete2_m.css" type="text/css">
+	<!--<link rel="stylesheet" href="../../src/css/m/common_m.css" type="text/css">
+	<link rel="stylesheet" href="../../src/css/m/complete/complete2_m.css" type="text/css">-->
+	
+	
+	<link rel="stylesheet" href="http://static.go.co.kr/css/jquery-ui.css">
+	<script src="http://static.onbiz.co.kr/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://static.go.co.kr/js/jquery_ui.js"></script>
+	<script type="text/javascript" src="http://static.go.co.kr/js/datepicker_ko.js"></script>
+	<script src="http://static.onbiz.co.kr/js/jquery.swiper-3.4.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://post.ebiznetworks.co.kr/post.php" charset="utf-8"></script>
+	<script type="text/javascript" src="http://static.ssenflower.co.kr/js/jquery.number.js"></script>
+	<script src="http://static.onbiz.co.kr/js/onbiz_m.js"></script>
+	<!--지도-->
+	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=ccf6dd6538a21cc002e87e64695e0862"></script><script charset="UTF-8" src="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapi/3.5.20/1505973623735/open.js"></script>
+	<!-- ie9이하 html5, 미디어쿼리 작동 -->
+<!--[if lte IE 8]>
+<script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script type="text/javascript" src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+	$(function() {
+		$("#startDate").datepicker({ dateFormat:"yy-mm-dd", showAnim:"slideDown", dayNamesMin:["일","월","화","수","목","금","토"], minDate: 0, maxDate: 3, changeMonth: true, changeYear: true, onSelect: function(){
+
+			val = this.value;
+
+			$.ajax({		
+				type: "post",
+				url: "/rent/state.php",
+				data: "mode=rdate&a=" + val +"&b=" + $("input[name='month']").val(),
+				success: function(r){
+					$("#sdate").html(val);
+					$("#edate").html(r);
+				}
+			});
+
+		}
+		
+	});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap"> 
+		<div id="backDrop"></div>
+		<div id="menu_wrap">
+			<section class="menu">
+				<a class="clsBtn" href="#"></a>
+				<h2>Onbiz Office Menu</h2>
+				<h3>Onbiz Office</h3>
+				<nav class="gnb">
+					<ul>
+						<li>
+							<a href="/">홈으로</a>
+						</li>
+						<li>
+							<a href="/rent/guide.php">임대신청</a>
+						</li>
+						<li>
+							<a class="chClk" href="#">임대신청 내역 확인</a>
+						</li>
+					</ul>
+				</nav>
+				<ul class="wrap_ntc clr">
+					<li>
+						<span class="ph"></span>
+						<p>전화문의</p>
+						<p>H : 010-4429-3013</p>
+						<p>H : 010-4429-3019</p>
+					</li>
+					<li>
+						<span class="mp"></span>
+						<p>오시는 길</p>
+						<p>서울트별시 강남구</p>
+						<p>테헤란로 82길 15</p>
+					</li>
+				</ul>
+			</section>
+			<section class="chk_wrap off">
+				<a href="#" class="chk_clsBtn"></a>
+				<h2>가상오피스 임대신청서 내역 조회</h2>
+				<form id="zform" method="post" action="/rent/state.php">
+					<input type="hidden" name="mode" value="search">
+					<ul>
+				<!--li>
+					<label for="chk_email">이메일 주소</label>
+					<input type="text" name="zmail1" id="chk_email"><span>&#64;</span><input type="text" name="zmail2" id="chk_email">
+				</li-->
+				<li>
+					<label for="chk_num">전화번호</label>
+					<input type="text" name="ztel1"><span>-</span><input type="text" name="ztel2"><span>-</span><input type="text" name="ztel3">
+				</li>
+				<li>
+					<input type="button" value="확 인" class="chk_btn" onclick="contract.search();">
+				</li>
+			</ul>
+		</form>
+	</section>
+	<div id="search"></div>
+</div>
+
+
+
+
+<header class="headerOrigin">
+	<h1><a href="/">Onbiz Office</a><span>가상오피스 임대신청</span></h1>
+	<a class="nav_tab" href="#"></a>
+</header>
+
+<div class="btntop ptr">
+	<img src="http://img.go.co.kr/mobile/top.png" alt="위로가기">
+</div>
+<!--단계 bar-->
+<ul class="inf_bar clr">
+	<li class="ib0">신청내역확인</li>
+	<li class="ib3 on">신청내역 확인</li>
+</ul>
+
+<!--main 섹션-->
+<section id="main">
+	<h2><span>Onbiz</span><span>Office</span></h2>
+	<p>
+		1인실~ 60인 이상을 수용할 수 있는 다양한 독립 사무실, <br>
+		법인 설립 에서 세무기장까지 강남 최저가 서비스
+	</p>
+	<p>전국 어디에서든 방문없이 1시간 이내 제공받으실 수 있습니다.</p>
+	<!--170925 01.비상주오피스-->
+	<!--<p><button type="button" >비상주 임대차계약서 다운받기<br/>(세무서 제출용)</button></p>-->
+	<!--170925 02.코워킹스페이스-->
+	<p><button type="button" >사용계약서 다운받기</button></p>
+	<!--170925 03.코워킹스페이스 + 비상주오피스-->
+	<!--<p><button type="button" class="b1">사용계약서 다운받기<br>(코워킹스페이스)</button><button type="button" class="b2">비상주 임대차계약서 다운받기<br/>(세무서 제출용)</button></p>-->
+</section>
+
+<!--contents-->
+<div id="contents">
+	<!--사업자정보-->
+	<section>
+		<h3>• 사업자정보</h3>
+		<div>
+			<ul>
+				<li>사업자구분</li><li>사업자등록증 보유자</li>
+			</ul>
+			<ul>
+				<li>용도</li><li>주소지 이전</li>
+			</ul>
+			<ul>
+				<li>업종</li><li></li>
+			</ul>
+		</div>
+	</section>
+	<!--신청자정보-->
+	<section>
+		<h3>• 신청자정보</h3>
+		<div>
+			<ul>
+				<li>성명</li><li></li>
+			</ul>
+			<ul>
+				<li>연락처</li><li></li>
+			</ul>
+			<ul>
+				<li>이메일주소</li><li></li>
+			</ul>
+		</div>
+	</section>
+	<!--170925 코워킹스페이스는 결제정보만!-->
+	<!--결제정보-->
+	<section class="sec_prc">
+		<h3>• 결제정보</h3>
+		<div>
+			<ul>
+				<li>결제일</li><li></li>
+			</ul>
+			<ul>
+				<li>상품정보</li><li></li>
+			</ul>
+			<ul>
+				<li>임대기간</li><li> ~ 1970. 01. 01 (개월)</li>
+			</ul>
+			<ul>
+				<li>옵션상품 추가</li><li></li>
+			</ul>
+			<ul>
+				<li>결제방법</li><li>신용카드</li>
+			</ul>
+			<ul class="total">
+				<li>최종 결제 금액</li>
+				<li>0원 (VAT포함)</li>
+			</ul>
+			<ul class="recipt">
+				<li>영수증 발급</li>
+				<!--170925 한가지일 경우 영수증 발급-->
+				<li>
+					<a href="#" class="a1">&#91;영수증 발급&#93;</a>
+				</li>
+				<!--170925 코워킹 + 가상오피스 영수증 발급-->
+				<!--<li>
+					<a href="#" class="a1">&#91;코워킹스페이스 영수증 발급&#93;</a>
+					<br><a href="#" class="a2">&#91;비상주사무실 영수증 발급&#93;</a>
+				</li>-->
+			</ul>
+		</div>
+	</section>
+	
+	<p><!--input type="button" value="세금계산서 신청"><input type="button" value="영수증발급" onclick=""--></p>
+
+	<form name="pdf" method="post" action="http://onbiz.co.kr/form/pdf/doc/1.php" target="_blank">
+		<input type="hidden" name="oid" value="">
+	</form>
+</div><!--contents 끝-->
+
+<div class="footer">
+	<ul class="info">
+		<li>(주)이비즈네트웍스 / 대표이사:박기범</li>
+		<li>사업자등록번호:220-87-30865</li>
+		<li>서울특별시 강남구 테헤란로82길 15, 14층(대치동, 디아이타워)</li>
+		<li>TEL : 02-6255-3014 / EMAIL : onbiz@ebiznetworks.co.kr</li>					
+
+		<li>Copyright ⓒ Ebiznetworks, All Rights Reserved.</li>
+	</ul>
+</div>
+</div>
+
+
+
+
+
+
+</body><whale translate="no"></whale></html>

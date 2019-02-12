@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+	<meta name="title" content="온비즈오피스" />
+	<meta name="subject" content="가상오피스 1인실에서 80평까지 분할임대" />
+	<meta name="description" content="가상오피스 1인실에서 80평까지 분할임대, 삼성역 풀옵션 Onbiz Office">
+	<meta name="keywords" content="가상오피스, 80평, 분할임대, 삼성역, 풀옵션,Onbiz Office" />
+	<meta name="classification" content="소호사무실" />
+
+	<!-- 오픈그래프 -->
+	<meta property="og:title" content="온비즈오피스">
+	<meta property="og:url" content="http://onbiz.co.kr">
+	<meta property="og:image" content="http://img.onbiz.co.kr/images/og_onbiz.jpg">
+	<meta property="Description" content="가상오피스 1인실에서 80평까지 분할임대, 삼성역 풀옵션 Onbiz Office">
+	<!-- twitter -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="http://onbiz.co.kr">
+	<meta name="twitter:title" content="온비즈오피스">
+	<meta name="twitter:description" content="가상오피스 1인실에서 80평까지 분할임대, 삼성역 풀옵션 Onbiz Office">
+	<meta name="twitter:image" content="http://img.onbiz.co.kr/images/og_onbiz.jpg">
+
+	<!-- Android icon -->
+	<link rel="shortcut icon" type="image/x-ico" href="http://img.onbiz.co.kr/favicon/icon128x128.png" />
+	<!-- iPhone icon -->
+	<link rel="apple-touch-icon" type="image/x-ico" sizes="57x57" href="http://img.onbiz.co.kr/favicon/icon57x57.png" />
+	<!-- iPad icon -->
+	<link rel="apple-touch-icon" type="image/x-ico" sizes="72x72" href="http://img.onbiz.co.kr/favicon/icon72x72.png" />
+	<!-- iPhone icon(Retina) -->
+	<link rel="apple-touch-icon" type="image/x-ico" sizes="114x114" href="http://img.onbiz.co.kr/favicon/icon114x114.png" />
+	<!-- iPad icon(Retina) -->
+	<link rel="apple-touch-icon" type="image/x-ico" sizes="144x144" href="http://img.onbiz.co.kr/favicon/icon144x144.png" />
+
+	<title>온비즈결제페이지</title>
+
+	<!--170922 css경로변경-->
+	<!-- <link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/common_renewal_m.css" type="text/css">
+  <link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/info/info2_m.css" type="text/css"> -->
+	<link rel="stylesheet" href="../../src/css/m/common_renewal_m.css" type="text/css">
+	<link rel="stylesheet" href="../../src/css/m/info/info2_m.css" type="text/css">
+
+	<script src="http://static.onbiz.co.kr/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+	<script src="http://static.onbiz.co.kr/js/m/common_m.js"></script>
+	<!--<script src="http://static.onbiz.co.kr/src/js/info/info2_m.js"></script>-->
+	 <script src="../../src/bak/js/info/info2_m.js"></script>
+
+	<!-- ie9이하 html5, 미디어쿼리 작동 -->
+	<!--[if lte IE 8]>
+    <script type="text/javascript" src="http://static.onbiz.co.kr/js/html5shiv.js"></script>
+    <script type="text/javascript" src="http://static.onbiz.co.kr/js/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+	<h1 class="hidden">온비즈오피스</h1>
+
+	<!--서명레이어팝업-->
+	<div id="sign_wrap" class="common_wrap">
+		<section class="sign">
+			<div class="common_box">
+				<h3>서명란에 서명을 해주세요</h3>
+				<a href="#" class="common_clsBtn"><span class="sc_01"></span><span class="sc_02"></span></a>
+			</div>
+			<div class="common_txt">
+				<p>서명 확인 후 00시간 이내 당사 날인된 임대차계약서(PDF)를</p>
+				<p>이메일 또는 팩스로 발송해드립니다.</p>
+			</div>
+
+			<ul class="sign_tab clr">
+				<li class="on">전자서명하기</li>
+				<li class="">도장이미지 업로드</li>
+			</ul>
+
+			<ul class="sign_pan clr">
+				<li class="sp_sign m-signature-pad on" id="signature-pad">
+					<div class="m-signature-pad--body">
+						<p>※회색 패드에 손가락 혹은 스마트 펜을 이요하여 서명을 해주세요</p>
+						<p>
+							<canvas width="310" height="138" style="touch-action: none;"></canvas>
+						</p>
+					</div>
+					<div class="m-signature-pad--footer">
+						<input type="button" data-action="clear" value="다시 서명하기">
+						<input type="button" value="서명 완료" class="st_ld">
+					</div>
+				</li>
+				<li class="sp_up">
+					<div>
+						<p>※도장 이미지를 업로드 해 주세요</p>
+						<div class="filebox">
+							<input class="upload-name" value="파일선택" disabled="disabled">
+							<label for="filename">파일찾기</label>
+							<input type="file" id="filename" class="upload-hidden">
+						</div>
+					</div>
+					<div><input type="button" value="이미지 업로드" class="st_ld"></div>
+				</li>
+			</ul>
+		</section>			
+	</div>
+	<!--계약서 발급중-->
+	<div id="load_wrap" class="common_wrap">
+		<section>
+			<div class="common_box">
+				<a href="#" class="common_clsBtn"><span class="sc_01"></span><span class="sc_02"></span></a>
+			</div>
+			<h3>계약서를 발급중입니다</h3>
+			<p>잠시만 기다려주세요</p>
+			<p><img src="http://img.onbiz.co.kr/images/m/on_loading.png" alt="로딩중이미지"></p>
+		</section>
+	</div>
+
+	<div id="wrap">
+		<!--모바일 팝업 배경 백드랍-->
+		<div id="backDrop"></div>
+		<!--전체화면 메뉴-->
+		<div id="menu_wrap">
+			<section class="menu">
+				<a class="clsBtn" href="#"></a>
+				<h2>Onbiz Office Menu</h2>
+				<h3>Onbiz Office</h3>
+				<nav class="gnb">
+					<ul>
+						<li>
+							<a href="index.html">홈으로</a>
+						</li>
+						<li>
+							<a href="info.html">임대신청</a>
+						</li>
+						<li>
+							<a class="chClk" href="#">임대신청 내역 확인</a>
+						</li>
+					</ul>
+				</nav>
+				<ul class="wrap_ntc clr">
+					<li>
+						<span class="ph"></span>
+						<p>전화문의</p>
+						<p>T : 02-6255-3014</p>
+						<p>H : 010-4429-3013</p>
+					</li>
+					<li>
+						<span class="mp"></span>
+						<p>오시는 길</p>
+						<p>서울트별시 강남구</p>
+						<p>테헤란로 82길 15</p>
+					</li>
+				</ul>
+			</section>
+			<section class="chk_wrap off">
+				<a href="#" class="chk_clsBtn"></a>
+				<h2>가상오피스 임대신청서 내역 조회</h2>
+				<ul>
+					<li>
+						<label for="chk_name">신청자명</label>
+						<input type="text" id="chk_name" placeholder='"-"없이 입력해주세요'>
+					</li>
+					<li>
+						<label for="chk_email">이메일 주소</label>
+						<input type="text" id="chk_email"><span>&#64;</span><select>
+              <option value="naver.com">naver.com</option>
+              <option value="daum.net">daum.net</option>
+              <option value="hanmail.net">hanmail.net</option>
+              <option value="nate.com">nate.com</option>
+              <option value="gmail.com">gmail.com</option>
+            </select>
+					</li>
+					<li>
+						<label for="chk_num">전화번호</label>
+						<input type="text" id="chk_num" placeholder='"-"없이 입력해주세요'>
+					</li>
+					<li>
+						<input type="button" value="확 인" class="chk_btn">
+					</li>
+				</ul>
+			</section>
+		</div>
+		<!-- 모바일 헤더 -->
+		<header class="headerOrigin">
+			<h1><a href="./index.html">Onbiz Office</a><span>코워킹스페이스 임대신청</span></h1>
+			<a class="nav_tab" href="#"></a>
+		</header>
+		<!--모바일 top으로-->
+		<div class="btntop ptr">
+			<img src="http://img.go.co.kr/mobile/top.png" alt="위로가기">
+		</div>
+		<!--모바일 단계 bar-->
+		<ul class="inf_bar clr">
+			<!-- <li>상품선택</li>
+      <li class="on">정보입력</li>
+      <li>계약서 서명</li>
+      <li>계약완료</li> -->
+			<li class="ib1">1.상품결제</li>
+			<li class="ib2 on">2.임차인 정보입력</li>
+			<li class="ib3">3.신청완료 및 출력</li>
+		</ul>
+
+		
+		<!--코워킹 스페이스 사용자 정보-->
+		<div id="container2" class="container">
+			<section class="corUser">
+				<h3>코워킹 스페이스 사용자 정보</h3>
+				<!--170922 코워킹과 동일함-->
+				<p><input type="checkbox" id="les" class="equal"><span><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="les">신청인과 동일함</label></p>
+				<div class="select_wrap">
+					<label for="cor_est">사용 시작일</label>
+					<div class="selectBox"><input type="text" id="cor_est" class="s_btn hasDatepicker" value="2017-09-22" readonly=""><i class="calandar_icon"><img src="http://img.onbiz.co.kr/calandar_icon.png" alt="날짜선택"></i></div>
+				</div>
+				<ul>
+					<li>
+						<label for="cor_name">성명</label>
+						<input type="text" id="cor_name">
+					</li>
+					<li class="m_jm">
+						<label for="cor_jm">주민등록번호</label>
+						<input type="text" id="cor_jm" class="mng_jm"><span>-</span><input type="text"> XXXXXX
+					</li>
+					<li>
+						<label for="cor_num">연락처</label>
+						<input type="text" id="cor_num" placeholder="'-'없이 입력해주세요.">
+					</li>
+					<li>
+						<label for="cor_mail">이메일 주소</label>
+						<input type="text" id="cor_mail" placeholder="ex) abc@naver.com">
+					</li>
+					<li class="mTxt">※ 계약서를 메일로 발송하오니, 정확하게 입력해주세요</li>
+					<li class="m_adr">
+						<label for="cor_adr">주소</label>
+						<input type="text" id="cor_adr" class="mng_adr" placeholder="우편번호">
+						<a href="#">우편번호 찾기</a>
+					</li>
+					<li class="m_emt">
+						<label for="empt2"></label>
+						<input type="text" id="empt2">
+					</li>
+					<li class="m_emt">
+						<label for="empt3"></label>
+						<input type="text" id="empt3" placeholder="상세주소입력">
+					</li>
+				</ul>
+			</section>
+			
+			<div class="refund">
+					<h3>※ 환불 계좌 정보 ※</h3>
+					<p>계약 종료시 예치금 상환받으실 계좌정보 입력</p>
+					<ul>
+						<li>
+							<label for="r_bank">은행명</label>
+							<div class="selectBox">
+								<input type="button" id="r_bank" class="s_btn" value="환불받으실 은행 선택"><i><img src="http://img.onbiz.co.kr/f_icons.png" alt="아래로"></i>
+								<ul>
+									<li>하나은행</li>
+									<li>기업은행</li>
+									<li>국민은행</li>
+									<li>우리은행</li>
+									<li>신한은행</li>
+									<li>직접입력</li>
+								</ul>
+							</div>
+						</li>
+						<li><label for="r_acount">계좌번호</label> <input type="text" id="r_acount" placeholder="'-' 없이 입력해주세요."></li>
+						<li><label for="r_name">예금주</label> <input type="text" id="r_name"></li>
+					</ul>
+					<p>※ 계약서 전송 및 세금계산서 발행을 위해 정확히 입력 부탁드립니다.</p>
+					<p>※ 계약 명의자를 허위로 기재하거나, 임대인의 동의없이 사업자 등록을 하실 경우 관련 법에 의하여, 형사처벌을 받으실 수 있습니다.</p>
+				</div>
+		</div>
+		<!-- 171020 서명하기삭제 -->
+		<!--<div class="btn_wrap2" id="btn_wrap2">
+			<a href="#" class="a1">서명하기</a><!--<a href="#" class="a2">다음단계</a>
+		</div>-->
+		
+		<div class="mt"></div>
+		
+		<!--170922 정보등록 추가-->
+		<!-- 171020 정보등록삭제 -->
+<!--	<div class="container">
+			<section class="c_form">
+				<h3>가상오피스(비상주)<span>임대 신청하기</span></h3>
+				<ul>
+					<li><input type="checkbox" id="cork" class="equal"><span><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="cork" class="cork">코워킹 사용자와 동일함</label></li>
+					<li><label for="mng_name">계약자 성명</label><input type="text" name="name" id="mng_name"></li>
+					<li><label for="mng_num">연락처</label><input type="number" name="tel" id="mng_num" placeholder="'-'없이 입력해주세요." pattern="[0-9]*" inputmode="numeric"></li>
+				</ul>
+				<div class="select_wrap">
+					<label for="m_est">임대 게시일 <span>선택</span></label>
+					<div class="selectBox"><input type="text" id="m_est" class="s_btn hasDatepicker" value="2017-09-22" readonly=""><i class="calandar_icon"><img src="http://img.onbiz.co.kr/calandar_icon.png" alt="날짜선택"></i></div>
+				</div>
+				<a class="nBtn" href="javascript:pay.simple();">임대 신청하기<i><img src="http://img.onbiz.co.kr/f_icons.png" alt="아래로"></i></a>
+				<div class="d1">계약자: 임대차계약을 진행햐는 사람(대표자가 직접 진행 시, 대표자분 정보입력/대리인 진행 시, 대리인 정보입력)</div>
+			</section>
+		</div> -->
+
+		<!-- main영역 -->
+		<section id="main">
+			<!--<h3><img src="http://img.onbiz.co.kr/info_mt.png" alt="임대계약에필요한정보를입력해주세요"></h3>-->
+			<h3 class="m_private mTxt">
+				<p>
+					온비즈 가상오피스(비상주) 임대계약에 필요한<br/><span class="unline">정보를 입력해주세요.</span>
+				</p>
+				<p><span class="fc">아래 입력정보는 정식 임대차계약서에 기재될 정보이므로</span><br/><span class="fc">정확하게 입력</span>해 주시기 바랍니다.</p>
+			</h3>
+		</section>
+
+		<!-- 콘텐츠 -->
+		<div id="contents">
+			<!--카테고리 영역-->
+			<section class="category">
+				<ul class="clr">
+					<li class="on">
+						<h3 class="c_h">
+							<input id="new" type="radio" name="category" class="cate_inp" checked="checked">
+							<span class="on"></span><label for="new"> 신규사업자 등록</label>
+						</h3>
+						<p>개인 또는 법인 신규사업자<br/>등록을 위해 사용합니다.</p>
+					</li>
+					<li>
+						<h3 class="c_h rt">
+							<input id="hold" type="radio" name="category" class="cate_inp">
+							<span></span><label for="hold"> 사업자 등록증 보유자</label>
+						</h3>
+						<p>현재 사업자 등록증이 있으나,<br/>주소 이전을 위해 사용합니다.</p>
+					</li>
+				</ul>
+				<div class="st_wrap">
+					<div class="selectBox">
+						<input type="button" class="s_btn" value="업종을 선택해주세요."><i><img src="http://img.onbiz.co.kr/f_icons.png" alt="아래로"></i>
+						<ul>
+							<li>건설업</li>
+							<li>도매 및 소매업</li>
+							<li>운수업</li>
+							<li>출판, 영상, 방송통신 및 정보서비스업</li>
+							<li>금융 및 보험업</li>
+							<li>전문, 과학 및 기술서비스업</li>
+							<li>사업시설관리 및 사업지원서비스업</li>
+							<li>교육서비스업</li>
+							<li>사회복지서비스업</li>
+							<li>예술, 스포츠 및 여가관련 서비스업</li>
+							<li>협회 및 단체, 수리 및 기타</li>
+							<li>개인서비스업</li>
+							<li>직접입력</li>
+						</ul>
+					</div>
+<!--					<p>※ 업종을 모를 경우, 사업 내용을 간략하게 입력해주세요.</p>-->
+				</div>
+			</section>
+			<!--정보등록-->
+			<div id="container" class="container">
+				<section class="manager">
+					<h3>계약 명의자(임차인) 정보</h3>
+					<!--170922 코워킹과 동일함-->
+					<p><input type="checkbox" id="mng" class="equal"><span><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="mng">코워킹 사용자와 동일함</label></p>
+					<ul>
+						<li>
+							<label for="mng_name">성명</label>
+							<input type="text" id="mng_name">
+						</li>
+						<li class="m_jm">
+							<label for="mng_jm">주민등록번호</label>
+							<input type="text" id="mng_jm" class="mng_jm"><span>-</span><input type="text"> XXXXXX
+						</li>
+						<li>
+							<label for="mng_num">연락처</label>
+							<input type="text" id="mng_num" placeholder="'-'없이 입력해주세요.">
+						</li>
+						<li>
+							<label for="mng_mail">이메일 주소</label>
+							<input type="text" id="mng_mail" placeholder="ex) abc@naver.com">
+						</li>
+						<li class="mTxt">※ 계약서를 메일로 발송하오니, 정확하게 입력해주세요</li>
+						<li class="m_adr">
+							<label for="mng_adr">주소</label>
+							<input type="text" id="mng_adr" class="mng_adr" placeholder="우편번호">
+							<a href="#">우편번호 찾기</a>
+						</li>
+						<li class="m_emt">
+							<label for="empt"></label>
+							<input type="text" id="empt">
+						</li>
+						<li class="m_emt">
+							<label for="empt2"></label>
+							<input type="text" id="empt2" placeholder="상세주소입력">
+						</li>
+						<!--<li class="m_est">
+              <label for="m_est">임대개시일</label>
+              <input type="text" value="2017년 00월 00일" id="m_est">
+            </li>-->
+					</ul>
+				</section>
+				<!--사업자등록증 보우-->
+				<section class="manager lessee">
+					<h3>계약 명의자(임차인) 정보</h3>
+					<!--170922 코워킹과 동일함-->
+					<p><input type="checkbox" id="les" class="equal"><span><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="les">코워킹 사용자와 동일함</label></p>
+					<ul>
+						<li>
+							<label for="les_name">대표자 성명</label>
+							<input type="text" id="les_name">
+						</li>
+						<li>
+							<label for="les_rep">상호(법인명)</label>
+							<input type="text" id="les_rep">
+						</li>
+						<li class="l_snum">
+							<label for="les_snum">사업자등록번호</label>
+							<input type="text" id="les_snum" class="les_num"><span>-</span><input type="text"><span>-</span><input type="text">
+						</li>
+						<li>
+							<label for="les_num">연락처</label>
+							<input type="text" id="les_num" placeholder="'-'없이 입력해주세요.">
+						</li>
+						<li>
+							<label for="les_mail">이메일 주소</label>
+							<input type="text" id="les_mail" placeholder="ex) abc@naver.com">
+						</li>
+						<li class="mTxt">※ 계약서를 메일로 발송하오니, 정확하게 입력해주세요</li>
+						<li class="m_adr">
+							<label for="les_adr">주소</label>
+							<input type="text" id="les_adr" class="mng_adr">
+							<a href="#">우편번호 찾기</a>
+						</li>
+						<li class="m_emt">
+							<label for="l_empt"></label>
+							<input type="text" id="l_empt">
+						</li>
+						<li class="m_emt">
+							<label for="l_empt2"></label>
+							<input type="text" id="l_empt2" placeholder="상세주소입력">
+						</li>
+						<!--<li class="m_est">
+              <label for="les_est">임대개시일</label>
+              <input type="text" value="2017년 00월 00일" id="les_est">
+            </li>-->
+					</ul>
+				</section>
+				<!--환불 계좌 정보-->
+				<div class="refund">
+					<h3>※ 환불 계좌 정보 ※</h3>
+					<p>계약 종료시 예치금 상환받으실 계좌정보 입력</p>
+					<ul>
+						<li>
+							<label for="r_bank">은행명</label>
+							<div class="selectBox">
+								<input type="button" id="r_bank" class="s_btn" value="환불받으실 은행 선택"><i><img src="http://img.onbiz.co.kr/f_icons.png" alt="아래로"></i>
+								<ul>
+									<li>하나은행</li>
+									<li>기업은행</li>
+									<li>국민은행</li>
+									<li>우리은행</li>
+									<li>신한은행</li>
+									<li>직접입력</li>
+								</ul>
+							</div>
+						</li>
+						<li><label for="r_acount">계좌번호</label> <input type="text" id="r_acount" placeholder="'-' 없이 입력해주세요."></li>
+						<li><label for="r_name">예금주</label> <input type="text" id="r_name"></li>
+					</ul>
+					<p>※ 계약서 전송 및 세금계산서 발행을 위해 정확히 입력 부탁드립니다.</p>
+					<p>※ 계약 명의자를 허위로 기재하거나, 임대인의 동의없이 사업자 등록을 하실 경우 관련 법에 의하여, 형사처벌을 받으실 수 있습니다.</p>
+				</div>
+
+			</div>
+			<!-- 콘테이너 끝 -->
+
+			<!--170922 버튼 추가-->
+			<div class="btn_wrap2" id="btn_wrap2">
+			<!-- 171020 서명하기버튼삭 -->
+				<a href="#" class="a1">서명하기</a><!--<a href="#" class="a2">도장업로드</a>-->
+			</div>
+
+			<p class="btn_wrap">
+				<a class="nBtn b2" href="#">다음 단계<i><img src="http://img.onbiz.co.kr/f_icons.png" alt="아래로"></i></a>
+			</p>
+		</div>
+		<!-- 콘텐츠영역 끝 -->
+		
+		
+
+		<!-- 푸터 -->
+		<footer class="footer">
+			<ul class="info">
+				<li>(주)이비즈네트웍스 / 대표이사:박기범</li>
+				<li>사업자등록번호:220-87-30865</li>
+				<li>서울특별시 강남구 선릉로 99길 12, 4층 (역삼동, 모노타워)</li>
+				<li>TEL : 02-6255-3014 / EMAIL : onbiz@ebiznetworks.co.kr</li>
+
+				<li><small>Copyright ⓒ Ebiznetworks, All Rights Reserved.</small></li>
+			</ul>
+		</footer>
+		<!--푸터끝 -->
+	</div>
+	
+<!--커스터마이징-->
+<script src="http://static.onbiz.co.kr/js/m/sign/signature_pad.min.js"></script>
+<script src="http://static.onbiz.co.kr/js/m/sign/app.js"></script>
+<script src="http://static.onbiz.co.kr/js/m/sign/sign_m.js"></script>
+<!--<script src="../../src/js/m/sign/sign_m.js"></script>-->
+	
+</body>
+
+</html>

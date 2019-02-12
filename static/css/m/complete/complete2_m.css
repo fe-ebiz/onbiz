@@ -1,0 +1,56 @@
+/*단계 bar*/
+.inf_bar {position: relative; width: 100%;}
+.inf_bar li {position: relative; float:left; height: 34px; line-height: 34px; background-color: #F3F3F3; font-size: 12px; font-weight: 500; color: #4C4C4C; text-align: center; width: 30%; text-indent: 5px; box-sizing: border-box;}
+.inf_bar .ib0 {font-weight: 700; width: 70%; font-size: 14px; text-align: left;}
+.inf_bar li.on {background-color: #5B5B59; color: #fff;}
+.inf_bar li:after {z-index: 1; position:absolute; top: 0; right: -25px; content: ""; display: block;
+border:17px solid transparent;  border-left-color: #f3f3f3; border-left-width: 8px;}
+.inf_bar li.on:after {border-left-color: #5B5B59;}
+.inf_bar .ib3:after {display: none;}
+
+/*main 섹션*/
+#main {letter-spacing: -1px;}
+#main h2 {color: #3C3C3C; font-size: 54px; font-weight: 600; margin-top: 28px;}
+#main h2 span:first-child {display: inline-block; color: #fff; background-color: #3c3c3c; 
+	height: 45px; width: 168px; line-height: 52px;}
+#main h2 span:last-child {position: relative; left: -4px;}
+#main h2 + p {margin-top: 12px;}
+#main p {color: #ff7700; font-weight: 600; text-align: center; line-height: 1.3em;}
+#main h2 + p + p {color: #4c4c4c; font-size: 14px; margin-top: 10px;}
+@media (max-width: 320px){
+	#main p {font-size: 14px}
+	#main h2 + p + p {font-size: 13px;}
+}
+#main p:last-child {margin-top: 30px;}
+#main p:last-child input {display: block; margin: 0 auto; background-color: #323232; width: 220px; color: #fff; padding: 11px 0px; border: none; border-radius: 4px; letter-spacing: -1px; font-size: 15px}
+#main p:last-child button {display: inline-block; margin: 0 auto; background-color: #323232; width: 220px; color: #fff; padding: 11px 0px; border: none; border-radius: 4px; letter-spacing: -1px; font-size: 15px}
+#main p:last-child button.b1, #main p:last-child button.b2 {width: 49.5%; font-size: 12px;}
+#main p:last-child button.b1 {}
+#main p:last-child button.b2 {background: #ff9000; margin-left: 1%;}
+
+/*컨텐츠*/
+#contents {position: relative; margin: 0 5px; margin-top: 20px; color: #4c4c4c; border-top: 2px solid #e0e0e0;
+padding-bottom: 40px;}
+#contents h2 {font-size: 12px; font-weight: 700; color: #4c4c4c; text-align: left; line-height: 1em; letter-spacing: -1px; margin-top: 24px;}
+#contents h2 span:first-child {position: relative; top: 2px; width: 12px; height: 12px; background-size: 28px;}
+
+
+/*사업자정보 ~ 결제정보*/
+#contents section {margin-top: 25px;}
+#contents section:first-child {margin-top: 30px;}
+#contents section h3 {font-weight: 600; font-size: 14px; margin-bottom: 3px;}
+#contents section div {display: table; width: 100%;}
+#contents section ul {position: relative; display: table-row; width: 100%;}
+#contents section ul li {display: table-cell; vertical-align: middle;  box-sizing: border-box; text-align: center; font-size: 13px; border-right: 1px solid #c9c9c9; border-bottom: 1px solid #c9c9c9; height: 38px; letter-spacing: -1px;}
+#contents section ul li a {color: #4c4c4c;}
+#contents section ul:first-child li {border-top: 2px solid #FF8A17; height: 32px;}
+#contents section ul li:first-child {width: 30%; border-left: 1px solid #c9c9c9;}
+#contents section ul li:last-child {font-size: 12px; text-align: left; padding-left: 8px;}
+#contents section.sec_prc ul.total li:last-child {font-size: 16px; font-weight: 600; letter-spacing: 0;}
+
+#contents section.sec_prc ul.recipt li:last-child {padding: 6px 0px 6px 8px; line-height: 1.4;}
+#contents section.sec_prc ul.recipt a {color: #065bbb; font-size: 13px;}
+
+/* 세금계산서, 영수증발급 버튼 */
+#contents > p:last-child {margin-top: 25px; position: relative; text-align: center;}
+#contents > p:last-child input {display: inline-block; width: 135px; margin-right: 5px; color: #fff; background: #FF7E00; line-height: 2em; font-size: 17px; letter-spacing: -2px; border: none; }

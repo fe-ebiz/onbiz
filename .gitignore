@@ -1,3 +1,13 @@
+# etc
+_bak/
+_document/
+_draft/
+_work/
+_media/
+_tmp/
+img/
+.sass-cache/
+
 #fontFile
 *.ttf
 *.woff
@@ -5,12 +15,8 @@
 *.eot
 *.otf
 
-src/bourbon/**
-.sass-cache/**
-
 #sftpFile, zip∆ƒ¿œ
-# *.json
-package-lock.json
+*.json
 *.zip
 
 # ImeageFile

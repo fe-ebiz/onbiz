@@ -1,0 +1,139 @@
+/* 마진과 패딩의 초기화 */
+a, abbr, acronym, address, 
+b, blockquote, big, body,
+center, caption, cite, code, command,
+ dd, del, dfn, dl, div, dt, 
+em, embed,
+fieldset, footer, form, 
+h1, h2, h3, h4, h5, h6, header, hgroup, html,
+i, iframe, img,
+label, legend, li, 
+object, ol,
+p, pre, 
+q, 
+s, samp, section, small, span, source, strike, strong, sub, sup,
+table, tbody, tfoot, thead, th, tr, 
+u, ul, 
+nav, aside, canvas, main, figure, figcaption,
+var { margin:0; padding:0}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block; 
+}
+/* 헤더 폰트 사이즈 초기화 */
+h1,h2,h3,h4,h5,h6 {font-size:100% }
+
+
+/* 리스트의 스타일 제거 */
+ol, ul {list-style:none}
+
+
+/* 폰트 강조 특성 초기화 */
+address, caption, cite, code, dfn, em, 
+strong, th, var {font-style :normal; font-weight:normal}
+
+
+/* 테이블 스타일 초기화 */
+table {border-collapse:collapse; border-spacing:0}
+
+
+/* 이미지 및 필드셋에서 보더표시 초기화 */
+fieldset, img {border:0}
+
+img, input, button, select, textarea {margin:0; padding:0; vertical-align:middle}
+
+
+/* 캡션과 테이블헤더 텍스트 정렬 초기화 */
+caption, th {text-align:left }
+
+
+/* 인용구 표시 초기화 */
+q:before, q:after {content :''} 
+
+/* hidden_class */
+.hidden {width:0; height:0; margin:0; padding:0; overflow:hidden; line-height:0; font-size:0; visibility:hidden; position:absolute; left: -9999px; top:0; text-indent: -9999px;}
+/* clr - clearfix */
+.clr:before, .clr:after {content:""; display:block;}
+.clr:after {clear:both;}
+
+/* dropDown-bg */
+.dropDown-bg {position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 100%; background: url(http://img.go.co.kr/black_rgba85.png) repeat;}
+
+.appe-reset {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.appe-s-reset {
+    border: 1px solid #ddd; border-radius: 0; background: #fff;
+}
+
+/* a태그 아이콘 X버튼*/
+.a-i-x {position: absolute; display: block; width: 20px; height: 20px; top: 10px; right: 10px;}
+.a-i-x:before, .a-i-x:after {content: ""; display: inline-block; position: absolute; width: 20px; height: 1px; background: #555;}
+.a-i-x:before {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.a-i-x:after {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);   
+}
+/*.ie8 .a-i-x:after {content: "×"; font-family: sans-serif; background: 0;}*/
+/* rArrow, lArrow 버튼 */
+.ic-lArrow:after, .ic-rArrow:after, .ic-bArrow:after {
+	position: relative; top: -2px;
+    content: ""; display: inline-block; width: 7px; height: 7px; border: 1px solid #898989;
+    -webkit-transform: rotate(-45deg); 
+    -ms-transform: rotate(-45deg); 
+    -o-transform: rotate(-45deg); 
+    transform: rotate(-45deg); 
+}
+.ic-lArrow:after {
+    border-right: 0; border-bottom: 0;
+    left: 2px;
+}
+.ic-rArrow:after {
+    border-top: 0; border-left: 0;
+    right: 2px;
+}
+.ic-bArrow:after {
+    border-top: 0; border-right: 0;
+    top: 2px; width: 8px; height: 8px;
+}
+.ie8 .ic-lArrow:after, .ie8 .ic-rArrow:after {
+	width: auto; height: auto; 
+	border: 0; left: 0; right: 0;
+}
+.ie8 .ic-lArrow:after {content: "◀";}
+.ie8 .ic-rArrow:after {content: "▶";}
+.ie8 .ic-bArrow:after {content: "▼";}
+
+.i-borL-tran, .i-borT-tran {position: relative;}
+.i-borL-tran:before, .i-borL-tran:after, .i-borT-tran:before, .i-borT-tran:after{
+	position: absolute; content: ""; border: 4px solid transparent; 
+}
+
+.i-borT-tran:before .i-borT-tran:after {
+	border-bottom: 8px solid #233549;  top: -13px; left: 18px;
+}
+.i-borT-tran:after {
+	top: -12px;	
+}
+
+.i-borL-tran:before, .i-borL-tran:after {
+	border-right-color: #d2d2d2; bottom: 6px; left: -9px;
+}
+.i-borL-tran:after {
+	border-right-color: #fff; left: -8px;
+}
+.ie8 .i-borL-tran, .ie8 .i-borT-tran {display: none;}
+
+

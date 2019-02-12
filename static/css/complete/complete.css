@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* 공통 css */
+@import url(http://static.onbiz.co.kr/css/reset.css);
+
+/* 유틸리티 영역 */
+#util {width: 980px; margin: 0 auto; padding: 25px 3px 15px; border-bottom: 1px solid #ddd;}
+.util_link {margin-top: 15px;}
+.util_link > li {float: left; margin-left: 10px;}
+.util_link > li.nth-1 {margin-left: 0;}
+.util_link > li > a {display: block; width: 154px; height: 100px; background: url(http://img.onbiz.co.kr/util_down.png) no-repeat 0;}
+.util_link > li.nth-1 > a {background-position: 0; }
+.util_link > li.nth-2 > a {background-position: -164px 0; }
+.util_link > li.nth-3 > a {background-position: -328px 0; }
+.util_link > li.nth-4 > a {background-position: -492px 0; }
+.util_link > li.nth-5 > a {background-position: -656px 0; }
+.util_link > li.nth-6 > a {background-position: -820px 0; }
+
+/* 신청내역확인 */
+.contract {width:980px; height:100%; margin:20px auto 45px;}
+.contract > div > p {
+  font-size:16px;
+  color:#434343;
+  font-weight:bold;
+  margin:15px 0px 5px 0px;
+}
+.contract > div > table {width:980px;bordeR-top:2px solid #ff7e00;}
+.contract > div > table td{height:35px;border:1px solid #878787;padding-left:15px;color:#4b4b4b;}
+.contract > div > table td.th_color{
+  background:#f3f3f3;
+  text-align:center;
+  font-size:17px;
+  color:#272727;
+  font-weight:600;
+}
+.contract > div > table td.final_pay02{position:relative;height:50px;}
+.contract > div > table td.final_pay02 > p{font-size:17px;color:#4b4b4b;font-weight:800;}
+.contract > div > table td.final_pay02 span.btnBox3{
+  position:absolute;
+  width:284px;
+  height:30px;
+  right:0;
+  top:6px;
+}
+.contract > div > table td.final_pay02 span.btnBox3 input{
+  width:136px;
+  height:36px;
+  background:#ff7e00;
+  font-family:'Nanum Gothic', sans-serif;
+  color:#fff;
+  border:none;
+  font-size:15px;
+  line-height:30px;
+  font-weight:700;
+  cursor:pointer;
+}
+.contract > div > table td.final_pay02 span.btnBox3 input:hover{background:#ff5a00;}
+.contract > div > table td.final_pay02 span.btnBox3 a {position: relative; top: 8px; color: #ff7e00; font-weight: 600;}
+
+.contract  .contract_btn03{width:100%;text-align:center;margin-top:30px;}
+.contract  .contract_btn03 input{
+  width:250px;
+  height:50px;
+  background:#323232;
+  font-family:'Nanum Gothic', sans-serif;
+  color:#fff;
+  border:none;
+  border-radius:5px;
+  font-size:18px;
+  font-weight:600;
+}
+.contract .contract_pdf {text-align: center; margin-top: 20px;}
+.contract .contract_pdf > p {font-size: 15px; font-weight: 400;}
+
+.receipt {display:none; position:absolute; left:50%; top:210px; min-width:620px; margin-left:-130px; padding:20px 15px 40px; border:3px solid #333; background-color:#fff;}
+.receipt .top_txt {font-size:22px; font-weight:bold;}
+.receipt .receipt_close {position:absolute; right:15px; top:20px;}
+.receipt .sort {margin:30px 0 10px; text-align:right;}
+.receipt .receipt_data {border-right:1px solid #b2b2b2; border-bottom:1px solid #b2b2b2;}
+.receipt .receipt_data thead tr th {padding:15px 10px; background-color:#f4f4f4; border-left:1px solid #dedede; border-top:1px solid #b2b2b2; color:#010101; font-weight:bold; text-align:center;}
+.receipt .receipt_data thead tr th:first-child {border-left:1px solid #b2b2b2;}
+.receipt .receipt_data tbody tr td {padding:10px; border-left:1px solid #dedede; border-top:1px solid #dedede; color:#010101; text-align:center;}
+.receipt .receipt_data tbody tr td:first-child {border-left:1px solid #b2b2b2;}
+.receipt .receipt_data tbody tr td.ar {text-align:right;}
+.receipt .receipt_data tbody tr:first-child td {border-top:1px solid #b2b2b2;}
+.paging {margin-top:35px; text-align:center;}
+.paging > a {vertical-align:top;}
+.paging span {display:inline-block; width:28px; height:28px; vertical-align:top; line-height:28px;}
+.paging span.on {border:1px solid #e41b13;}
+.paging span.on a {color:#e41b13;}
+.paging span:hover a, .paging span:active a {color:#e41b13;}

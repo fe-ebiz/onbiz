@@ -1,0 +1,147 @@
+/* -- 공통 css -- */
+* {margin:0; padding:0; font-family: 'Nanum Gothic', '나눔고딕', 'NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, sans-serif,Helvetica,AppleGothic;}
+ul,ol {list-style-type:none;}
+a {text-decoration:none;}
+/*label {vertical-align: middle;}*/
+/*input label 설정*/
+input[type="reset"], input[type="button"] {cursor: pointer;}
+input[type="checkbox"] + label, input[type="radio"] + label {vertical-align: middle;}
+input[type="checkbox"], input[type="radio"] {vertical-align: middle;}
+input[type="reset"], input[type="checkbox"], input[type="text"], input[type="radio"], input[type="button"] {-webkit-border-radius:1px; -webkit-appearance:none;}
+select {
+	-webkit-border-radius:1px;
+	-webkit-appearance:none; 
+	-moz-appearance: none; 
+	appearance: none; 
+	background: url("http://img.onbiz.co.kr/images/m/triangle2.png") no-repeat 95% 50%;
+	background-size: 12px;
+	background-color: #fff;
+}
+textarea {-webkit-border-radius:1px; -webkit-appearance:none;}
+strong {font-weight: bold;}
+input[type="checkbox"] + label, input[type="radio"] + label {
+	cursor: pointer; 
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+input[type=radio] {position: relative; width: 13px; height: 13px; border: 1px solid #ccc; border-radius: 50%; box-sizing: border-box; background-color: #fff; cursor: pointer;}
+input[type=radio]:checked {background-image: url("http://img.onbiz.co.kr/images/m/on_arrow.png"); background-repeat: no-repeat; background-size: 29px; background-position: -14px 0px; border: none; background-color: #FCAD17;}
+select {font-size:14px; border:1px solid #636363; border-radius: 4px; }	
+
+input[type="checkbox"] {
+	-webkit-border-radius:1px; -webkit-appearance:none;
+	display: none;
+ 	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0
+}
+input[type="checkbox"] {position: relative; width: 14px; height: 14px;}
+input[type="checkbox"] + label {position: relative; display: inline-block; width: 36%; font-size: 11px; letter-spacing: -1px; text-align: left;}
+input[type="checkbox"] + label:active:before,
+input[type="checkbox"]:checked + label:active:before {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+input[type="checkbox"]:checked + label:before {
+	content: '\2714';  
+	text-indent: -3px;
+	color: #99a1a7;
+	width: 12px; height: 12px;
+	margin: -1px 1px 0 0;
+	text-shadow: 1px 1px #fff;
+	background: #e9ecee;
+	border-color: #adb8c0;
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+}
+
+.clr:before, .clr:after {content:""; display:block;}
+.clr:after {clear:both;}
+
+#wrap {width:100%; position:relative; margin:0 auto; overflow: hidden;}
+
+/*jquery addClass*/
+.menu.off, .chk_wrap.off {display: none;}
+ 
+/* 헤더영역 */
+.headerOrigin {position: relative; width: 100%;height: 50px;background: #fff;}
+.headerOrigin h1 a, .headerOrigin h1 span {position: relative; top: 8px; color: #302E2E; font-size: 28px; letter-spacing: -1px; }
+.headerOrigin h1 a {margin-left: 3px;}
+.headerOrigin h1 span {top: 7px; margin-left: 5px; font-size: 14px;}
+.headerOrigin h1 + a {position: absolute; width: 25px; height: 22px; top: 14px;	right: 10px; display: block; background-image: url("http://img.onbiz.co.kr/images/m/tab.jpg");}
+
+.header {width:100%; height:60px; float:left; background-color:#3b3938;}
+h2 {font-weight:bold; font-size:22px;  margin-top:10px; text-align:center; color: #ff8921;}
+.header h2 span {font-size:18px;}
+.h_txt_1 {font-size:13px; letter-spacing:-1px; text-align:center; color: #fff;}
+/* .h_txt_2 {font-size:12px; float:right; color:rgb(255, 137, 33); padding-right:5px; padding-top:8px; letter-spacing:-1px;} */
+
+/*컨텐츠영역*/
+#contents h2 span {position: relative; top: 5px; display: inline-block; width: 18px; height: 18px; background-image: url("http://img.onbiz.co.kr/images/m/on_arrow.png"); background-repeat: no-repeat; background-size: 36px;}
+
+/*Div팝업창 등장시 배경*/
+#backDrop, #menu_wrap {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+#backDrop {display: none; z-index: 20;background: rgba(0,0,0,.905);}
+/* 전체 네비게이션 */
+/*메뉴 영역*/
+#menu_wrap {display: none; z-index: 21;}
+.menu {color:#fff;}
+.clsBtn, .ph, .mp, .chk_clsBtn {display: block; width: 40px;height: 40px;background-image:url("http://img.onbiz.co.kr/images/m/menuIcon.png"); background-repeat: no-repeat; background-size: 120px; }
+.clsBtn, .chk_clsBtn {position: absolute;top: 7px; right: 5px; background-position: -80px 0px; }
+.menu h2 {color: #fff; font-size: 24px; font-weight: 400; margin-top: 10px;}
+.menu h3 {color: #FB7C00; font-weight: 400; font-size: 34px; text-align: center; margin-top: 60px;}
+nav.gnb ul li {text-align: center; margin-top: 18px}
+nav.gnb ul li:first-child {margin-top: 28px;}
+nav.gnb a {color:#fff; font-size: 20px}
+/*내역 조회 영역*/
+.wrap_ntc {position:relative; width: 350px; height: 130px; margin: 0 auto; margin-top: 60px; border:1px solid #fff; border-radius: 2px; box-sizing: border-box;}
+@media (max-width: 320px) {
+	.wrap_ntc {width: 316px;}
+}
+.wrap_ntc li {float:left; text-align: center; width: 50%; box-sizing: border-box;}
+.wrap_ntc li:first-child {border-right: 1px solid #fff; height: 100%;}
+.wrap_ntc li a {color: #fff;}
+.ph, .mp { margin: 0 auto; margin-top: 4px; background-position: 0px 0px; }
+.mp {background-position: -40px 0;}
+.ph + p, .mp + p {font-size: 14px; margin-bottom: 8px;}
+.wrap_ntc p {line-height: 1.4em; font-weight: 600;}
+
+/*전체 네비게이션 안에 메뉴박스 영역*/
+.chk_wrap { position: relative; width: 350px; height: 210px; margin: 0 auto; margin-top: 20px;
+background: #fff; border-radius: 4px;}
+@media (max-device-width: 320px){
+	.chk_wrap {width: 96%;}
+}
+.chk_clsBtn {position: absolute; top: -34px; right: 0px;}
+.chk_wrap h2 {color:#424242; font-size: 20px; font-weight: 500; line-height: 1.9em; padding-top: 8px; border-bottom:1px solid #ccc;}
+.chk_wrap ul {margin-top: 25px;}
+.chk_wrap ul li {padding: 6px 20px; line-height: 2.4em;}
+.chk_wrap label {display: inline-block; width: 30%; font-size: 16px;}
+.chk_wrap input, .chk_wrap select {width: 66%; height: 40px; border-radius: 4px; border: 1px solid #666; text-indent: 5px;
+box-sizing: border-box;}
+/* 연락처만 설정_20170228_강혜준 */
+.chk_wrap label {width: 23%;}
+.chk_wrap ul li span {display: inline-block; width: 3%; text-align: center;}
+.chk_wrap input {width: 23%; text-indent: 0; text-align: center;}
+
+.chk_wrap select {text-indent: 0; width: 29%;}
+.chk_wrap #chk_email {width: 29%;}
+.chk_wrap #chk_email +  span {display: inline-block; width: 8%; text-align: center;}
+.chk_wrap input::-webkit-input-placeholder { color: #666; }
+.chk_wrap input::-ms-input-placeholder { color: #666; }
+.chk_wrap input::-moz-input-placeholder { color: #666; }
+.chk_wrap .chk_btn {color: #fff; font-size: 18px; line-height: 2.4em; width: 100%; margin: 0 auto; margin-top: 16px;border-radius: 4px; border: none; background: #FF8400; cursor: pointer;}
+
+/* 푸터영역 */
+.footer {width:100%; height: 130px; float:left; background: #F9f9f9;}
+.info {width:100%; float:left; font-size:11px; margin:15px 0; color:#2E2E2E;}
+.info li {text-align:center; margin-top:5px;}
+.info li a {color: #2E2E2E;}
+
+/*위로가기 버튼*/
+.btntop {width:55px; z-index:10; position:fixed; height:55px; bottom:75px; right:15px;}
+.btntop img {width:100%; cursor: pointer;}
