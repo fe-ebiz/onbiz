@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+/* 공통 */
+#Wrapper {padding-top:130px;}
+.sec {padding:25px 0 30px;}
+.sec .wrap {padding:0 10px; text-align:center;}
+.sec .wrap .title {display:inline-block; position:relative; margin:30px 0 10px; padding:0 10px 10px; font-size:20px;}
+.sec .wrap .title:first-child {margin-top:0;}
+.sec .wrap .title:before {content:''; display:block; position:absolute; left:50%; bottom:0; width:18px; margin-left:-9px; height:2px; background-color:#ff7701;}
+.sec .wrap .s_txt01 {margin-bottom:5px; padding:0 10px 15px; font-weight:bold; font-size: 15px; word-break: keep-all;}
+.sec .wrap .s_txt02 {padding:0 10px 15px; font-size:13px; word-break: keep-all;}
+.sec .wrap .etc {position:relative; padding:6px 0 0 11px; font-size: 14px; text-align:left; word-break: keep-all;}
+.sec .wrap .etc:before {content:'※'; display:block; position:absolute; left:0; top:5px;}
+.sec .wrap .btn_area {margin-top:15px;}
+.sec .wrap .btn_area a {display:block; height:37px; background-color:#222; color:#fff; font-size:14px; line-height:37px;}
+
+/* header */
+header {position:fixed; left:0; top:0; z-index:10; width:100%; background-color:#fff;}
+header .top_bar {overflow:hidden; padding:0 10px; background-color:#000; height:46px; line-height:46px;}
+header .top_bar .city {float:left; overflow:hidden; font-size:0;}
+header .top_bar .city li {float:left; margin-left:3px;}
+header .top_bar .city li:first-child {margin-left:0;}
+header .top_bar .city li a {display:inline-block; width:50px; padding:5px 0; border:1px solid #fff; border-radius:2px; color:#fff; font-size:12px; text-align:center; vertical-align:middle; line-height:12px;}
+header .rent {float:right;}
+header .rent a {display:inline-block; padding:5px 10px; border:1px solid #fff; border-radius:2px; color:#fff; text-align:center; vertical-align:middle; line-height:12px;}
+header .logo {height:50px; font-size:17px; text-align:center; line-height:50px;}
+header .logo span {color:#ff7d0d;}
+header .gnb {display:table; width:100%; background-color:#ff7d0d; table-layout:fixed;}
+header .gnb li {display:table-cell; width:20%; vertical-align:middle;}
+header .gnb li h2 {display:table; width:100%; table-layout:fixed;}
+header .gnb li h2 a {display:table-cell; height:34px; color:#fff; font-weight:normal; font-size:12px; text-align:center; vertical-align:middle;}
+header .gnb li h2 a.on {font-weight:bold; font-size:13px;}
+header .gnb li:last-child h2 a {font-size: 13px;}
+header .gnb li:last-child h2 a.on {font-size: 14px;}
+
+/* footer */
+footer {padding:15px 10px; background-color:#f9f9f9; text-align:center;}
+footer address {line-height:1.6;}
+
+/* top button */
+.move_top {display:none; position:fixed; right:10px; bottom:45px;}
+.move_top img {width:32px;}
+
+/* 온비즈소개 */
+.intro {border-bottom:1px dashed #ccc;}
+.intro .info {padding:15px 10px; border-top:1px solid #d9d9d9; border-bottom:1px solid #d9d9d9; background-color:#f9f9f9;}
+.intro .info ul > li {margin-top:25px;}
+.intro .info ul > li:first-child {margin-top:0;}
+.intro .info ul > li > strong {position:relative; padding-left:10px; font-size: 15px;}
+.intro .info ul > li > strong:before {content:''; display:block; position:absolute; left:0; top:50%; width:9px; height:8px; margin-top:-4px; background:url('http://img.onbiz.co.kr/m/partners/ico_blt01.png') no-repeat 0 0; background-size:100% 100%;}
+.intro .info ul > li > p {margin-top:10px; font-size: 13px;}
+.intro .office {font-size:0; text-align:center;}
+.intro .office > li {display:inline-block; margin:4px 10px; width:150px; height:150px; border:1px solid #ff7701; border-radius:100%; vertical-align:middle;}
+.intro .office > li .radius {display:table; width:100%; table-layout:fixed;}
+.intro .office > li .radius:first-child {height:57px; font-size:13px;}
+.intro .office > li .radius:last-child {height:93px; border-bottom-left-radius:152px; border-bottom-right-radius:152px; background-color:#ff7701; color:#fff; font-size:12px;}
+.intro .office > li .radius > div {display:table-cell; width:100%; text-align:center; vertical-align:middle;}
+.intro .office > li .radius:first-child > div {padding-top: 10px;}
+/* 개설특장점 */
+.feature .feature_list  > li {margin-top:15px; /*height:69px;*/ padding:10px 10px 12px 70px; border:1px solid #d6d6d6; box-shadow:2px 2px 2px rgba(220,220,220,.75); text-align:left;}
+.feature .feature_list  > li.ico01 {background:url('http://img.onbiz.co.kr/m/partners/ico_feature01.png') no-repeat 14px 50% #f7f7f7; background-size:33px 37px;}
+.feature .feature_list  > li.ico02 {background:url('http://img.onbiz.co.kr/m/partners/ico_feature02.png') no-repeat 14px 50% #f7f7f7; background-size:33px 40px;}
+.feature .feature_list  > li.ico03 {background:url('http://img.onbiz.co.kr/m/partners/ico_feature03.png') no-repeat 14px 50% #f7f7f7; background-size:28px 38px;}
+.feature .feature_list  > li > strong {font-size: 15px; font-weight: bold;}
+.feature .feature_list  > li > p {margin-top: 5px; font-size: 14px; word-break: keep-all;}
+.feature .feature_list  > li > p > br {display: none}
+
+/* 개설절차 */
+.process {background:url('http://img.onbiz.co.kr/m/partners/bg_pattern.gif') repeat 0 0;}
+.process .process_list {position: relative; padding:0 15px;}
+.process .process_list img {position: relative; width: 100%;}
+
+/* 예상수익률 */
+.revenue .invest {border:1px solid #dbdbdb;}
+.revenue .invest .top {padding:5px 10px; background-color:#ff7d0d;}
+.revenue .invest .top > p {color:#fff;}
+.revenue .invest .btm {padding:10px; background-color:#fbfbfb;}
+.revenue .invest .btm > p {font-size:14px;}
+.revenue .invest .btm .money {font-size:30px;}
+.revenue .example {display:inline-block; position:relative; padding:15px 20px; font-weight:bold; font-size:13px; line-height:1.6;}
+.revenue .example:before {content:'“'; display:block; position:absolute; left:0; top:-2px; font-size:40px}
+.revenue .example:after {content:'”'; display:block; position:absolute; right:0; bottom:-24px; font-size:40px}
+.revenue .example em {color:#ff7d0d;}
+
+/* 가맹문의 */
+.partners {background-color:#4b4b4b; color:#fff;}
+.partners .board_write tbody tr td {padding-bottom:10px; text-align:left;}
+.partners .board_write tbody tr td:nth-child(2) {padding-left:10px;}
+.partners .board_write tbody tr td .lb_txt {display:block; color:#fff; line-height:1.8;}
+.partners .board_write tbody tr td .txt_box {height:30px; padding:5px; border:0; box-sizing:border-box;}
+.partners .board_write tbody tr td input[type="radio"] {position:relative; width:16px; height:16px; border-radius:100%; background-color:#fff;}
+.partners .board_write tbody tr td input[type="radio"]:before {content:''; display:none; position:absolute; left:50%; top:50%; width:10px; height:10px; margin:-5px 0 0 -5px; border-radius:100%; background-color: #ff7d0d;}
+.partners .board_write tbody tr td input[type="radio"]:checked:before {display:block;}
+.partners .board_write tbody tr td label {color:#fff;}
+.partners .board_write tbody tr td textarea {width:100%; height:150px; padding:5px; box-sizing:border-box; resize:none;}
+
+/*jquery addClass*/
+.menu.off, .chk_wrap.off {display: none;}
+/*Div팝업창 등장시 배경*/
+#backDrop, #menu_wrap {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+#backDrop {display: none; z-index: 20;background: rgba(0,0,0,.905);}
+/* 전체 네비게이션 */
+/*메뉴 영역*/
+#menu_wrap {display: none; z-index: 21;}
+#menu_wrap h2 {text-align:center;}
+.menu {color:#fff;}
+.clsBtn, .ph, .mp, .chk_clsBtn {display: block; width: 40px;height: 40px;background-image:url("http://img.onbiz.co.kr/images/m/menuIcon.png"); background-repeat: no-repeat; background-size: 120px; }
+.clsBtn, .chk_clsBtn {position: absolute;top: 7px; right: 5px; background-position: -80px 0px; }
+.menu h2 {color: #fff; font-size: 24px; font-weight: 400; margin-top: 10px;}
+.menu h3 {color: #FB7C00; font-weight: 400; font-size: 34px; text-align: center; margin-top: 60px;}
+nav.gnb ul li {text-align: center; margin-top: 18px}
+nav.gnb ul li:first-child {margin-top: 28px;}
+nav.gnb a {color:#fff; font-size: 20px}
+/*내역 조회 영역*/
+.wrap_ntc {position:relative; width: 350px; height: 130px; margin: 0 auto; margin-top: 60px; border:1px solid #fff; border-radius: 2px; box-sizing: border-box;}
+@media (max-width: 320px) {
+	.wrap_ntc {width: 316px;}
+}
+.wrap_ntc li {float:left; text-align: center; width: 50%; box-sizing: border-box;}
+.wrap_ntc li:first-child {border-right: 1px solid #fff; height: 100%;}
+.wrap_ntc li a {color: #fff;}
+.ph, .mp { margin: 0 auto; margin-top: 4px; background-position: 0px 0px; }
+.mp {background-position: -40px 0;}
+.ph + p, .mp + p {font-size: 14px; margin-bottom: 8px;}
+.wrap_ntc p {line-height: 1.4em; font-weight: 600;}
+
+/*전체 네비게이션 안에 메뉴박스 영역*/
+.chk_wrap { position: relative; width: 350px; height: 210px; margin: 0 auto; margin-top: 20px;
+background: #fff; border-radius: 4px;}
+@media (max-device-width: 320px){
+	.chk_wrap {width: 96%;}
+}
+.chk_clsBtn {position: absolute;top: -34px;right: 0px;}
+.chk_wrap h2 {color:#424242; font-size: 20px; font-weight: 500; line-height: 1.9em; padding-top: 8px; border-bottom:1px solid #ccc;}
+.chk_wrap ul {margin-top: 25px;}
+.chk_wrap ul li {padding: 6px 20px; line-height: 2.4em;}
+.chk_wrap label {display: inline-block; width: 30%; font-size: 16px;}
+.chk_wrap input, .chk_wrap select {width: 66%; height: 40px; border-radius: 4px; border: 1px solid #666; text-indent: 5px;
+box-sizing: border-box;}
+/* 연락처만 설정_20170228_강혜준 */
+.chk_wrap label {width: 23%;}
+.chk_wrap ul li span {display: inline-block; width: 3%; text-align: center;}
+.chk_wrap input {width: 23%; text-indent: 0; text-align: center;}
+
+.chk_wrap select {text-indent: 0; width: 29%;}
+.chk_wrap #chk_email {width: 29%;}
+.chk_wrap #chk_email +  span {display: inline-block; width: 8%; text-align: center;}
+.chk_wrap input::-webkit-input-placeholder { color: #666; }
+.chk_wrap input::-ms-input-placeholder { color: #666; }
+.chk_wrap input::-moz-input-placeholder { color: #666; }
+.chk_wrap .chk_btn {color: #fff; font-size: 18px; line-height: 2.4em; width: 100%; margin: 0 auto; margin-top: 16px;border-radius: 4px; border: none; background: #FF8400; cursor: pointer;}
+
+@media (max-device-width: 320px){ 
+    header .gnb li h2 a, header .gnb li h2 a.on {font-size:11px;}
+    header .gnb li:last-child h2 a {font-size: 12px;}
+    header .gnb li:last-child h2 a.on {font-size: 13px;}
+}
