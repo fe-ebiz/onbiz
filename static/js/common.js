@@ -18,7 +18,7 @@ $(function () {
      **/
     var bnl = $('.bn-left-wrap'), bnr = $('.bn-right-wrap');
     var bnlH = bnl.height(), bnrH = bnr.height();
-    var bnrt = 190, bnTime = 250;
+    var bnrt = 125, bnTime = 250;
     
     //좌측배너 세로 가운데 정렬
     bnl.css({'margin-top' : (-bnlH)+'px'});

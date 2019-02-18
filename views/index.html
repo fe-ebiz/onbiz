@@ -49,18 +49,18 @@
     <!--<link rel="stylesheet" href="http://static.onbiz.co.kr/css/common_renewal.css" type="text/css">-->
     <link rel="stylesheet" href="../static/css/common_renewal.css" type="text/css">
     <!-- 190111 css 추가 -->
-   <!-- <link rel="stylesheet" href="http://static.onbiz.co.kr/css/main.css" type="text/css">-->
-    <link rel="stylesheet" href="../static/css/main.css" type="text/css">
+    <link rel="stylesheet" href="http://static.onbiz.co.kr/css/main.css" type="text/css">
+    <!--<link rel="stylesheet" href="../static/css/main.css" type="text/css">-->
 
     <!-- js -->
 	<script src="http://static.onbiz.co.kr/js/jquery-1.12.4.min.js" type="text/javascript"></script>
 	<!-- slide js 추가 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script> 
 	<script src="http://static.onbiz.co.kr/js/common.js"></script>
+	<script src="http://static.onbiz.co.kr/js/main.js"></script>
     <!-- 190111 js 추가 -->
-	<!--<script src="http://static.onbiz.co.kr/js/main.js"></script>-->
 	<!--<script type="text/javascript" src="../static/js/common.js"></script>--> 
-	<script type="text/javascript" src="../static/js/main.js"></script> 
+	<!--<script type="text/javascript" src="../static/js/main.js"></script> -->
 
     <!-- 패밀리사이트 스크립트 -->
     <script type="text/javascript">
@@ -92,7 +92,8 @@
 	    <!-- header -->
         <header id="header_new" class="main-header clr">
             <div class="top-area clr">
-                <a href="http://hobiz.co.kr/" class="bn-link"><img src="http://img.onbiz.co.kr/banner/bn_link_hobiz.png" alt="호비즈오피스 GO"></a>
+                <!-- 190218 좌측 배너 숨김 -->
+                <!--<a href="http://hobiz.co.kr/" class="bn-link"><img src="http://img.onbiz.co.kr/banner/bn_link_hobiz.png" alt="호비즈오피스 GO"></a>-->
                 <h2 class="in">
                     <a href="/"><img src="http://img.onbiz.co.kr/logo.gif" alt="온비트오피스로고"/></a>
                 </h2>
@@ -104,14 +105,28 @@
                 </ul>
             </div>
             
+            <!-- 190218 other onbiz link -->
+            <div class="link-menu">
+                <div class="link-box clr">
+                    <p class="txt-adr">온비즈 지점</p>
+                    <ul class="until-list">
+                        <!-- 해당 지정사이트에서는 li에 on -->
+                        <li class="nth-1 on"><a href="#none" target="_blank"><span class="s-1">강남본점</span><span class="s-2">010-4429-3013</span></a></li>
+                        <li class="nth-2"><a href="#none" target="_blank"><span class="s-1">성수본점</span><span class="s-2">010-4429-3023</span></a></li>
+                        <li class="nth-3"><a href="#none" target="_blank"><span class="s-1">평택본점</span><span class="s-2">010-4429-3019</span></a></li>
+                    </ul>
+                    <p class="txt-last">가맹점 모집<br>010-4429-3013</p>
+                </div>
+            </div>
+            
             <!-- call -->
-            <div class="call-area">
+            <!--<div class="call-area">
                 <ul class="call-list clr">
                     <li>강남본점 010-4429-3013(3019)</li>
                     <li><a href="http://hobiz.co.kr/" target="_blank">성수본점 : 010-4429-3023</a></li>
                     <li class="last">가맹점 모집 : 010-4429-3013</li>
                 </ul>
-            </div>
+            </div>-->
             <!--// call -->
             
             <nav class="main-gnb">
@@ -676,7 +691,9 @@
         
         <!-- 우측배너 -->
         <div id="" class="bn-right-wrap">
-            <a href="http://hobiz.co.kr/" class="bn-link"><img src="http://img.onbiz.co.kr/banner/bn_link_hobiz.png" alt="호비즈오피스 GO"></a>
+            <!-- 190218 우측배너 수정 / 예시 -->
+            <a href="#none" class="bn-link"><img src="http://img.onbiz.co.kr/banner/bn_link_gangnam.png" alt="온비즈 강남본점으로 바로가기"></a>
+            <a href="#none" class="bn-link"><img src="http://img.onbiz.co.kr/banner/bn_link_pyeongtaek.png" alt="온비즈 평택본점으로 바로가기"></a>
             
             <!-- 문의 폼 -->
             <div class="form-area">

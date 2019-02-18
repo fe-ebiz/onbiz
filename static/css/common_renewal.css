@@ -298,7 +298,7 @@ p.nth-2 a span {position: relative; font-weight: 600; font-size: 10px; margin-le
 /* main header */
 .main-header {position: relative; min-width: 980px; width: 100%; padding-top: 0;}
 .main-header .call-area, .main-header .main-gnb {position: relative; background: #f0f0f0;}
-.main-header .top-area, .main-header .call-area .call-list, .main-header .main-gnb .menu-box {position: relative; width: 980px; margin: 0 auto;}
+.main-header .top-area, .main-header .link-menu .link-box, .main-header .main-gnb .menu-box {position: relative; width: 980px; margin: 0 auto;}
 /* top area */
 .main-header .top-area {padding-top: 15px;}
 .main-header .top-area .top-nav {float: right; display: inline-block; width: auto; border: 0;}
@@ -314,12 +314,27 @@ p.nth-2 a span {position: relative; font-weight: 600; font-size: 10px; margin-le
 /* 메인배너 (온비즈/호비즈 링크) */
 .main-header .bn-link {display: block; position: absolute; top: 12px; left: -212px;}
 .main-header .bn-link img {position: relative;}
-/* call area */
+/* call area - 삭제예정 */
 .main-header .call-area {margin: 7px auto 7px;}
-.main-header .call-area .call-list {}
+.main-header .call-area .call-list {position: relative; width: 980px; margin: 0 auto;}
 .main-header .call-area .call-list li {float: left; margin-right: 40px; padding: 8px 0;}
 .main-header .call-area .call-list .last {float: right;}
 .main-header .call-area .call-list li, .main-header .top-area .call-area .call-list li a {font-size: 16px; font-weight: 600; letter-spacing: -1px; color: #ff1f14;}
+/* other onbiz link */
+.main-header .link-menu {margin: 7px auto 20px; background: #7391a3;}
+.main-header .link-menu .link-box {box-sizing: border-box; padding: 16px 5px 17px; text-align: center;}
+.main-header .link-menu .link-box p {font-weight: bold; color: #fff;}
+.main-header .link-menu .link-box .txt-adr {float: left; padding-left: 24px; font-size: 24px; line-height: 34px; letter-spacing: -1.2px; background: url(http://img.onbiz.co.kr/ico_adr.png) no-repeat 0 center; background-size: 15px auto;}
+.main-header .link-menu .link-box .until-list {float: left; margin-left: 31px;}
+.main-header .link-menu .link-box .until-list li {float: left; position: relative; margin-left: 16px;}
+.main-header .link-menu .link-box .until-list li.on:before {content: ''; z-index: 2; display: inline-block; position: absolute; width: 0px; height: 0px; bottom: -19px; left: 50%; margin-left: -10px; border: 10px solid #fff; border-left-color: transparent; border-right-color: transparent; border-bottom-color: transparent;}
+.main-header .link-menu .link-box .until-list li:first-child {margin-left: 0;}
+.main-header .link-menu .link-box .until-list li a {position: relative; display: block; box-sizing: border-box; width: 200px; height: 34px; line-height: 34px; border: 1px solid #dedede; background: #fff;}
+.main-header .link-menu .link-box .until-list li a span {font-size: 16px; font-weight: bold; letter-spacing: -0.7px;}
+.main-header .link-menu .link-box .until-list li a .s-1 {color: #333;}
+.main-header .link-menu .link-box .until-list li a .s-2 {padding-left: 8px; color: #ff4133;}
+.main-header .link-menu .link-box .txt-last {position: absolute; top: 12px; right: 12px; font-weight: 18px; line-height: 22px; letter-spacing: -0.7px;}
+
 /* menu */
 .main-header .main-gnb {z-index: 10; position: absolute; width: 100%; top: auto; left: 0; text-align: center;}
 .main-header .main-gnb .menu-box {}
@@ -395,7 +410,8 @@ p.nth-2 a span {position: relative; font-weight: 600; font-size: 10px; margin-le
 /* 우측배너 */
 .bn-right-wrap {right: 70px; /*top: 190px;*/}
 /* 메인 우측배너 (온비즈/호비즈 링크)  */
-.bn-right-wrap .bn-link {}
+.bn-right-wrap .bn-link {display: block;}
+.bn-right-wrap .bn-link + .bn-link {margin-top: 10px;}
 /* form */
 .bn-right-wrap .form-area {position: relative; display: block; box-sizing: border-box; width: 200px; margin-top: 10px; padding: 15px 10px 13px; border-radius: 12px; background: #d1d1d1; opacity: 0.6; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out;}
 .bn-right-wrap .form-area:hover {opacity: 1;}
