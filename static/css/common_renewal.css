@@ -408,7 +408,7 @@ p.nth-2 a span {position: relative; font-weight: 600; font-size: 10px; margin-le
 .bn-left-wrap .btn-faq .faq-txt .faq-link-txt span {padding-left: 2px;}
 
 /* 우측배너 */
-.bn-right-wrap {right: 70px; /*top: 190px;*/}
+.bn-right-wrap {right: 70px; /*top: 70px;*/}
 /* 메인 우측배너 (온비즈/호비즈 링크)  */
 .bn-right-wrap .bn-link {display: block;}
 .bn-right-wrap .bn-link + .bn-link {margin-top: 10px;}
