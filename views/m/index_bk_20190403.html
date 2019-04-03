@@ -36,7 +36,7 @@
     <!--<link rel="stylesheet" href="../../static/css/m/common_renewal_m.css" type="text/css">-->
     
 	<link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/index2_m.css" type="text/css">
-	<!-- <link rel="stylesheet" href="../../static/css/m/index2_m.css" type="text/css"> -->
+	 <!--<link rel="stylesheet" href="../../static/css/m/index2_m.css" type="text/css"> -->
 
 	<script src="http://static.onbiz.co.kr/js/jquery-1.12.4.min.js" type="text/javascript"></script>
 	<script src="http://static.onbiz.co.kr/js/jquery.swiper-3.4.1.min.js" type="text/javascript"></script>
@@ -44,9 +44,9 @@
 	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=ccf6dd6538a21cc002e87e64695e0862"></script>
 	<!--커스터마이징-->
 	  <script src="http://static.onbiz.co.kr/js/m/common_m.js"></script>
-	<!--<script src="../../static/js/m/common_m.js"></script>-->
 	   <script src="http://static.onbiz.co.kr/js/m/index_m.js"></script>  
-	<!--<script src="../../src/js/m/index_m.js"></script>-->
+	<!--<script src="../../src/js/m/index_m.js"></script>
+	<script src="../../src/js/m/common_m.js"></script>-->
 
 	<!--[if lt IE 9]>
     <script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -56,95 +56,129 @@
 
 <body>
 	<div id="wrap">
-        
-        <!-- 190403 메뉴 변경 -->
-        <!-- #backDrop 부터 .header 까지 제거 -->
 		<div id="backDrop"></div>
-        <section class="chk_wrap off">
-			<a href="#" class="chk_clsBtn type-2"></a>
-			<h2>가상오피스 임대신청서 내역 조회</h2>
-            <ul>
-                <li>
-                    <label>종류</label>
-                    <select name="type" style="border-radius:5px; width:130px; height:36px;">
-                        <option value="1">비상주오피스</option>
-                        <option value="2">코워킹스페이스</option>
-                    </select>
-                </li>
-                <li>
-                    <label for="p_room">호수</label>
-                    <input type="text" name="p_room">
-                </li>
-                <li>
-                    <label for="chk_num">전화번호</label>
-                    <input type="text" name="ztel1"><span>-</span><input type="text" name="ztel2"><span>-</span><input type="text" name="ztel3">
-                </li>
-                <li>
-                    <input type="button" value="확 인" class="chk_btn">
-                </li>
-            </ul>
-		</section>
-        
-        <header class="header-renew">
-            <div class="header-area">
-                <h1 class="hd-tit">온비즈 오피스 <span>(강남본점)</span></h1>
-                <p class="p-0">모든 서비스가 가능한 서울 강남구 대치동의 풀옵션 사무실</p>
-                
-                <a href="#none" class="btn-nav">
-                    <span class="sbar-1"></span>
-                    <span class="sbar-2"></span>
-                    <span class="sbar-3"></span>
-                </a>
-            </div>
-            
-            <div class="gnb">
-                <div class="gnb-area">
-                    <div class="gnb-box">
-                        <h2 class="hd-tit">온비즈 오피스 <span>(강남)</span></h2>
-                        <p class="p-0">Onbiz Office</p>
-                    </div>
-                    <ul class="gnb-list">
-                        <li class="li-1"><a href="#none">홈으로</a></li>
-                        <li class="li-2"><a href="http://m.hobiz.co.kr/rent/guide_new.php">비상주 사무실 임대신청</a></li>
-                        <li class="li-3"><a href="javascript:;">코워킹스페이스 임대신청</a></li> <!-- 클릭하면 "PC 홈페이지를 이용해 주세요." 라는 얼랏창이 나오게 -->
-                        <li class="li-4"><a href="#none" class="btn-chk">임대신청 내역 확인</a></li>
-                        <li class="li-5 mv"><a href="#inquiry">문의하기</a></li>
-                        <li class="li-6 mv"><a href="#contact">오시는 길</a></li>
-                    </ul>
-                </div>
-                <div class="site-box">
-                    <p class="p-1">온비즈 오피스 지점</p>
-                    <ul class="site-list">
-                        <li><a href="http://m.onbiz.co.kr/">서울 성수본점 (성수동)<span class="ico-go">GO</span></a></li>
-                        <li><a href="http://m.onbiz1.co.kr">경기 평택본점 (포승읍)<span class="ico-go">GO</span></a></li>
-                        <li><a href="http://m.onbiz2.co.kr">충남 아산본점 (온천동)<span class="ico-go">GO</span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-        <!--//END : 190403 메뉴 변경 -->
-        
+		<!--전체화면 메뉴-->
+		<div id="menu_wrap">
+			<section class="menu">
+				<a class="clsBtn" href="#"></a>
+				<h2>Onbiz Office Menu</h2>
+				<h3>Onbiz Office</h3>
+				<!--170922 gnb내용 변경-->
+				<nav class="gnb">
+					<ul>
+						<li>
+							<a href="index.html">홈으로</a>
+						</li>
+						<li class="mg-"></li>
+						<li>
+							<a href="info.html">비상주 사무실 임대신청</a>
+						</li>
+						<li>
+							<a class="chClk" href="#">임대신청 내역 확인</a>
+						</li>
+						<li class="mg-"></li>
+						<li><a href="#">코워킹스페이스 임대신청</a></li>
+						<li><a href="#">사용계약서 확인</a></li>
+					</ul>
+				</nav>
+				<ul class="wrap_ntc clr">
+					<li>
+						<span class="ph"></span>
+						<p>전화문의</p>
+						<p>T : 02-6255-3014</p>
+						<p>H : 010-4429-3013</p>
+					</li>
+					<li>
+						<span class="mp"></span>
+						<p>오시는 길</p>
+						<p>서울트별시 강남구</p>
+						<p>테헤란로 82길 15</p>
+					</li>
+				</ul>
+			</section>
+			<section class="chk_wrap off">
+				<a href="#" class="chk_clsBtn"></a>
+				<h2>가상오피스 임대신청서 내역 조회</h2>
+				<ul>
+					<!--<li>
+						<label for="chk_name">신청자명</label>
+						<input type="text" id="chk_name" placeholder='"-"없이 입력해주세요'>
+					</li>
+					<li>
+						<label for="chk_email">이메일 주소</label>
+						<input type="text" id="chk_email"><span>&#64;</span><select>
+							<option value="naver.com">naver.com</option>
+							<option value="daum.net">daum.net</option>
+							<option value="hanmail.net">hanmail.net</option>
+							<option value="nate.com">nate.com</option>
+							<option value="gmail.com">gmail.com</option>
+						</select>
+					</li>
+					<li>
+						<label for="chk_num">전화번호</label>
+						<input type="text" id="chk_num" placeholder='"-"없이 입력해주세요'>
+          mo</li>-->
+					<li>
+						<label for="chk_num">전화번호</label>
+						<input type="text" name="ztel1"><span>-</span><input type="text" name="ztel2"><span>-</span><input type="text" name="ztel3">
+					</li>
+					<li>
+						<input type="button" value="확 인" class="chk_btn">
+					</li>
+				</ul>
+			</section>
+		</div>
+
+		<!-- 헤더 -->
+		<header class="headerOrigin">
+			<h1 class="hidden">온비즈오피스(가상오피스)</h1>
+			<!-- 181207 온비즈오피스에서 나타나는 배너 -->
+			<a href="#none" class="bn-link">
+			    <p class="bn-txt-1">
+                    성수본점(성수동)
+                    <em class="fc-orange">호비즈 오피스 Hobiz Office</em>
+                    <span class="bn-txt-go">GO</span>
+			    </p>
+			</a>
+			<!-- 181207 호비즈오피스에서 나타나는 배너 -->
+			<!--<a href="#none" class="bn-link">
+			    <p class="bn-txt-1">
+                    강남본점(대치동)
+                    <em class="fc-green">온비즈 오피스 Hobiz Office</em>
+                    <span class="bn-txt-go">GO</span>
+			    </p>
+			</a>-->
+			
+			<!-- 지역선택 추가 -->
+			<!--170922 가맹점안내로 변경-->
+			<nav class="nav_tab2">
+				<a href="/affiliate/">가맹점 안내 <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+				<a class="" href="#">코워킹스페이스</a>
+				<a class="" href="#">비상주 사무실</a>
+			</nav>
+			<!--<div class="slt_box">
+				<a href="/affiliate/" class="a1" style="width:100px;">가맹점 안내 <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+			</div>
+			
+			<a class="nav_tab" href="#">가상오피스 임대 <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+			<a class="nav_tab" href="#">비상주 사무실<i class="fa fa-caret-right" aria-hidden="true"></i></a>-->
+		</header>
+		<div class="header">
+			<h2>Onbiz Office <span>온비즈오피스</span></h2>
+			<p class="h_txt_1">모든 서비스가 가능한 대치동 테헤란로의 풀옵션 사무실</p>
+		</div>
 
 		<div class="btntop ptr">
 			<img src="http://img.go.co.kr/mobile/top.png" alt="위로가기">
 		</div>
 
-        <!-- 190403 전화문의 변경 -->
-        <!-- .call 부분 변경 -->
-		<div class="call-renew">
+		<div class="call">
 			<img src="http://img.onbiz.co.kr/images/footer_call.png" alt="전화문의">
-			<div class="call-box">
-			    <a href="tel:010-4429-3013" class="btn-call btn-tit">강남지점 ☎ 010-4429-3013</a>
-			    <div class="btn-box">
-			        <a href="tel:010-4429-3023" class="btn-call">성수점 ☎ 010-4429-3023</a>
-			        <a href="tel:010-4429-3013" class="btn-call">평택점 ☎ 010-4429-3023</a>
-			        <a href="tel:010-4429-3013" class="btn-call">아산점 ☎ 010-4429-3023</a>
-			    </div>
-				<!--<p class="bt_title"><a href="tel:02-6255-3014">02-6255-3014</a>, <a href="tel:010-4429-3013">010-4429-3013</a></p>-->
-				
+			<div class="call_bt ptr">
+				<p class="bt_title"><a href="tel:02-6255-3014">02-6255-3014</a>, <a href="tel:010-4429-3013">010-4429-3013</a></p>
+				<p class="bt_title2">(24시간 통화가능)</p>
 			</div>
 		</div>
-        <!--//END :  190403 전화문의 변경 -->
 
 		<div class="top_box">
 			<h2 class="regionName">서울시 강남구 대치동</h2>
@@ -629,8 +663,7 @@
 			<!-- HAPPY CLIENTS END -->
 
 			<!-- 문의하기 -->
-            <!-- 190403 id 추가 -->
-			<div id="inquiry" class="inquiry">
+			<div class="inquiry">
 				<p>문의하기</p>
 				<div class="inquiry_wrap">
 					<div class="form_box">
@@ -681,8 +714,7 @@
 			<!-- 문의하기 끝-->
 
 			<!-- 오시는길 부분-->
-            <!-- 190403 id 추가 -->
-			<div id="contact" class="contact">
+			<div class="contact">
 				<p>오시는 길</p>
 				<ul class="address">
 					<li><b>Onbiz Office 주소</b></li>

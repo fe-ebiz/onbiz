@@ -23,7 +23,7 @@ $(function () {
 		$("#backDrop, #menu_wrap").fadeOut();
 	});
 	/*임대신청내역확인 내역조회 등장*/
-	$(".chClk, .chk_clsBtn").on("click", function() {
+	$(".chClk, #menu_wrap .chk_clsBtn").on("click", function() {
 		$(this).closest("section").addClass("off");
 		$(this).closest("section").next().removeClass("off");
 
@@ -39,7 +39,7 @@ $(function () {
 		
 	});
 	/*내역조회 X버튼 클릭시 다시 Nav등장*/
-	$(".chk_clsBtn").on("click", function() {
+	$("#menu_wrap .chk_clsBtn").on("click", function() {
 		$(this).closest("section").addClass("off");
 		$(this).closest("section").prev().removeClass("off");
 	}); 
@@ -53,4 +53,50 @@ $(function () {
 		$("#menu_wrap").hide();
 	});
 	*/
-});     
+    
+    /* 190403 메뉴 클릭 이벤트 */
+    $('.btn-nav').on('click', function(){
+        $(this).toggleClass('on');
+        $('.header-renew .gnb').toggleClass('on');
+    });
+    
+    /* 문의하기 & 오시는 길 */
+    $('.gnb .gnb-list li a').on('click',function(e){
+       if( $(this).parents('li').hasClass('mv') ){
+           e.preventDefault();
+           
+           var getId = $(this).attr('href');
+           var offset = $(getId).offset();
+           
+           $("html, body").animate({
+               scrollTop: offset.top
+           }, 1000);
+       }
+    });
+    
+    /* 임대신청 내역 확인 */
+    $('.btn-chk').on('click', function(){
+		$('.chk_wrap').removeClass("off");
+
+		$("#backDrop").fadeIn();
+		var wd = $('.chk_wrap').width();
+		var wh = $(window).height();
+		$('.chk_wrap').css({"left" : "50%", "margin-left" : -(wd/2)+'px'});
+		if(wh > 306){
+			wh = wh/2 ;
+			$('.chk_wrap').css({
+				"top": wh,
+				"margin-top": "-163px"
+			});
+		}
+    });
+    //이전 임대신청 내역 확인 팝업 닫기 버튼과 겹치지 않도록 멀티클래스 추가
+    $(".chk_clsBtn.type-2").on("click", function() {
+		$("#backDrop").fadeOut();
+		$('.chk_wrap').addClass("off");
+	}); 
+}); 
+
+
+
+
