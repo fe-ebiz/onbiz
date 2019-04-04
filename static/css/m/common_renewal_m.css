@@ -92,8 +92,8 @@ input[type="radio"], input[type="checkbox"] {
 
 
 /*Div팝업창 등장시 배경*/
-#backDrop, #menu_wrap {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
-#backDrop {display: none; z-index: 20;background: rgba(0,0,0,.905);}
+/*#backDrop, #menu_wrap {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+#backDrop {display: none; z-index: 20;background: rgba(0,0,0,.905);}*/
 
 
 /* 헤더영역 */
@@ -182,8 +182,11 @@ h2 {font-weight:bold; font-size:22px;  margin-top:10px; text-align:center; color
 }
 
 /*Div팝업창 등장시 배경*/
-#backDrop, #menu_wrap {position: fixed;top: 0;left: 0;width: 100%;height: 100%;}
-#backDrop {display: none; z-index: 9991;background: rgba(0,0,0,.905);}
+#backDrop, #menu_wrap {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+#backDrop {display: none; z-index: 20;background: rgba(0,0,0,.905);}
+/* 메인 백드롭 */
+#backDrop.bg-backdrop {position: fixed; z-index: 9991;}
+
 /* 전체 네비게이션 */
 /*메뉴 영역*/
 #menu_wrap {display: none; z-index: 9993;}
