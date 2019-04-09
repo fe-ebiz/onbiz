@@ -9,15 +9,18 @@ $(document).ready(function() {
 		var wIdx = $(this).closest("li").index();
 		var aIdx = $(this).closest("a").index();
 		$sign_wrap = $("#sign_wrap");
+        
+        var htop = 0;
+		var wh = $sign_wrap.height();
+        
+		//console.log('test : ' + wh);
 
 		/* 모달창 브라우저 중앙높이 정렬 */
 		$(window).scrollTop(0);
-		var wh = $(window).height();
-		//console.log(wh);
 		if(wh > 380){
-			wh = wh/2 ;
+			htop = wh/2 ;
 			$(".common_wrap section").css({
-				"top": wh,
+				"top": htop,
 				"margin-top": "-190px"
 			});
 			
