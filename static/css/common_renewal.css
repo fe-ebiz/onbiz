@@ -102,6 +102,66 @@ input[type="checkbox"]:checked + label:active:before {
   background-size: 16px; background-color: #ff9000; border-color: #ff9000;
 }
 
+input[type="radio"] {position: relative; left: -9999px;}
+input[type="radio"] + label:before {
+  content: "";
+  display: inline-block;
+  position: relative; top: 6px; width: 30px; height: 30px; cursor: pointer;
+  background: url("http://img.onbiz.co.kr/onb_picto.png") no-repeat center -30px;
+}
+input[type="radio"]:checked + label:before,
+input[type="radio"] + label:active:before,
+input[type="radio"]:checked + label:active:before {
+  background: url("http://img.onbiz.co.kr/onb_picto.png") no-repeat center -60px;
+}
+input[type="radio"]:checked + label:after {
+  background: url("http://img.onbiz.co.kr/onb_picto.png") no-repeat center -60px;
+}
+
+/* reset 클래스 추가, 되돌리기 */
+input[type="checkbox"].reset {
+  -webkit-appearance: checkobx;
+  -moz-appearance: checkobx;
+  appearance: checkobx;
+  position: absolute;
+  left: auto;
+  width: auto;
+  height: auto;
+  padding: auto;
+  margin: auto;
+  overflow: auto;
+  clip: auto;
+  border: 0
+}
+input[type="radio"].reset {
+  -webkit-appearance: radio;
+  -moz-appearance: radio;
+  appearance: radio;
+  position: relative; 
+  left: auto;
+}
+
+input[type="checkbox"].reset + label {position: relative; display: inline-block; font-size: inherit; text-align: left;}
+input[type="checkbox"].reset + label:before {
+  display: none;
+}
+input[type="checkbox"].reset:checked + label:before,
+input[type="checkbox"].reset + label:active:before,
+input[type="checkbox"].reset:checked + label:active:before {
+  display: none;
+}
+input[type="radio"].reset + label:before {
+  display: none;
+}
+input[type="radio"].reset:checked + label:before,
+input[type="radio"].reset + label:active:before,
+input[type="radio"].reset:checked + label:active:before {
+  display: none;
+}
+input[type="radio"].reset:checked + label:after {
+  display: none;
+}
+
 /* 폰트 */
 .fc-point {color: #f23131;}
 .fc-center {text-align: center;}
