@@ -365,7 +365,7 @@ p.nth-2 a span {position: relative; font-weight: 600; font-size: 10px; margin-le
 .main-header .top-area .top-nav {float: right; display: inline-block; width: auto; border: 0;}
 .main-header .top-area .top-nav li {display: table; float: left;}
 .main-header .top-area .top-nav li a {position: relative; box-sizing: border-box; display: table-cell; width: 121px; height: 40px; text-align: center; vertical-align: middle; border: 1px solid #ff4033; background: #ff4033;}
-.main-header .top-area .top-nav li a em {position: relative; display: inline-block; font-size: 14px; font-weight: 600; text-align: center; letter-spacing: -1px; text-align: left; color: #fff;}
+.main-header .top-area .top-nav li a em {position: relative; display: inline-block; font-size: 14px; font-weight: 600; text-align: center; letter-spacing: -1px; /*text-align: left;*/ color: #fff;}
 .main-header .top-area .top-nav li a em span {position: relative; display: inline-block; top: -1px; padding-left: 3px; font-size: 12px; font-family: "NanumGothic", sans-serif;}
 .main-header .top-area .top-nav .nth-2 a {border: 1px solid #fb7919; background: #fb7919;}
 .main-header .top-area .top-nav .nth-3 a {border: 1px solid #ff3f2d; border-left: 0; background: #fff;}
