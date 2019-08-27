@@ -81,7 +81,7 @@ input[type="radio"], input[type="checkbox"] {
 .info li a {color: #2E2E2E;}
 
 /*위로가기 버튼*/
-.btntop {width:55px; z-index:10; position:fixed; height:55px; bottom:110px; right:15px;}
+.btntop {width:55px; z-index:10; position:fixed; height:55px; bottom:134px; right:15px;}
 .btntop img {width:100%; cursor: pointer;}
 
 /*jquery addClass*/

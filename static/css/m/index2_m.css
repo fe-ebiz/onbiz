@@ -254,7 +254,8 @@ span.rs-slide-btn {position: absolute; width: 100%; top: 50%; margin-top: -10px;
 #tel_input1, #tel_input2, #tel_input3 {width: 31.3%;}
 .link_text {display: inline-block; width: 3%; height:100%; text-align: center;}
 .link_text2 {display: inline-block; width: 6%; height:100%; text-align: center; }
-#email {width: 46%; float: left;}
+.form_wrap .link_text, .form_wrap .link_text2 {height: auto;}
+#email {width: 44.1%; float: left;}
 #email2 {width: 48%; height: 30px; background-color: #fff;}
 #email3 {width: 100%; margin-top: 10px;}
 #subject {width: 100%;}

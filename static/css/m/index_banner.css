@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/*동그란배너*/
+.banner02{position:fixed;width:90px;height:133px;bottom:195px;right:10px;z-index:15;background:url(http://img.onbiz.co.kr/images/bannerBg.png) repeat;border-radius:15px;opacity:0.9;}
+.banner02:hover{opacity:1;}
+.banner02 > .bannerBox{width:90px;height:133px;margin:0 auto;}
+.banner_txt02{text-align:center;width:90px;font-size:15px;color:#fff;font-weight:600;line-height:11px;margin-top:8px;}
+.banner_txt02 span{font-size:11px;font-weight:normal;}
+.yellow_txt02{text-align:center;font-size:18px;line-height:19px;font-weight:600;color:#ffd200;}
+p.link_txt{color:#fff;font-size:12px;font-weight:600;line-height:13px;text-align:center;margin:2px 0px;border-top:1px dashed #fff;padding-top:3px;}
+p.link_txt02{width:75px;height:25px;background:#fff;font-size:12px;border-radius:5px;text-align:center;margin:0 auto;color:#db2d2e;font-weight:600;line-height:25px;cursor:pointer;}
+.close_btn_x02{
+	position:absolute;
+	width:25px;
+	height:24px;
+	top:-25px;right:10px;
+	color:#fff;
+	font-size:18px;
+	tvext-align:center;
+	cursor:pointer;
+	font-weight:normal;
+	background:url(http://img.onbiz.co.kr/images/bannerBg.png) repeat;
+	border-radius:5px;
+	display:none;
+	}
+
+.close_btn_x02 img{width:19px;height:19px;display:block;margin:0 auto;padding-top:3px;display:none;}
+
+/* 가맹점메뉴배너 */
+.quick_onoffice {position:fixed; right:10px; bottom:335px; z-index:15; width:80px; padding:5px 5px 10px; border-radius:10px; background-color:#363636; color:#fff; font-size:12px; text-align:center;}
+.quick_onoffice .link_go {display:inline-block; margin-top:5px; padding:2px 4px; border:1px solid #fff; border-radius:2px; color:#fff;}
