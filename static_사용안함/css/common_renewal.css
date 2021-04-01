@@ -363,9 +363,7 @@ p.nth-2 a span {position: relative; font-weight: 600; font-size: 10px; margin-le
 .main-header .call-area, .main-header .main-gnb {position: relative; background: #f0f0f0;}
 .main-header .top-area, .main-header .link-menu .link-box, .main-header .main-gnb .menu-box {position: relative; width: 980px; margin: 0 auto;}
 /* top area */
-/* .main-header .top-area {padding-top: 15px;} */
-.main-header .top-area {padding-top: 15px; display: flex; justify-content: space-between;}
-.main-header .top-area.clr:before,.main-header .top-area.clr::after {content: none;}
+.main-header .top-area {padding-top: 15px;}
 .main-header .top-area .top-nav {float: right; display: inline-block; width: auto; border: 0;}
 .main-header .top-area .top-nav li {display: table; float: left;}
 .main-header .top-area .top-nav li a {position: relative; box-sizing: border-box; display: table-cell; width: 121px; height: 40px; text-align: center; vertical-align: middle; border: 1px solid #ff4033; background: #ff4033;}
@@ -480,7 +478,7 @@ p.nth-2 a span {position: relative; font-weight: 600; font-size: 10px; margin-le
 .bn-right-wrap .bn-link {display: block;}
 .bn-right-wrap .bn-link + .bn-link {margin-top: 10px;}
 /* form */
-.bn-right-wrap .form-area {position: relative; display: block; box-sizing: border-box; width: 200px; margin-top: 10px; padding: 15px 10px 13px; border-radius: 12px; background: #d1d1d1; opacity: 0.8; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out;}
+.bn-right-wrap .form-area {position: relative; display: block; box-sizing: border-box; width: 200px; margin-top: 10px; padding: 15px 10px 13px; border-radius: 12px; background: #d1d1d1; opacity: 0.6; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out;}
 .bn-right-wrap .form-area:hover {opacity: 1;}
 .bn-right-wrap .form-area .input-area {}
 .bn-right-wrap .form-area .input-area .ip-w, .bn-right-wrap .form-area .input-area .msg-box {position: relative; box-sizing: border-box; width: 100%; margin: 5px 0 0; font-size: 13px; letter-spacing: -0.5px; color: #666; border: 0; border-radius: 4px; background: #fff;}
@@ -515,80 +513,12 @@ p.nth-2 a span {position: relative; font-weight: 600; font-size: 10px; margin-le
 .ie8 .bn-right-wrap .form-area:hover, .ie8 .bn-right-wrap .form-area:hover * {filter: alpha(opacity=100);}
 
 
-/*==[2021_0326 수정]==*/
-
-/*푸터 지점 버튼*/
-.f-btn-box{
-  margin-bottom: 30px;
-}
-
-.f-btn-box .btn-ul{
-  display: flex;
-  justify-content: space-between;
-}
-
-.f-btn-box .btn-ul>li a{
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 40px;
-  background-color: #454545;
-  color: #ccc;
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.6px;
-}
-
-.f-btn-box .btn-ul>li a.active{
-  color: #151515;
-  background-color: #aaa;
-}
-
-/*우측배너*/
-.bn-right-wrap{
-  /* transform: translateY(170px); */
-}
-
-/*상단 지점 전화번호*/
-.main-header .top-tel-area{
-  padding-top: 2px;
-  display: inline-block;
-  /* margin-left: 118px; */
-  margin-left: auto;
-  margin-right: 18px;
-}
-
-.main-header .top-tel-item{
-  display: none !important;
-  padding-top: 5px;
-  padding-left: 10px;
-}
 
 
-.main-header .main-gnb.on .top-tel-item{
-  display: block !important;
-}
 
-.main-header .p-branch{
-  text-align: left;
-  color: #3f4048;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-}
 
-.main-header .p-tel{
-  text-align: left;
-  line-height: 1.2;
-  color: #ff0000;
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-}
 
-/*==[2021_0326 수정]==*/
+
 
 
 

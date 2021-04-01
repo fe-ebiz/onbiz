@@ -82,7 +82,7 @@ section[class*='-sec'].top-sec {padding: 66px 0 90px; background: url('http://im
 .about-sec .about-area .about-box {position: relative; float: left; width: 50%; padding: 0 35px 10px; text-align: left;}
 .about-sec .about-area .about-box:first-child:before {content: ''; display: block; position: absolute; width: 1px; height: 100%; top: 0; right: 0; background: #c4c4c4;}
 .about-sec .about-area .about-box .about-tit {font-size: 18px; font-weight: 600; color: #2f2e2e;}
-.about-sec .about-area .about-box .about-txt-box {font-size: 16px; line-height: 24px; word-break: keep-all; color: #666;}
+.about-sec .about-area .about-box .about-txt-box {font-size: 14px; line-height: 24px; word-break: keep-all; color: #666;}
 .about-sec .about-area .about-box .about-txt-box p {margin-top: 15px;}
 .about-sec .about-area .about-box .about-txt-box p em {font-weight: 800;}
 
@@ -96,10 +96,10 @@ section[class*='-sec'].top-sec {padding: 66px 0 90px; background: url('http://im
 .service-sec .service-list .service-box.right {float: right; margin-bottom: 28px;}
 .service-sec .service-list .service-box.all {clear: both; width: 100%;}
 .service-sec .service-list .service-box .service-tit, .service-sec .service-list .service-box .service-txt-box {position: relative; display: table-cell; text-align: left;}
-.service-sec .service-list .service-box .service-tit {width: 210px; padding-left: 10px; font-size: 20px; font-weight: 600;}
+.service-sec .service-list .service-box .service-tit {width: 210px; padding-left: 10px; font-size: 18px; font-weight: 600;}
 .service-sec .service-list .service-box .service-txt-box {font-size: 14px; line-height: 18px; word-break: keep-all;}
 .service-sec .service-list .service-box .service-txt-box .service-txt-list {}
-.service-sec .service-list .service-box .service-txt-box .service-txt-list li {margin-bottom: 10px; font-size: 16px;}
+.service-sec .service-list .service-box .service-txt-box .service-txt-list li {margin-bottom: 10px;}
 .service-sec .service-txt {font-size: 25px; line-height: 30px;}
 .service-sec .service-txt + .service-txt {margin-top: 15px;}
 
@@ -303,7 +303,7 @@ section[class*='-sec'].way-sec {padding: 0;}
 
 .intro-contents .point-ul>li .p-txt{
     color: #ffb400;
-    font-size: 24px;
+    font-size: 22px;
     margin-left: 18px;
     letter-spacing: -1.2px;
     line-height: 1.15;
@@ -319,7 +319,7 @@ section[class*='-sec'].way-sec {padding: 0;}
 }
 .intro-contents .notice-area .notice-ul>li{
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: -0.8px;
     text-align: left;
     /* margin-bottom: 9px; */
@@ -360,137 +360,15 @@ section[class*='-sec'].way-sec {padding: 0;}
     
 }
 
-/*==[2021_0326 수정]==*/
-
-/*렌탈 서비스 부분*/
-.service-rental-box{
-    margin-top: 52px;
-    margin-bottom: 40px;
-}
-
-.service-rental-box .rental-ul{
-    display: flex;
-    justify-content: space-between;
-}
-
-.service-rental-box .rental-ul>li{
-    width: 320px;
-    padding: 0 15px;
-    padding-top: 34px;
-    padding-bottom: 45px;
-    /* margin-right: 12px; */
-}
-
-.service-rental-box .rental-ul>li:last-of-type{
-    /* margin-right: 0; */
-}
-
-.service-rental-box .rental-ul .title-area{
-    padding-bottom: 19px;
-    border-bottom: 2px solid #2A2A2A;
-}
-
-
-.service-rental-box .rental-ul .title-area .title-main{
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: -0.9px;
-}
-
-.service-rental-box .rental-ul .title-area .title-sub{
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: -0.7px;
-    margin-top: 3px;
-}
-
-
-.service-rental-box .rental-ul .rental-ment{
-    margin-top: 24px;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: -1.5px;
-    line-height: 1.3;
-    text-align: center;
-}
-
-.service-rental-box .rental-ul .txt-area{
-    margin-top: 28px;
-}
-
-.service-rental-box .rental-ul .txt-area p{
-    font-size: 15px;
-    letter-spacing: -0.9px;
-    text-align: left;
-    display: flex;
-    line-height: 1.7;
-    word-break: keep-all;
-    margin-top: 4px;
-}
-
-.service-rental-box .rental-ul .txt-area p::before{
-    content: "ㆍ";
-}
-
-.service-rental-box li.box-sty01{
-    background-color: #f9a253;
-}
-.service-rental-box li.box-sty02{
-    background-color: #111;
-}
-
-.service-rental-box li.box-sty01 .title-area{
-    border-bottom: 2px solid #2A2A2A;
-}
-.service-rental-box li.box-sty02 .title-area{
-    border-bottom: 2px solid #898989;
-}
-
-.service-rental-box li.box-sty01 .title-area .title-main{
-    color: #111;
-}
-
-.service-rental-box li.box-sty02 .title-area .title-main{
-    color: #f9a253;
-}
-
-.service-rental-box li.box-sty01 .title-area .title-sub{
-    color: #444;
-}
-
-.service-rental-box li.box-sty02 .title-area .title-sub{
-    color: #ccc;
-}
-
-.service-rental-box li.box-sty01 .rental-ment{
-    color: #111;
-}
-
-.service-rental-box li.box-sty02 .rental-ment{
-    color: #f9a253;
-}
-
-.service-rental-box li.box-sty01 .txt-area{
-    color: #111;
-}
-
-.service-rental-box li.box-sty02 .txt-area{
-    color: #fff;
-}
-
-/*이벤트배너 부분*/
-.event-sec{
-    background-color: #414141;
-}
-
-
-/*==.//[2021_0326 수정]==*/
-
 
 /*
 g
 
 */
+
+
+
+
 
 
 

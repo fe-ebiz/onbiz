@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<title>Onbiz Office</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta name="title" content="온비즈 오피스">
+<meta name="Description" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+<meta name="keywords" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+<meta name="viewport" content="width=320, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<!-- facebook -->
+<meta property="og:title" content="온비즈 오피스">
+<meta property="og:url" content="http://onbiz.co.kr">
+<meta property="og:image" content="http://img.onbiz.co.kr/images/og_onbiz.jpg">
+<meta property="Description" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+<!-- twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="http://onbiz.co.kr">
+<meta name="twitter:title" content="온비즈 오피스">
+<meta name="twitter:description" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+<meta name="twitter:image" content="http://img.onbiz.co.kr/images/og_onbiz.jpg">
+<link rel="canonical" href="http://onbiz.co.kr">
+<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+<link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/swiper.3.4.1.min.css" type="text/css">
+<link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/reset_m.css" type="text/css">
+<link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/common_renewal_m.css?ver=20210225113405" type="text/css">
+<link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/complete/complete2_m.css?ver=20210225113405" type="text/css">
+<link rel="stylesheet" href="http://static.onbiz.co.kr/css/jquery-ui.css">
+<script src="http://static.onbiz.co.kr/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://static.onbiz.co.kr/js/jquery_ui.js"></script>
+<script type="text/javascript" src="http://static.onbiz.co.kr/js/datepicker_ko.js"></script>
+<script src="http://static.onbiz.co.kr/js/jquery.swiper-3.4.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://post.ebiznetworks.co.kr/post.php" charset="utf-8"></script>
+<script type="text/javascript" src="http://static.ssenflower.co.kr/js/jquery.number.js"></script>
+<script src="http://static.onbiz.co.kr/js/onbiz_m.js?ver=20210225113405"></script>
+<!--지도-->
+<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=ccf6dd6538a21cc002e87e64695e0862"></script>
+<!--커스터마이징-->
+<script src="http://static.onbiz.co.kr/js/m/common_m.js?ver=20210225113405"></script>
+
+<!-- ie9이하 html5, 미디어쿼리 작동 -->
+<!--[if lte IE 8]>
+<script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script type="text/javascript" src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+$(function() {
+	$("#startDate").datepicker({ dateFormat:"yy-mm-dd", showAnim:"slideDown", dayNamesMin:["일","월","화","수","목","금","토"], minDate: 0, maxDate: 3, changeMonth: true, changeYear: true, onSelect: function(){
+		
+				val = this.value;
+
+				$.ajax({		
+					type: "post",
+					url: "/rent/state.php",
+					data: "mode=rdate&a=" + val +"&b=" + $("input[name='month']").val(),
+					success: function(r){
+						$("#sdate").html(val);
+						$("#edate").html(r);
+					}
+				});
+
+		}
+		
+	});
+});
+</script>
+</head>
+<body cz-shortcut-listen="true">
+<div id="wrap"> 
+	<div id="backDrop"></div>
+	<div id="menu_wrap">
+		<section class="menu">
+      		<a class="clsBtn" href="#"></a>
+			<h2>Onbiz Office Menu</h2>
+			<h3>Onbiz Office</h3>
+			<nav class="gnb">
+				<ul>
+					<li>
+						<a href="/">홈으로</a>
+					</li>
+					<li>
+						<a href="/rent/guide_new.php">임대신청</a>
+					</li>
+					<!-- <li>
+						<a class="chClk" href="#">임대신청 내역 확인</a>
+					</li> -->
+				</ul>
+			</nav>
+			<ul class="wrap_ntc clr">
+				<li>
+					<span class="ph"></span>
+					<p>전화문의</p>
+					<p>H : 010-4429-3013</p>
+				</li>
+				<li>
+					<span class="mp"></span>
+					<p>오시는 길</p>
+					<p>서울 강남구 테헤란로82길 15</p>
+				</li>
+			</ul>
+		</section>
+		<section class="chk_wrap off" style="height:auto;">
+			<a href="#" class="chk_clsBtn"></a>
+			<h2>가상오피스 임대신청서 내역 조회</h2>
+			<form id="zform" method="post" action="/rent/state.php">
+				<input type="hidden" name="mode" value="search2">
+				<ul>
+					<li>
+						<label for="chk_num">호수</label>
+						<input type="text" name="p_room">
+					</li>
+					<li>
+						<label for="chk_num">전화번호</label>
+						<input type="text" name="ztel1"><span>-</span><input type="text" name="ztel2"><span>-</span><input type="text" name="ztel3">
+					</li>
+					<li>
+						<input type="button" value="확 인" class="chk_btn" onclick="contract.search();">
+					</li>
+				</ul>
+			</form>
+		</section>
+		<div id="search"></div>
+	</div>
+	
+	
+
+	
+	    <header class="headerOrigin" style="height:40px;">
+      <h1><a href="/">Onbiz Office</a><span>가상오피스 임대신청</span></h1>
+      <a class="nav_tab" href="#"></a>
+    </header>
+	
+	<div class="btntop ptr" style="display: none;">
+      <img src="http://img.onbiz.co.kr/top.png" alt="위로가기">
+    </div>
+<!--단계 bar-->
+<ul class="inf_bar clr">
+<li class="ib0">신청내역확인</li>
+<li class="ib3 on">신청내역 확인</li>
+</ul>
+
+<!--main 섹션-->
+<section id="main">
+	<h2><span>Onbiz</span><span>Office</span></h2>
+	<!-- <p>
+		1인실~ 60인 이상을 수용할 수 있는 다양한 독립 사무실, <br/>
+		법인 설립 에서 세무기장까지 강남 최저가 서비스
+	</p> -->
+	<p>전국 어디에서든 방문없이 즉시 제공받으실 수 있습니다.</p>
+	<p><!--input type="button" value="계약서 (PDF)파일 다운받기" onclick="document.pdf.submit();"/--></p>
+</section>
+
+<!--contents-->
+<div id="contents">
+	<!--사업자정보-->
+	<section>
+		<h3>• 사업자정보</h3>
+		<div>
+			<ul>
+				<li>사업자구분</li><li>신규사업자 등록</li>
+			</ul>
+			<ul>
+				<li>용도</li><li>개인 또는 신규사업자 개설</li>
+			</ul>
+			<ul>
+				<li>업종</li><li>창작 및 예술관련 서비스업</li>
+			</ul>
+		</div>
+	</section>
+	<!--계약 담당자 정보-->
+	<!--section>h3+(ul>li*2)*5-->
+	<section>
+		<h3>• 계약 담당자 정보</h3>
+		<div>
+			<ul>
+				<li>성명</li><li>테스트</li>
+			</ul>
+			<ul>
+				<li>연락처</li><li>010-1234-1234</li>
+			</ul>
+			<!--ul>
+				<li>주민등록번호</li><li>000000-0000000</li>
+			</ul-->
+			<ul>
+				<li>이메일주소</li><li>test@naver.com</li>
+			</ul>
+			<!--ul>
+				<li>팩스</li><li>00-000-0000</li>
+			</ul-->
+		</div>
+	</section>
+	<!--결제상품정보-->
+	<!--section>
+		<h3>&#8226; 결제상품정보</h3>
+		<div>
+			<ul>
+				<li>상품정보</li><li>임대료 6개월 외 옵션상품</li>
+			</ul>
+			<ul>
+				<li>임대기간</li><li>2021-02-25 ~ 2021-08-24</li>
+			</ul>
+			<ul>
+				<li>옵션상품 추가</li><li><p>우편물 발송 및 등기수취(발송비용별도)</</li>
+			</ul>
+		</div>
+	</section-->
+	<!--결제정보-->
+	<section class="sec_prc">
+		<h3>• 결제상품정보</h3>
+		<div>
+			<ul>
+				<li>결제일</li><li>2021-02-25 11:26:25</li>
+			</ul>
+			<ul>
+				<li>상품정보</li><li>임대료 6개월 외 옵션상품</li>
+			</ul>
+						<ul>
+				<li>임대기간</li><li>2021-02-25 ~ 2021-08-24</li>
+			</ul>
+			<ul>
+				<li>결제방법</li><li>신용카드</li>
+			</ul>
+			<ul>
+				<li>최종 결제 금액</li>
+				<li>1,000원 (VAT포함)</li>
+			</ul>
+		</div>
+	</section>
+	
+	<p><!--input type="button" value="세금계산서 신청"><input type="button" value="영수증발급" onclick=""--></p>
+
+	<form name="pdf" method="post" action="http://onbiz.co.kr/form/pdf/doc/new_1_opt.php" target="_blank">
+	<input type="hidden" name="oid" value="1614219935473">
+	</form>
+</div><!--contents 끝-->
+
+		<div class="footer">
+			<ul class="info">
+				<li>(주)이비즈네트웍스 / 대표이사:박기범</li>
+				<li>사업자등록번호:220-87-30865</li>
+				<li>서울특별시 강남구 테헤란로82길 15, (대치동, 디아이타워)</li>
+				<li>TEL : 010-4429-3013 / EMAIL : onbiz@ebiznetworks.co.kr</li>					
+							
+				<li>Copyright ⓒ Ebiznetworks, All Rights Reserved.</li>
+			</ul>
+		</div>
+	</div>
+
+
+		
+
+
+
+<iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}" style="display: none;"></div></body></html>

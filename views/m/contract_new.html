@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<title>Onbiz Office</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta name="title" content="온비즈 오피스">
+<meta name="Description" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+<meta name="keywords" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+<meta name="viewport" content="width=320, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<!-- facebook -->
+<meta property="og:title" content="온비즈 오피스">
+<meta property="og:url" content="http://onbiz.co.kr">
+<meta property="og:image" content="http://img.onbiz.co.kr/images/og_onbiz.jpg">
+<meta property="Description" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+<!-- twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="http://onbiz.co.kr">
+<meta name="twitter:title" content="온비즈 오피스">
+<meta name="twitter:description" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+<meta name="twitter:image" content="http://img.onbiz.co.kr/images/og_onbiz.jpg">
+<link rel="canonical" href="http://onbiz.co.kr">
+<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+<link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/swiper.3.4.1.min.css" type="text/css">
+<link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/reset_m.css" type="text/css">
+
+
+<!-- <link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/common_renewal_m.css?ver=20210225112625" type="text/css"> -->
+<!-- <link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/info/info2_m.css?ver=20210225112625" type="text/css"> -->
+
+
+
+<link rel="stylesheet" href="../../static_onbiz/css/m/common_renewal_m.css" type="text/css">
+<link rel="stylesheet" href="../../static_onbiz/css/m/info/info2_m.css" type="text/css">
+
+
+<link rel="stylesheet" href="http://static.onbiz.co.kr/css/jquery-ui.css">
+<script src="http://static.onbiz.co.kr/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://static.onbiz.co.kr/js/jquery_ui.js"></script>
+<script type="text/javascript" src="http://static.onbiz.co.kr/js/datepicker_ko.js"></script>
+<script src="http://static.onbiz.co.kr/js/jquery.swiper-3.4.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://post.ebiznetworks.co.kr/post_renew.php" charset="utf-8"></script>
+<!-- <script type="text/javascript" src="http://post.ebiznetworks.co.kr/post.php" charset="utf-8"></script> -->
+<script type="text/javascript" src="http://static.onbiz.co.kr/js/jquery.number.js"></script>
+<script src="http://static.onbiz.co.kr/js/onbiz_m_new.js?ver=20210225112625"></script>
+<!-- <script src="http://static.onbiz.co.kr/js/onbiz_m.js"></script> -->
+<!--지도-->
+<!-- <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d19597d88e4197c6787da7d76f76e6bc"></script> -->
+<!--커스터마이징-->
+<script src="http://static.onbiz.co.kr/js/m/common_m.js?ver=20210225112625"></script>
+
+<script src="http://static.onbiz.co.kr/js/info/info2_m.js?ver=20210225112625"></script>          
+<!-- ie9이하 html5, 미디어쿼리 작동 -->
+<!--[if lte IE 8]>
+<script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script type="text/javascript" src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+$(function() {
+	$("#startDate").datepicker({
+		dateFormat:"yy-mm-dd",
+		showAnim:"slideDown", 
+		dayNamesMin:["일","월","화","수","목","금","토"], 
+		minDate: 0, 
+		maxDate: 3, 
+		changeMonth: true, 
+		changeYear: true, 
+		onSelect: function(){		
+			val = this.value;
+
+			$.ajax({		
+				type: "post",
+				url: "/rent/state.php",
+				data: "mode=rdate&a=" + val +"&b=" + $("input[name='month']").val(),
+				success: function(r){
+					$("#sdate").html(val);
+					$("#edate").html(r);
+				}
+			});
+		}		
+	});
+});
+</script>
+</head>
+<body cz-shortcut-listen="true">
+<div id="wrap"> 
+	<div id="backDrop" style="position:fixed;"></div>
+	<div id="menu_wrap">
+		<section class="menu">
+      		<a class="clsBtn" href="#"></a>
+			<h2>Onbiz Office Menu</h2>
+			<h3>Onbiz Office</h3>
+			<nav class="gnb">
+				<ul>
+					<li>
+						<a href="/">홈으로</a>
+					</li>
+					<li>
+						<a href="/rent/guide_new.php">임대신청</a>
+					</li>
+					<!-- <li>
+						<a class="chClk" href="#">임대신청 내역 확인</a>
+					</li> -->
+				</ul>
+			</nav>
+			<ul class="wrap_ntc clr">
+				<li>
+					<span class="ph"></span>
+					<p>전화문의</p>
+					<p>H : 010-4429-3013</p>
+				</li>
+				<li>
+					<span class="mp"></span>
+					<p>오시는 길</p>
+					<p>서울 강남구 테헤란로82길 15</p>
+				</li>
+			</ul>
+		</section>
+		<section class="chk_wrap off" style="height:auto;">
+			<a href="#" class="chk_clsBtn"></a>
+			<h2>가상오피스 임대신청서 내역 조회</h2>
+			<form id="zform" method="post" action="/rent/state.php">
+				<input type="hidden" name="mode" value="search2">
+				<ul>
+					<li>
+						<label for="chk_num">호수</label>
+						<input type="text" name="p_room">
+					</li>
+					<li>
+						<label for="chk_num">전화번호</label>
+						<input type="text" name="ztel1"><span>-</span><input type="text" name="ztel2"><span>-</span><input type="text" name="ztel3">
+					</li>
+					<li>
+						<input type="button" value="확 인" class="chk_btn" onclick="contract.search();">
+					</li>
+				</ul>
+			</form>
+		</section>
+		<div id="search"></div>
+	</div>
+	
+	
+
+	<!-- <header class="headerOrigin" style="height:40px;">
+		<h1><a href="/">Onbiz Office</a><span>강남 가상오피스 임대신청</span></h1>
+		<a class="nav_tab" href="#"></a>
+	</header> -->
+
+
+	<div class="btntop ptr" style="display: none;">
+      <img src="http://img.onbiz.co.kr/top.png" alt="위로가기">
+    </div><script>
+$(document).ready(function(){
+	// 사업계획 글자수 제한
+	$("#plan").on('keyup', function(){
+		if($(this).val().length > 100) {
+			$(this).val($(this).val().substring(0, 100));
+		}
+	});
+	
+	$("#cplan").on('keyup', function(){
+		if($(this).val().length > 100) {
+			$(this).val($(this).val().substring(0, 100));
+		}
+	});
+	
+});
+function info2() {
+	if(!$("input[name=service]").val()) {
+		alert("업종을 선택해주세요.");
+		$("input[name=service]").focus();
+		return;
+	}
+	
+	if($("input[name=service]").val() == "dr" && !$("#service2").val()) {
+		alert("업종을 입력해주세요.");
+		$("#service2").focus();
+		return;
+	}
+
+
+	if($("input:radio[name='ctype']:checked").val() == 1) {
+		if(!$("#mng_name").val()) {
+			alert("성명을 입력해주세요.");
+			$("#mng_name").focus();
+			return;
+		}
+
+		if(!$("#mng_jm").val()) {
+				alert("주민등록번호 앞 6자리를 입력해주세요.");
+				$("#mng_jm").focus();
+				return;
+			}
+
+		if(!$("#ssn2").val()) {
+			alert("주민등록번호 뒤 1자리를 입력해주세요.");
+			$("#ssn2").focus();
+			return;
+		}
+
+		if(!$("#mng_num").val()) {
+			alert("연락처를 입력해주세요.");
+			$("#mng_num").focus();
+			return;
+		}
+
+		if(!$("#mng_mail").val()) {
+			alert("이메일 주소를 입력해주세요.");
+			$("#mng_mail").focus();
+			return;
+		}
+
+		if(!$("input[name='pcode']").val()) {
+			alert("주소를 입력해주세요.");
+			$("input[name='pcode']").focus();
+			return;
+		}
+
+		if(!$("input[name='addr']").val()) {
+			alert("주소를 입력해주세요.");
+			$("input[name='addr']").focus();
+			return;
+		}
+
+		if(!$("input[name='addr_sub']").val()) {
+			alert("주소를 입력해주세요.");
+			$("input[name='addr_sub']").focus();
+			return;
+		}
+
+	} else {
+		if(!$("#les_name").val()) {
+			alert("대표자 성명을 입력해주세요.");
+			$("#cname").focus();
+			return;
+		}
+
+		if(!$("input[name='company']").val()) {
+			alert("상호(법인명)를 입력해주세요.");
+			$("input[name='company']").focus();
+			return;
+		}
+
+		if(!$("#les_snum").val()) {
+			alert("사업자등록번호를 입력해주세요.");
+			$("#les_snum").focus();
+			return;
+		}
+
+		if(!$("#ccssn2").val()) {
+			alert("사업자등록번호를 입력해주세요.");
+			$("#ccssn2").focus();
+			return;
+		}
+
+		if(!$("#ccssn3").val()) {
+			alert("사업자등록번호를 입력해주세요.");
+			$("#ccssn3").focus();
+			return;
+		}
+
+		if(!$("#les_mail").val()) {
+			alert("이메일 주소를 입력해주세요.");
+			$("#les_mail").focus();
+			return;
+		}
+
+		if(!$("input[name='cpcode']").val()) {
+			alert("주소를 입력해주세요.");
+			$("input[name='cpcode']").focus();
+			return;
+		}
+
+		if(!$("input[name='caddr']").val()) {
+			alert("주소를 입력해주세요.");
+			$("input[name='caddr']").focus();
+			return;
+		}
+
+		if(!$("input[name='caddr_sub']").val()) {
+			alert("주소를 입력해주세요.");
+			$("input[name='caddr_sub']").focus();
+			return;
+		}
+	}
+
+	
+
+	if(!$("input[name=bank1]").val()) {
+		alert("은행을 선택해주세요.");
+		$("input[name=bank1]").focus();
+		return;
+	}
+	
+	if($("input[name=bank1]").val() == "dr" && !$("#r_bank").val()) {
+		alert("은행을 입력해주세요.");
+		$("#r_bank").focus();
+		return;
+	}
+
+	if(!$("input[name=bank2]").val()) {
+		alert("계좌번호를 입력해주세요.");
+		$("input[name=bank2]").focus();
+		return;
+	}
+
+	if(!$("input[name=bank3]").val()) {
+		alert("예금주를 입력해주세요.");
+		$("input[name=bank3]").focus();
+		return;
+	}
+
+	if(!$("input[name=sign]").val()) {
+		if ($("input[name='sign_upload']").val() == "") {
+			alert("서명 입력 및 도장을 업로드해주세요.");
+			return;
+		}
+	}
+	
+	$("#iform").submit();
+	/*
+	$.ajax({		
+		type: "post",
+		url: "/rent/state.php",
+		data: $("#iform").serialize(),
+		success: function(r){
+			//$("#test_test").html(r);
+			$("#temp").html(r);
+			$("#sform").submit();
+		}
+	});
+	*/
+}
+
+	/*도장업로드*/
+	function pay_sign2(){ 
+		// 도장업로드 팝업 노출
+		//$('#backDrop').hide();
+		$("#sign_wrap").hide();
+		$("#backDrop").show();
+		$("#sign_wrap2").show();
+		$("#sign_wrap2").css({
+			"opacity": "1",
+			"z-index": "22 "
+		});
+	}
+	function pay_sign2_close(){
+		$("#backDrop").hide();
+		$("#sign_wrap2").hide();
+	}
+
+
+function sign_check() {
+	if (signaturePad.isEmpty()) {
+		alert("서명을 입력해주세요.");
+	} else {
+		var sign = signaturePad.toDataURL();
+		$('input[name="sign"]').val(sign);
+
+		$('#backDrop').hide();
+		$('#sign_wrap').hide();
+	}
+}
+
+function sign_check2() {
+	if ($("input[name='sign_upload']").val() == "") {
+		alert("도장파일을 업로드해주세요.");
+	} else {
+		// 파일이 이미지인지 유효성	
+		var fileNm = $("input[name='sign_upload']").val();
+		if (fileNm != "") {
+			var ext = fileNm.slice(fileNm.lastIndexOf(".") + 1).toLowerCase();
+			if (!(ext == "png")) {
+				alert("이미지파일만 업로드 가능합니다.");
+				return;
+			}else{
+				$("#backDrop").hide();
+				$("#sign_wrap2").hide();
+			}
+		}		
+	}
+}
+</script>
+
+
+
+<!--서명레이어팝업-->
+<div id="sign_wrap" class="common_wrap" style="position:fixed;">
+	<section class="sign">
+		<div class="common_box">
+			<h3>서명란에 서명을 해주세요</h3>
+			<a href="#" class="common_clsBtn"><span class="sc_01"></span><span class="sc_02"></span></a>
+		</div>
+
+		<ul class="sign_pan clr">
+			<li class="sp_sign m-signature-pad on" id="signature-pad">
+				<div class="m-signature-pad--body">
+					<p>※회색 패드에 손가락 혹은 스마트 펜을 이요하여 서명을 해주세요</p>
+					<p>
+						<canvas width="692" height="276" style="touch-action: none;"></canvas>
+					</p>
+				</div>
+				<div class="m-signature-pad--footer">
+					<input type="button" data-action="clear" value="다시 서명하기">
+					<input type="button" value="서명 완료" onclick="javascript: sign_check();">
+				</div>
+			</li>
+			<li style="display:none;"></li>
+		</ul>
+	</section>			
+</div>
+
+
+
+
+
+
+<input type="hidden" id="_name" value="테스트">
+<input type="hidden" id="_tel" value="01012341234">
+<input type="hidden" id="_sign" value="">
+
+<!--단계 bar-->
+<!-- <ul class="inf_bar clr">
+	<li class="ib1">1.상품결제</li>
+	<li class="ib2 on">2.임차인 정보입력</li>
+	<li class="ib3">3.신청완료 및 출력</li>
+</ul> -->
+
+
+<!--상단 부분 추가-->
+<div class="top-step-area">
+    <a href="/" class="logo-text" >Onbiz Office</a>
+    <div class="img-step"><img src="http://img.onbiz.co.kr/m/payment/top_step02.png" alt="스텝"></div>
+</div>
+<div class="top-notice">
+	<p class="p-txt"><span class="mark">임대차계약서에 기재될 정보</span>를 정확하게 입력해주세요.</p>
+</div>
+<!--./상단 부분 추가-->
+
+
+<!--main 섹션-->
+<!-- <section id="main">
+	<h3 class="m_private mTxt">
+		<p>
+			온비즈 가상오피스(비상주) 임대계약에 필요한<br><span class="unline">정보를 입력해주세요.</span>
+		</p>
+		<p><span class="fc">아래 입력정보는 정식 임대차계약서에 기재될 정보이므로</span><br><span class="fc">정확하게 입력</span>해 주시기 바랍니다.</p>
+	</h3>
+</section> -->
+
+
+<!--신규추가(입력부분)-->
+<section class="top-in-area">
+    <h3>강남점 가상오피스(비상주)<span>임대 신청하기</span></h3>
+    <ul class="in-ul">
+        <li><label for="in_name">계약자 성명</label><input type="text" name="name" id="in_name" placeholder="계약자 본인 또는 대리인명"></li>
+        <li><label for="in_phone">연락처</label><input type="number" name="tel" id="in_phone" placeholder="'-'없이 입력해주세요." pattern="[0-9]*" inputmode="numeric"></li>
+    </ul>
+</section>
+
+<!--./신규추가(입력부분)-->
+
+
+<!--180129 팝업추가-->
+<script>
+	var popDisplay = {
+		hide: function(itm, itmBg) {
+			//console.log('start');
+			$(itm + "," + itmBg).hide();
+			//console.log('end');
+		}
+	}
+</script>
+<div class="dropDown-bg" id="orderPopBg" style="display: none;"></div>
+<script type="text/javascript">
+	function agr_chk(){
+		if($("#cork2").hasClass("on") == false) {
+			alert("상기 관련업종 외 인허가 사항을 확인해주시기 바랍니다.");
+			$("#cork2").addClass("on", true);
+			return false;
+		}else{
+			$("#orderPopBg").css("display","none");
+			$("#orderPop").css("display","none");
+		}
+	}
+	function agr_chk2(){
+		var agre1 = $('#agree1').next('span');
+		var agre2 = $('#agree2').next('span');
+		var agre3 = $('#agree3').next('span');
+
+		if(agre1.hasClass("on") == false) {
+			alert("법인사업자등록순서를 확인해주시기 바랍니다.");
+			$("#agree1").prop("checked", true);
+			agre1.addClass("on", true);
+			agree_chk3();
+			return false;
+		}
+		if(agre2.hasClass("on") == false) {
+			alert("사업자 등록 불가 업종 사항을 확인해주시기 바랍니다.");
+			$("#agree2").prop("checked", true);
+			agre2.addClass("on", true);
+			agree_chk3();
+			return false;
+		}
+		if(agre3.hasClass("on") == false) {
+			alert("직권폐업에 관한 내용을 확인해주시기 바랍니다.");
+			$("#agree3").prop("checked", true);
+			agre3.addClass("on", true);
+			agree_chk3();
+			return false;
+		}
+		
+		
+		$("#orderPopBg").css("display","none");
+		$("#orderPop").css("display","none");
+	}
+</script>
+
+<script>
+	$(function() {
+		$('.agree_chk').on('change', function() {
+			agree_chk3();
+		});
+
+		$('#agreeAll').on('click', function() {
+			if($('#agreeAll').is(":checked") == true) {
+				$("#agree1, #agree2, #agree3").prop("checked", true);
+				$('#agree1').next('span').attr('class', 'on');
+				$('#agree2').next('span').attr('class', 'on');
+				$('#agree3').next('span').attr('class', 'on');
+			} else {
+				$("#agree1, #agree2, #agree3").prop("checked", false);
+				$('#agree1').next('span').attr('class', '');
+				$('#agree2').next('span').attr('class', '');
+				$('#agree3').next('span').attr('class', '');
+			}
+		});
+	});
+
+	function agree_chk3() {
+		var agree1 = $("#agree1").is(":checked");
+		var agree2 = $("#agree2").is(":checked");
+		var agree3 = $("#agree3").is(":checked");
+
+		if(agree1 == true && agree2 == true && agree3 == true) {
+			$('#agreeAll').prop("checked", true);
+			$('#agreeAll').next('span').attr('class', 'on');
+		} else {
+			$('#agreeAll').prop("checked", false);
+			$('#agreeAll').next('span').attr('class', '');
+		}
+	}
+</script>
+<div class="orderPop" id="orderPop" style="display: none;">
+	<div class="d-top">
+	</div>
+	<div class="d-cont">
+		<p class="pop-con-tit d-line">* 법인사업자등록순서</p>
+		<ul class="order-info-list clr">
+			<li><span>임대차계약</span></li>
+			<li><span>등기신청</span></li>
+			<li><span class="d-line">계약서수정</span></li>
+			<li><span>사업자등록신청</span></li>
+		</ul>
+		
+		<p class="chec_p"><input type="checkbox" id="agree1" class="equal agree_chk"><span class="on" style=""><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="agree1">위에 내용을 확인했습니다.</label></p>
+	</div>
+	
+	<div class="d-cont">
+		<p class="pop-con-tit">사업자 등록 불가 업종</p>
+		<ul class="orderList2">
+			<li>제조업 (의료용기기 제조업 포함)</li>
+			<li>건설업 , 대부업 ,창고업</li>
+			<li>임대업(운송장비, 산업용기계 임대업 불가)</li>
+		</ul>
+		
+		<p class="chec_p"><input type="checkbox" id="agree2" class="equal agree_chk"><span class="on"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="agree2" class="fc-point">사업자 등록시 인가, 허가, 신고 업종은 사전 확인 후 사업자 등록 신청바랍니다.</label></p>
+	</div>
+	
+	<div class="d-cont">
+		<p class="order-txt">* 2과세기간에 걸쳐 관할 세무서에 무신고 하실 경우, 또는 해당기간 이내라도 실제 사업이 확인 되지 않을 경우 관할 세무서에서 사업장이 폐업되었다고 판단할 경우 직권폐업 되실 수 있습니다. 이 경우 환불이 불가 합니다.</p>
+		
+		<p class="chec_p"><input type="checkbox" id="agree3" class="equal agree_chk"><span class="on"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="agree3">해당 내용을 확인하였으며, 동의합니다</label></p>
+	</div>
+	
+	<p class="chec_p fc-center"><input type="checkbox" id="agreeAll" class="equal"><span class="on"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="agreeAll">위에 내용을 전체확인 하였습니다.</label></p>
+	<a class="nBtn" href="javascript: agr_chk2();">확인</a>
+</div>
+
+<!-- <div class="orderPop" id="orderPop">
+	<div class="d-top">
+		<h2>법인사업자등록순서</h2>
+		<strong class="h-str">법인사업자의 경우, 아래의 순서로 진행하여야 사업자등록이 가능합니다.</strong><a href="javascript:;" onclick="popDisplay.hide('#orderPop', '#orderPopBg')" class="a-i-x a-x"></a>
+	</div>
+	<div class="d-cont">
+		<ul class="orderList">
+			<li><span class="s-nth">1. </span>대표자 명의로 임대차계약 진행</li>
+			<li><span class="s-nth">2. </span>법인등기 진행</li>
+			<li><span class="s-nth">3. </span>온비즈오피스에 "법인등기사항증명서" 전달<br>(문자or메일)하여 계약서 법인명의로 수정요청</li>
+			<li><span class="s-nth">4. </span>수정완료안내 받은 후, 홈페이지에서 다운 및 인쇄</li>
+			<li><span class="s-nth">5. </span>법인도장날인 후, 사업자등록진행</li>
+		</ul>
+	</div>
+</div> -->
+
+<div id="contents">
+	<div id="test_test">
+	</div>
+
+	<div id="temp"></div>
+	<form id="iform" method="post" enctype="multipart/form-data" action="state.php">
+		<input type="hidden" name="mode" value="info2">
+		<input type="hidden" name="oid" value="1614219935473">
+		<input type="hidden" name="mnum" value="5935">
+		<input type="hidden" name="service" value="" id="service1">
+		<input type="hidden" name="sign" value="" id="sign">
+
+		<!--카테고리 영역-->
+		<section class="category">
+			<!--===분류선택(교체)==-->
+			<h4 class="type-title">사업자등록 분류선택</h4>
+			<ul>
+				<li class="on">
+					<h3 class="c_h">
+						<input id="new" type="radio" name="ctype" value="1" class="cate_inp" checked="checked">
+						<span class="on"></span><label for="new"> 신규사업자 등록</label>
+					</h3>
+					<p>개인 또는 법인 신규사업자<br>등록을 위해 사용합니다.</p>
+				</li>
+				<li class="">
+					<h3 class="c_h rt">
+						<input id="hold" type="radio" name="ctype" value="2" class="cate_inp">
+						<span class=""></span><label for="hold"> 사업자 등록증 보유자</label>
+					</h3>
+					<p>현재 사업자 등록증이 있으나,<br>주소 이전을 위해 사용합니다.</p>
+				</li>
+			</ul>
+
+			<h4 class="st-title">업종선택</h4>
+			<!--===./분류선택(교체)==-->
+			<div class="st_wrap">
+				<div class="selectBox">
+					<input type="button" class="s_btn" value="업종을 선택해주세요." id="service2" name="service2"><i><img src="http://img.onbiz.co.kr/f_icons.png" alt="아래로"></i>
+					<ul style="display: none;">
+						<li>전자상거래업(도소매업) </li><li>전자상거래업 </li><li>통신판매업</li><li>소프트웨어개발 및 서비스업</li><li>광고대행업</li><li>경영컨설팅</li><li>컴퓨터프로그래밍, 시스템통합 및 관리업</li><li>자료처리, 호스팅, 포털 및 기타 인터넷 서비스업</li><li>기타 광고업</li><li>사무지원 서비스업</li><li>창작 및 예술관련 서비스업</li><li>교육컨설팅</li>						<br>
+						<p>* 위에 기재되어 있지 않은 업종은 전화상담 부탁드립니다.<br>010-4429-3013(3019)</p>
+					</ul>
+				</div>
+				<!-- <p>※ 업종을 모를 경우, 사업 내용을 간략하게 입력해주세요.</p> -->
+			</div>
+		</section>
+
+		
+			<!--정보등록-->
+			<div id="container" class="container">
+				<section class="manager" id="section1" style="display: block;">
+					<h3>계약 명의자(임차인) 정보</h3>
+					<p><input type="checkbox" id="mng" class="equal" onclick="contract.copy(1);"><span class="" onclick="contract.copy(1);"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="mng">신청인과 동일함</label></p>
+					<ul>
+						<li>
+							<label for="mng_name">성명</label>
+							<input type="text" name="name" id="mng_name">
+						</li>
+						<li class="m_jm">
+							<label for="mng_jm">주민등록번호</label>
+							<input type="number" name="ssn1" id="mng_jm" pattern="[0-9]*" class="mng_jm" inputmode="numeric" maxlength="6" oninput="etc.maxlength(this);">
+							<span>-</span>
+							<input type="number" name="ssn2" id="ssn2" pattern="[0-9]*" inputmode="numeric" maxlength="1" oninput="etc.maxlength(this);"> XXXXXX
+						</li>
+						<li>
+							<label for="mng_num">연락처</label>
+							<input type="number" name="tel" id="mng_num" placeholder="'-'없이 입력해주세요." pattern="[0-9]*" inputmode="numeric">
+						</li>
+						<li>
+							<label for="mng_mail">이메일 주소</label>
+							<input type="text" name="email" id="mng_mail" placeholder="ex) abc@naver.com">
+						</li>
+						<li class="mTxt">※ 계약서를 메일로 발송하오니, 정확하게 입력해주세요</li>
+						<li class="m_adr">
+							<label for="con_pcode">주소</label>
+							<input type="text" id="con_pcode" name="pcode" class="mng_adr" placeholder="우편번호" onclick="ebizPost.search_layer('id'); etc.layer();" readonly="readonly">
+							<a href="javascript: void(0);" onclick="ebizPost.search_layer('id'); etc.layer();">우편번호 찾기</a>
+						</li>
+						<li class="m_emt">
+							<label for="con_addr"></label>
+							<input type="text" id="con_addr" name="addr" onclick="ebizPost.search_layer('id'); etc.layer();" readonly="readonly">
+						</li>
+						<li class="m_emt">
+							<label for="con_addr_sub"></label>
+							<input type="text" id="con_addr_sub" name="addr_sub" placeholder="상세주소입력">
+						</li>
+						<li class="m_adr">
+							사업자 구분
+							<input type="radio" name="sa_gubun" id="sa_gubun_P" value="P" style="clip:initial; width:13px; height:13px; left:60px; -webkit-appearance:radio; margin: 10px; margin-left: 45px;" checked="">
+							<label for="sa_gubun_P" style="margin:5px; margin-left:40px; width:70px;">개인사업자</label>
+							<input type="radio" name="sa_gubun" id="sa_gubun_C" value="C" style="clip:initial; width:13px; height:13px; left:200px; -webkit-appearance:radio; margin: 10px; ">
+							<label for="sa_gubun_C" style="margin-left:30px; width:70px;">법인사업자</label>
+						</li>
+						<li class="m_plan">
+							<label for="s_date" style="font-size: 13px;">사업자등록 예정일</label>
+							<input type="text" id="s_date" name="s_date" class="input-com fir hasDatepicker" placeholder="날짜를 선택해주세요." style="cursor:pointer; background:#fff url(http://img.coresco.co.kr/m/ico_cal.png) no-repeat right 10px center;" readonly="">
+							<!-- <input type="text" name="addr_sub" id="addr2" placeholder="상세주소입력" autocomplete="off"> -->
+						</li>
+						<!--180129 모바일 사업계획-->
+
+                        <!--문구수정(사업계획=>사업내용)-->
+						<li class="m_plan">
+						  <label for="plan">사업내용</label>
+							<textarea class="plan_txt" name="plan" id="plan" placeholder="간단히 입력해주세요."></textarea>
+						</li>
+						<li class="mTxt">
+							<p class="p-1">
+								사업내용 검토 후 정상사업장이 아니라고 판단될 경우 반려될 수 있습니다.
+								<a href="javascript:;" class="a-btn" onclick="$('#planExPop-bg, #planExPop').show();">사업내용 예시</a>
+							</p>
+
+							<div class="dropDown-bg" id="planExPop-bg" style="display: none;">
+								<div class="planExPop" id="planExPop">
+									<p class="p-tit">사업내용 예시문 <a href="javascript:;" class="a-i-x a-x" onclick="$('#planExPop-bg, #planExPop').hide();"></a></p>
+									<div class="d-cont">
+										<p class="p-txt dot">핸드폰 케이스 제작 및 인터넷 쇼핑몰을 통해 판매할 예정</p>
+										<p class="p-txt dot">아래내용 3가지 내용이 포함되도록 작성바랍니다.</p>
+										<p class="p-txt dot">
+											<span class="s-dot">1.</span> 사업내용 : 핸드폰 케이스
+										</p>
+										<p class="p-txt dot">
+											<span class="s-dot">2.</span> 진행사항 : 부품 발주 및 매입 중입니다
+										</p>
+										<p class="p-txt dot">
+											<span class="s-dot">3.</span> 개시예정 : 사업자등록 발급 후 약 1개월 이내
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+                        <!--./문구수정(사업계획=>사업내용)-->
+					</ul>
+				</section>
+				<!--사업자등록증 보우-->
+				<section class="manager lessee" id="section2" style="display: none;">
+					<h3>계약 명의자(임차인) 정보</h3>
+					<p><input type="checkbox" id="les" class="equal" onclick="contract.copy(2);"><span onclick="contract.copy(2);"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="les">계약 신청인 정보와 동일함</label></p>
+
+					<ul>
+						<li>
+							<label for="les_name">대표자 성명</label>
+							<input type="text" id="les_name" name="cname">
+						</li>
+						<li>
+							<label for="les_rep">상호(법인명)</label>
+							<input type="text" id="les_rep" name="company">
+						</li>
+						<li class="l_snum">
+							<label for="les_snum">사업자등록번호</label>
+							<input type="number" id="les_snum" class="les_snum" name="ccssn1" pattern="[0-9]*" inputmode="numeric" maxlength="3" oninput="etc.maxlength(this);">
+							<span>-</span>
+							<input type="number" name="ccssn2" id="ccssn2" pattern="[0-9]*" inputmode="numeric" maxlength="2" oninput="etc.maxlength(this);">
+							<span>-</span>
+							<input type="number" name="ccssn3" id="ccssn3" pattern="[0-9]*" inputmode="numeric" maxlength="5" oninput="etc.maxlength(this);" style="width:23%;">
+						</li>
+						<li>
+							<label for="les_num">연락처</label>
+							<input type="number" id="les_num" name="ctel" placeholder="'-'없이 입력해주세요." pattern="[0-9]*" inputmode="numeric">
+						</li>
+						<li>
+							<label for="les_mail">이메일 주소</label>
+							<input type="text" id="les_mail" name="cemail1" placeholder="ex) abc@naver.com">
+						</li>
+						<li class="mTxt">※ 계약서를 메일로 발송하오니, 정확하게 입력해주세요</li>
+						<li class="m_adr">
+							<label for="cpcode">주소</label>
+							<input type="text" id="cpcode" name="cpcode" class="mng_adr" onclick="ebizPost.search_layer('id2'); etc.layer();" readonly="readonly">
+							<a href="javscript: void(0);" onclick="ebizPost.search_layer('id2'); etc.layer();">우편번호 찾기</a>
+						</li>
+						<li class="m_emt">
+							<label for="caddr"></label>
+							<input type="text" id="caddr" name="caddr" onclick="ebizPost.search_layer('id2'); etc.layer();" readonly="readonly">
+						</li>
+						<li class="m_emt">
+							<label for="caddr_sub"></label>
+							<input type="text" id="caddr_sub" name="caddr_sub" placeholder="상세주소입력">
+						</li>
+						<li class="m_adr">
+							사업자 구분
+							<input type="radio" name="csa_gubun" id="csa_gubun_P" value="P" style="clip:initial; width:13px; height:13px; left:60px; -webkit-appearance:radio; margin: 10px; margin-left: 45px;" checked="">
+							<label for="csa_gubun_P" style="margin:5px; margin-left:40px; width:70px; ">개인사업자</label>
+							<input type="radio" name="csa_gubun" id="csa_gubun_C" value="C" style="clip:initial; width:13px; height:13px; left:200px; -webkit-appearance:radio; margin: 10px; ">
+							<label for="csa_gubun_C" style="margin-left:30px; width:70px;">법인사업자</label>
+						</li>
+						<li class="m_plan">
+							<label for="cs_date" style="font-size: 13px;">사업자 이전예정일</label>
+							<input type="text" id="cs_date" name="cs_date" class="input-com fir hasDatepicker" placeholder="날짜를 선택해주세요." style="cursor:pointer; background:#fff url(http://img.coresco.co.kr/m/ico_cal.png) no-repeat right 10px center;" readonly="">
+							<!-- <input type="text" name="addr_sub" id="addr2" placeholder="상세주소입력" autocomplete="off"> -->
+						</li>
+						<!--180129 모바일 사업계획-->
+						<!--문구수정(사업계획=>사업내용) 한개 더-->
+						<li class="m_plan">
+						  <label for="cplan">사업내용</label>
+							<textarea class="plan_txt" name="cplan" id="cplan" placeholder="간단히 입력해주세요.">							</textarea>
+						</li>
+						<li class="mTxt">
+							<p class="p-1">
+								사업내용 검토 후 정상사업장이 아니라고 판단될 경우 반려될 수 있습니다.
+								<a href="javascript:;" class="a-btn" onclick="$('#planExPop-bg, #planExPop').show();">사업내용 예시</a>
+							</p>
+
+							<div class="dropDown-bg" id="planExPop-bg" style="display: none;">
+								<div class="planExPop" id="planExPop">
+									<p class="p-tit">사업계획 예시문 <a href="javascript:;" class="a-i-x a-x" onclick="$('#planExPop-bg, #planExPop').hide();"></a></p>
+									<div class="d-cont">
+										<p class="p-txt dot">핸드폰 케이스 제작 및 인터넷 쇼핑몰을 통해 판매할 예정</p>
+										<p class="p-txt dot">아래내용 3가지 내용이 포함되도록 작성바랍니다.</p>
+										<p class="p-txt dot">
+											<span class="s-dot">1.</span> 사업내용 : 핸드폰 케이스
+										</p>
+										<p class="p-txt dot">
+											<span class="s-dot">2.</span> 진행사항 : 부품 발주 및 매입 중입니다
+										</p>
+										<p class="p-txt dot">
+											<span class="s-dot">3.</span> 개시예정 : 사업자등록 발급 후 약 1개월 이내
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!--문구수정(사업계획=>사업내용) 한개 더-->
+						<!--<li class="m_est">
+              <label for="les_est">임대개시일</label>
+              <input type="text" value="2017년 00월 00일" id="les_est">
+            </li>-->
+					</ul>
+				</section>
+				<!--환불 계좌 정보-->
+				<div class="refund">
+					<input type="hidden" name="bank1" value="" id="bank1">
+					<h3>※ 환불 계좌 정보 ※</h3>
+					<p>계약 종료시 예치금 상환받으실 계좌정보 입력</p>
+					<ul>
+						<li>
+							<label for="r_bank">은행명</label>
+							<div class="selectBox">
+								<input type="button" id="r_bank" name="r_bank" class="s_btn" value="환불받으실 은행 선택"><i><img src="http://img.onbiz.co.kr/f_icons.png" alt="아래로"></i>
+								<ul>
+									<li>기업은행</li><li>국민은행</li><li>우리은행</li><li>신한은행</li><li>KEB하나은행</li><li>농협은행</li><li>SC은행</li><li>한국씨티은행</li><li>우체국</li><li>새마을금고</li><li>수협</li><li>신협중앙회</li>									<li>직접입력</li>
+								</ul>
+							</div>
+						</li>
+						<li><label for="r_acount">계좌번호</label> <input type="text" id="r_acount" name="bank2" placeholder="'-' 없이 입력해주세요."></li>
+						<li><label for="r_name">예금주</label> <input type="text" id="r_name" name="bank3"></li>
+					</ul>
+					<p>※ 계약서 전송 및 세금계산서 발행을 위해 정확히 입력 부탁드립니다.</p>
+					<p>※ 계약 명의자를 허위로 기재하거나, 임대인의 동의없이 사업자 등록을 하실 경우 관련 법에 의하여, 형사처벌을 받으실 수 있습니다.</p>
+				</div>
+
+			</div>
+			<!-- 콘테이너 끝 -->
+<style>
+/*모달창 공통스타일*/
+.common_wrap2 {display: block; opacity: 0; z-index: 0; position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+.common_wrap2.on {opacity: 1; z-index: 21;}
+.common_wrap2 > section {position: relative; width: 96%; height: 320px;  height: 290px; margin: 0 auto; margin-top: 30px;  background: #fff; border-radius: 4px;}
+.common_wrap2 > section > div:first-child {position: relative; width: 96%; margin: 0 auto; height: 40px;}
+
+.common_box2 {height: 40px;}
+.common_box2 > h3 {}
+.common_clsBtn2 {position: absolute; width: 32px; height: 36px; top: 2px; right: 0;}
+.common_clsBtn2 > span {display: block; position: absolute; top: 18px; right: -3px; width: 32px; height: 2px; background: #727272;}
+@media (max-width: 320px){
+  .common_clsBtn2 > span{ right: 0; }
+}
+/*전자서명하기, 도장이미지 업로드, 모달창*/
+.sign2 .common_box2 {color: #3c3c3c; font-size: 22px; line-height: 2.4em; font-weight: 600; text-align: center; letter-spacing: -1px;}
+@media (max-width: 320px) {
+  .sign2 .common_box2 {font-size: 20px;}
+  .common_clsBtn2 > span {width: 26px;}
+}
+#sign_wrap2 .sign2 {position: relative; width: 96%; height: 360px; background: #fff; border-radius: 4px; top:200px;}
+.sign2 > div, .sign2 > ul {position: relative; width: 96%; margin: 0 auto;}
+.sign2 .common_txt2 {margin: 6px 0 10px; }
+.common_txt2 p {font-size: 12px; text-align: center; line-height: 1.4em;}
+@media (max-width: 320px) {
+  .common_txt2 p {letter-spacing: -1px;}
+}
+/*탭버튼*/
+.sign_tab2 li {float: left; width: 50%; text-align: center; padding: 10px 0; font-weight: 600; color: #4c4c4c; background-color: #b7b6b6; cursor: pointer;}
+/*탭화면*/
+.sign_pan2 { position: absolute; top: 0; left: 0;}
+.sign_pan2 li {display: none;} 
+.sign_pan2 li.on {display: block;}
+/*서명하기, 업로드 공통*/
+.sp_sign2 {margin-top: 60px;}
+.sp_sign2, .sp_up2 {width: 100%; background-color: #eee;}
+.sp_sign2 div:first-child, .sp_up2 div:first-child {width: 94%; margin: 0 auto;}
+.sp_sign2 div:first-child p:first-child, .sp_up2 div:first-child p {color: #333; font-size: 11px; letter-spacing: -1px;}
+.sp_sign2 div:last-child input, .sp_up2 > div:last-child input {display: inline-block; position: absolute; width: 43.5%; color: #fff; border: none; padding: 8px 0; font-size: 15px; border-radius: 3px;}
+/*서명하기*/
+.sp_sign2 {height: 190px;}
+.sp_sign2 div:first-child p:first-child {padding: 10px 0 5px;}
+.sp_sign2 div:first-child p:last-child {position: relative; width: 100%; height: 140px; background-color: #212121; border-radius: 2px; overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid #999;}
+.sp_sign2 div:first-child p:last-child canvas {
+  display: block; 
+  border: transparent; background-color: #fff; 
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* width: 972px;
+  height: 140px; */
+}
+.sign_upload{width:250px; height:120px; border-radius: 8px; font-weight: 600; font-size:18px; background: #ffb81e; color:#fff; cursor:pointer; opacity:0; position: relative; left:18%; top:30px;}
+.sign_replace{width:250px; height:120px; border-radius: 8px; font-weight: 600; font-size:18px; background: #ffb81e; color:#fff; cursor:pointer; position: absolute; left:18%; top:15%;}
+</style>
+<!--도장업로드팝업-->
+<div id="sign_wrap2" class="common_wrap2" style="position:fixed; display:none;">
+	<!-- <section class="sign2">
+		<div class="common_box2">
+			<h3>도장업로드를 해주세요</h3>
+			<a href="#" class="common_clsBtn2" onclick="pay_sign2_close();"><span class="sc_01"></span><span class="sc_02"></span></a>
+
+
+			<p class="sign_tit" style="margin-left:10px; margin-top:-20px; font-size:12px; font-weight:bold;">* 도장파일은 투명한 배경에 png 형식으로 업로드해야합니다. </p>
+			<p class="sign_tit" style="margin-left:10px; margin-top:-30px; font-size:12px; font-weight:bold;">* 이미지 크기는 500x 500 미만으로 업로드해주세요. </p>
+
+		</div>
+
+		<ul class="sign_pan2 clr">
+			<li class="sp_sign2 m-signature-pad on" id="signature-pad">  
+					<button class="sign_replace">도장 업로드하기</button>
+					<input type="file" name="sign_upload" class="sign_upload">
+				<div class="m-signature-pad--footer">
+					<input type="button" value="서명 완료" onclick="javascript: sign_check2();" style="top:200px; width:100%; height:50px; background:#ffb81e;">
+				</div>
+			</li>
+			<li style="display:none;"></li>
+		</ul>
+
+		
+	</section> -->
+	
+	<!--교체(도장 업로드)-->
+	<div class="pop-stamp-area">
+		<div class="close-pop-stamp" onclick="pay_sign2_close();">
+			<img alt="닫기" src="http://img.go.co.kr/mobile/menu_close.jpg">
+		</div>
+		<h3>도장업로드를 해주세요</h3>
+		<p class="top-ment">
+			<span class="mark">도장 파일이 없을 경우, 업로드 없이 완료해주세요.</span><br>
+			<span>임대차계약서를 다운받은 후 사인 또는 도장을 찍어 사용하세요.</span>
+		</p>
+		<div class="upload-box">
+			<label for="stamp-upload" class="stamp-upload-label">도장 업로드하기</label>
+			<input type="file" name="stamp_upload" class="stamp-upload-in" id="stamp-upload">
+		</div>
+		<p class="notice">* 도장파일은 투명한 배경, png 형식으로 업로드해야합니다.
+			<br>
+			* 이미지 크기는 500x 500 미만으로 업로드해주세요.
+		</p>
+		<a href="#none" class="btn-upload-complete">도장업로드 완료</a>
+	</div>
+	<!--./교체(도장 업로드)-->
+</div>
+
+
+
+
+<!--버튼 추가-->
+<div class="btn_wrap2" id="btn_wrap2">
+	<!--버튼 교체-->
+	<a href="javascript: void(0);" class="a1 btn-complete-next">서명 및 계약완료</a>
+	<!--./버튼 교체-->
+
+	<!-- <a href="javascript: void(0);" class="a1">서명하기</a><a href="javascript: void(0);" class="a2">도장업로드</a> -->
+	
+	<!-- <a href="javascript: void(0);" class="a1">서명하기</a> -->
+	<!-- <a href="javascript: pay_sign2();" class="a2">도장업로드</a> -->
+</div>
+</form>
+</div>
+<!-- 콘텐츠영역 끝 -->
+
+
+
+
+<!--커스터마이징-->
+<script src="http://static.onbiz.co.kr/js/m/sign/signature_pad.min.js"></script>
+<script src="http://static.onbiz.co.kr/js/m/sign/app.js"></script>
+<script src="http://static.onbiz.co.kr/js/m/sign/sign_m.js"></script>
+</div><!--contents 끝-->
+<script type="text/javascript">
+	//사업자등록 예정일
+	$("#s_date").datepicker({ 
+		dateFormat:"yy-mm-dd", 
+		showAnim:"slideDown", 
+		dayNamesMin:["일","월","화","수","목","금","토"], 
+		minDate: 0, 
+		//maxDate: 93, 
+		changeMonth: true, 
+		changeYear: true
+	});
+	//사업자 이전예정일
+	$("#cs_date").datepicker({ 
+		dateFormat:"yy-mm-dd", 
+		showAnim:"slideDown", 
+		dayNamesMin:["일","월","화","수","목","금","토"], 
+		minDate: 0, 
+		//maxDate: 93, 
+		changeMonth: true, 
+		changeYear: true
+	});
+</script><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+		<div class="footer">
+			<ul class="info">
+				<li>(주)이비즈네트웍스 / 대표이사:박기범</li>
+				<li>사업자등록번호:220-87-30865</li>
+				<li>서울특별시 강남구 테헤란로82길 15, (대치동, 디아이타워)</li>
+				<li>TEL : 010-4429-3013 / EMAIL : onbiz@ebiznetworks.co.kr</li>					
+							
+				<li>Copyright ⓒ Ebiznetworks, All Rights Reserved.</li>
+			</ul>
+		</div>
+	
+
+
+		
+
+
+
+<iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}" style="display: none;"></div></body></html>

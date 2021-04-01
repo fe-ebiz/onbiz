@@ -37,13 +37,7 @@
 
 <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
 <link rel="stylesheet" href="http://static.onbiz.co.kr/css/common_renewal.css?ver=20210302182128" type="text/css">
-
-<!-- <link rel="stylesheet" href="http://static.onbiz.co.kr/css/complete/complete2.css?ver=20210302182128" type="text/css"> -->
-
-<link rel="stylesheet" href="../static_onbiz/css/complete/complete2.css" type="text/css">
-
-
-
+<link rel="stylesheet" href="http://static.onbiz.co.kr/css/complete/complete2.css?ver=20210302182128" type="text/css">
 <script src="http://static.onbiz.co.kr/js/jquery-1.12.4.min.js" type="text/javascript"></script>
 <script src="http://static.onbiz.co.kr/js/onbiz_w.js?ver=20210302182128" type="text/javascript"></script>
 
@@ -385,39 +379,18 @@ function layer_on(id) {
 
 	<section id="util">
 		<h2 class="utit">
-			<!--상단 문구 추가-->
-            <p class="notice-title">
-                온비즈 가상오피스<br>
-                <span class="mark-orenge">온비즈 임대계약이 정상적으로 완료</span> 되었습니다.
-            </p>
-			<!--./상단 문구 추가-->
-
-            <!--강남점 이외의 안내문구-->
-            <!-- <p class="notice-send">
-                업계획서를 다운받아 온비즈 메일로 발송해주시면<br>
-                담당자 확인 후
-                <span class="mark-red">임대차계약서가 발송</span>됩니다.
-            </p> -->
-            <!--./강남점 이외의 안내문구-->
-            
+			<span class="tit" style="font-size:33px; color:red;">온비즈 오피스 계약이 정상적으로 완료되었습니다.</span>
 			
-			<script>
+						<script>
 				function form_chk() {
 					if(confirm("법인사업자는 필히 법인등기부등본 등록 후 임대차계약서 수정요청한 뒤 다운로드하여 세무서에 사업자등록을 하시기 바랍니다.\n법인등기를 먼저 등록하지 않고 세무서에 사업자등록하여 반려될 경우 당사에서 책임지지 않습니다.")) {
 						$("form[name='pdf']").submit();
 					}
 				}
 			</script>
-            <!--교체(다운로드 부분-강남점만)-->
 			<div class="contract_down">
-				<a href="javascript:form_chk()" class="btn-down">
-                    <p>임대차계약서 다운로드</p>
-                    <div class="icon-down">
-                       <img src="http://img.onbiz.co.kr/icon/icon_down_m.png" alt="아이콘 다운">
-                    </div>
-                </a>
+				<a href="javascript:form_chk()">임대차계약서 다운로드</a>
 			</div>
-            <!--./교체(다운로드 부분-강남점만)-->
 					</h2>
 		<h3><img src="http://img.onbiz.co.kr/complete_mt.png" alt="유틸리티제공"></h3>
 		<ul class="util_link clr">
