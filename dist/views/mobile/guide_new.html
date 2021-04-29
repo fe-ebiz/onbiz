@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>Onbiz Office</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="title" content="온비즈 오피스">
+    <meta name="Description" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+    <meta name="keywords" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+    <meta name="viewport" content="width=320, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- facebook -->
+    <meta property="og:title" content="온비즈 오피스">
+    <meta property="og:url" content="http://onbiz.co.kr">
+    <meta property="og:image" content="http://img.onbiz.co.kr/images/og_onbiz.jpg">
+    <meta property="Description" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://onbiz.co.kr">
+    <meta name="twitter:title" content="온비즈 오피스">
+    <meta name="twitter:description" content="강남 주소지비상주사무실, 5만원 비상주 사업자 등록, 가상오피스, 법인설립, 세무기장, 강남 최저가">
+    <meta name="twitter:image" content="http://img.onbiz.co.kr/images/og_onbiz.jpg">
+    <link rel="canonical" href="http://onbiz.co.kr">
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+    <link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/swiper.3.4.1.min.css" type="text/css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/reset_m.css" type="text/css">
+
+    <link rel="stylesheet" href="../../assets/css/mobile/common_renewal_m.css" type="text/css">
+    <link rel="stylesheet" href="../../assets/css/mobile/pay/pay3_m.css" type="text/css">
+
+    <!-- 실서버변경 -->
+    <!-- <link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/common_renewal_m.css">
+    <link rel="stylesheet" href="http://static.onbiz.co.kr/css/m/pay/pay3_m.css"> -->
+
+    <link rel="stylesheet" href="http://static.onbiz.co.kr/css/jquery-ui.css">
+    <script src="http://static.onbiz.co.kr/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://static.onbiz.co.kr/js/jquery_ui.js"></script>
+    <script type="text/javascript" src="http://static.onbiz.co.kr/js/datepicker_ko.js"></script>
+    <script src="http://static.onbiz.co.kr/js/jquery.swiper-3.4.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://post.ebiznetworks.co.kr/post_renew.php" charset="utf-8"></script>
+    <!-- <script type="text/javascript" src="http://post.ebiznetworks.co.kr/post.php" charset="utf-8"></script> -->
+    <script type="text/javascript" src="http://static.onbiz.co.kr/js/jquery.number.js"></script>
+    <script src="http://static.onbiz.co.kr/js/onbiz_m_new.js?ver=20210329115425"></script>
+    <!-- <script src="http://static.onbiz.co.kr/js/onbiz_m.js"></script> -->
+    <!--지도-->
+    <!-- <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d19597d88e4197c6787da7d76f76e6bc"></script> -->
+    <!--커스터마이징-->
+    <script src="http://static.onbiz.co.kr/js/m/common_m.js?ver=20210329115425"></script>
+
+    <!-- ie9이하 html5, 미디어쿼리 작동 -->
+    <!--[if lte IE 8]>
+    <script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script type="text/javascript" src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        $(function() {
+            $("#startDate").datepicker({
+                dateFormat: "yy-mm-dd",
+                showAnim: "slideDown",
+                dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+                minDate: 0,
+                maxDate: 3,
+                changeMonth: true,
+                changeYear: true,
+                onSelect: function() {
+                    val = this.value;
+
+                    $.ajax({
+                        type: "post",
+                        url: "/rent/state.php",
+                        data: "mode=rdate&a=" + val + "&b=" + $("input[name='month']").val(),
+                        success: function(r) {
+                            $("#sdate").html(val);
+                            $("#edate").html(r);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<body cz-shortcut-listen="true">
+    <div id="wrap">
+        <div id="backDrop" style="position:fixed;"></div>
+        <div id="menu_wrap">
+            <section class="menu">
+                <a class="clsBtn" href="#"></a>
+                <h2>Onbiz Office Menu</h2>
+                <h3>Onbiz Office</h3>
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="/">홈으로</a>
+                        </li>
+                        <li>
+                            <a href="/rent/guide_new.php">임대신청</a>
+                        </li>
+                        <!-- <li>
+                            <a class="chClk" href="#">임대신청 내역 확인</a>
+                        </li> -->
+                    </ul>
+                </nav>
+                <ul class="wrap_ntc clr">
+                    <li>
+                        <span class="ph"></span>
+                        <p>전화문의</p>
+                        <p>H : 010-4429-3013</p>
+                    </li>
+                    <li>
+                        <span class="mp"></span>
+                        <p>오시는 길</p>
+                        <p>서울 강남구 테헤란로82길 15</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="chk_wrap off" style="height:auto;">
+                <a href="#" class="chk_clsBtn"></a>
+                <h2>가상오피스 임대신청서 내역 조회</h2>
+                <form id="zform" method="post" action="/rent/state.php">
+                    <input type="hidden" name="mode" value="search2">
+                    <ul>
+                        <li>
+                            <label for="chk_num">호수</label>
+                            <input type="text" name="p_room">
+                        </li>
+                        <li>
+                            <label for="chk_num">전화번호</label>
+                            <input type="text" name="ztel1"><span>-</span><input type="text" name="ztel2"><span>-</span><input type="text" name="ztel3">
+                        </li>
+                        <li>
+                            <input type="button" value="확 인" class="chk_btn" onclick="contract.search();">
+                        </li>
+                    </ul>
+                </form>
+            </section>
+            <div id="search"></div>
+        </div>
+
+
+
+
+        <div class="btntop ptr" style="display: block;">
+            <img src="http://img.onbiz.co.kr/top.png" alt="위로가기">
+        </div>
+
+        <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+        <script type="text/javascript">
+            window.criteo_q = window.criteo_q || [];
+            window.criteo_q.push({
+                event: "setAccount",
+                account: 37291
+            }, {
+                event: "setSiteType",
+                type: "m"
+            }, {
+                event: "trackTransaction",
+                id: "1616986465",
+                item: [{
+                    id: "1",
+                    price: 1,
+                    quantity: 1
+                }]
+            });
+
+            function sign_check() {
+                if (signaturePad.isEmpty()) {
+                    alert("서명을 입력해주세요.");
+                } else {
+                    var sign = signaturePad.toDataURL();
+                    $('input[name="sign"]').val(sign);
+
+                    $('#backDrop').hide();
+                    $('#sign_wrap').hide();
+
+                    $("html, body").animate({
+                        scrollTop: $("#term_of")[0].scrollHeight
+                    }, 500)
+                }
+            }
+        </script>
+
+
+        <!-- 자주묻는질문 팝업창 -->
+        <div class="layer-pop-bg" id="reviewPop" style="display:none;">
+            <div id="contents">
+                <!--자주묻는 질문FAQ-->
+                <section class="faq" id="faq">
+                    <h3>온비즈 오피스 FAQ<a href="javascript: void(0);" class="i-x" onclick="$('#reviewPop').hide();"></a>
+                    </h3>
+                    <ul class="f_table">
+                        <li>
+                            <div class="f_q">
+                                <span class="q_icon">Q.</span>
+                                <p>계약을 하려면 방문해야 하나요?</p>
+                            </div>
+                            <div class="f_a">
+                                <span class="a_icon">A.</span>
+                                <p>온비즈 오피스는 직접 방문하시는 번거로움 없이 홈페이지에서 직접 신청 후 출력하여 이용하실 수 있습니다.</p>
+                            </div>
+                        </li>
+                        <li class="not_onbiz">
+                            <div class="f_q">
+                                <span class="q_icon">Q.</span>
+                                <p>직접 방문하지 않고 온라인으로 계약하려니 불안해요.</p>
+                            </div>
+                            <div class="f_a">
+                                <span class="a_icon">A.</span>
+                                <p>온비즈 오피스는 대치동 942-15번지 지하 3층 , 지상 15층 규모의 DI타워 건물주인 이비즈네트웍스가 직접 운영하고 있습니다.</p>
+                                <a class="mt link_btn lb1" href="http://www.ebiznetworks.co.kr" target="_blank"><span class="s1">이비즈네트웍스</span><span class="s2">홈페이지 바로가기 <span>&gt;</span></span></a>
+                                <a class="link_btn lb2" href="http://ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2006322008330211501&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=2208730865&amp;stdate=&amp;enddate=" target="_blank"><span class="s1">이비즈네트웍스</span><span class="s2">사업자 정보확인
+                                        <span>&gt;</span></span></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="f_q">
+                                <span class="q_icon">Q.</span>
+                                <p>온라인 만으로도 계약의 효력이 있나요?</p>
+                            </div>
+                            <div class="f_a">
+                                <span class="a_icon">A.</span>
+                                <p>사업자등록에는 주소지 및 임대차계약서가 필요합니다. 온비즈 오피스에서는 아래와 같이 임대차계약서를 온라인으로 제공하여,</p>
+                                <p>고개님의 시간과 비용을 절약해 드립니다.</p>
+                                <h4 class="mt">계약 진행 순서</h4>
+                                <div class="co_box clr">
+                                    <p class="co_p1"><img src="http://img.onbiz.co.kr/contract_order_m.png" alt="계약진행순서"></p>
+                                    <p class="co_p2" style="margin-top:50px; margin-left:80px;"><a href="http://img.onbiz.co.kr/new_cont_gn.jpg" target="_blank" style="background: url('http://img.onbiz.co.kr/new_1s_opt_hover.jpg');"></a><span>임대차계약서
+                                            앞면</span></p>
+                                    <p class="co_p2" style="float:left; margin-top:50px; margin-left:80px;"><a href="http://img.onbiz.co.kr/new_cont_all.jpg" target="_blank" style="background: url('http://img.onbiz.co.kr/new_2s_opt_hover.jpg');"></a><span>임대차계약서
+                                            뒷면</span></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="f_q">
+                                <span class="q_icon">Q.</span>
+                                <p>주소는 어떻게 표시 되나요?</p>
+                            </div>
+                            <div class="f_a">
+                                <span class="a_icon">A.</span>
+                                <p>서울특별시 강남구 테헤란로82길 15, (대치동, 디아이타워) ***호로 표시 됩니다.</p>
+                            </div>
+                        </li>
+                        <li class="not-pag">
+                            <div class="f_q">
+                                <span class="q_icon">Q.</span>
+                                <p>옵션이라는게 어떤 것이 있나요?</p>
+                            </div>
+                            <div class="f_a">
+                                <span class="a_icon">A.</span>
+                                <p>온비즈 오피스에서 제공하는 가상오피스(비상주)의 기본상품가격에 포함된 서비스는 사업자등록에 필요한 "주소" 제공 및 "임대차계약서" </p>
+                                <p>발행입니다. 고객님의 필요에 따라, 전화설치, 회의실 이용, 우편물발송 등의 옵션을 선택하실 수 있습니다.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="f_q">
+                                <span class="q_icon">Q.</span>
+                                <p>우편물이 오면 어떻게 되나요?</p>
+                            </div>
+                            <div class="f_a">
+                                <span class="a_icon">A.</span>
+                                <p>등기 및 우편물은 저희가 수신하여 보관해 드립니다.</p>
+                                <p>
+                                </p>
+                                <p>온비즈 인포메이션 담당직원에게 배정받으신 호수를 말씀해주시면 우편물을 찾아드립니다.(건물개방시간 평일 9시~18시 / 점심시간 12:30 ~ 13:30)
+                                </p>
+                                <p>등기 및 내용증명 등은 확인절차 후, 돌려드리고 있으니 미리 연락하신 후, 방문부탁드립니다. (보관기간 수신일로부터 2주) </p>
+                                <p>무방문으로 우편물을 수신하고 싶으시다면 옵션으로 선택하실 수 있습니다. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="f_q">
+                                <span class="q_icon">Q.</span>
+                                <p>세금계산서는 어떻게 발행 해 주시나요?</p>
+                            </div>
+                            <div class="f_a">
+                                <span class="a_icon">A.</span>
+                                <p>현금결제 : 매월 1회 계약일이 속한 금요일 전자발행 (사업자등록증을 문자로 사진찍어 보내주시면, 발행해드립니다.)</p>
+                                <p>카드결제 : 계약완료 후, 카드영수증 발행 (카드결제는 부가가치세법에 의거하여, 세금계산서 발행이 불가합니다.)</p>
+                            </div>
+                        </li>
+                        <li class="not-pag">
+                            <div class="f_q">
+                                <span class="q_icon">Q.</span>
+                                <p>회의실사용은 어떻게 하나요?</p>
+                            </div>
+                            <div class="f_a">
+                                <span class="a_icon">A.</span>
+                                <p>사용가능 시간은 평일 09시부터 18시까지 이며, 늦어도 하루전에 전화로 예약하고 이용가능합니다. 당일예약은 불가능합니다.</p>
+                                <p>하루 이용제한시간은 2시간입니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+
+        <!--서명레이어팝업-->
+        <div id="sign_wrap" class="common_wrap" style="position:fixed;">
+            <section class="sign">
+                <div class="common_box">
+                    <h3>서명란에 서명을 해주세요</h3>
+                    <a href="#" class="common_clsBtn"><span class="sc_01"></span><span class="sc_02"></span></a>
+                </div>
+
+                <ul class="sign_pan clr">
+                    <li class="sp_sign m-signature-pad on" id="signature-pad">
+                        <div class="m-signature-pad--body">
+                            <p>※회색 패드에 손가락 혹은 스마트 펜을 이요하여 서명을 해주세요</p>
+                            <p>
+                                <canvas width="884" height="276" style="touch-action: none;"></canvas>
+                            </p>
+                        </div>
+                        <div class="m-signature-pad--footer">
+                            <input type="button" data-action="clear" value="다시 서명하기">
+                            <input type="button" value="서명 완료" onclick="javascript: sign_check();">
+                        </div>
+                    </li>
+                    <li style="display:none;"></li>
+                </ul>
+            </section>
+        </div>
+
+
+        <!--단계 bar-->
+        <div class="top-step-area">
+            <a href="/" class="logo-text">Onbiz Office</a>
+            <div class="img-step"><img src="http://img.onbiz.co.kr/m/payment/top_step01.png" alt="스텝"></div>
+        </div>
+        <div class="top-notice">
+            <p class="p-txt">가상오피스 <span class="mark">임대상품 선택 후 결제</span>를 진행해주세요.</p>
+        </div>
+
+        <form name="order" method="post">
+            <input type="hidden" name="mode" value="office">
+            <input type="hidden" name="name">
+            <input type="hidden" name="gubun" value="강남">
+            <input type="hidden" name="tel">
+            <input type="hidden" name="date" value="2021-03-29">
+            <input type="hidden" name="deposit" value="82500">
+            <input type="hidden" name="month" value="6">
+            <input type="hidden" name="money" value="478500">
+            <input type="hidden" name="goods_name" value="임대료 6개월">
+            <input type="hidden" name="tax" value="36000">
+            <input type="hidden" name="city" value="서울">
+            <input type="hidden" name="path" value="onbiz.co.kr">
+            <input type="hidden" name="sign">
+
+            <!--contents-->
+            <div id="contents">
+                <section class="term" id="term_of">
+                    <h3>임대상품선택<span class="sm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예치금(보증금)은 계약종료 후 반환됩니다.</span></h3>
+
+                    <ul class="t_th clr">
+                        <li>임대기간</li>
+                        <li>월세<span>(부가세별도)</span></li>
+                        <li>예치금</li>
+                    </ul>
+
+                    <ul class="clr t_table">
+                        <li class="li-nth-1 ">
+                            <div class="table d-nth-1">
+                                <p class="t_cell">
+                                    <input type="radio" class="t_radio" name="rent" id="t1" value="1^150000^1">
+                                    <span class=""></span>
+                                    <label for="t1">1개월</label>
+                                </p>
+                            </div>
+                            <div class="table d-nth-2">
+                            </div>
+                            <div class="table d-nth-3">
+                                <p class="t_cell">
+                                    150,000원 </p>
+                            </div>
+                            <div class="table d-nth-4">
+                                <p class="t_cell">80,000원</p>
+                            </div>
+                        </li>
+                        <li class="li-nth-6 on">
+                            <div class="table d-nth-1">
+                                <p class="t_cell">
+                                    <input type="radio" class="t_radio" name="rent" id="t6" value="6^360000^6" checked="checked">
+                                    <span class="on"></span>
+                                    <label for="t6">6개월</label>
+                                </p>
+                            </div>
+                            <div class="table d-nth-2">
+                            </div>
+                            <div class="table d-nth-3">
+                                <p class="t_cell">
+                                    <del>900,000원</del><span class="sale">60%할인</span><span class="tc_price">360,000원<span class="tc_price_m">(월 6만원)</span></span>
+                                </p>
+                            </div>
+                            <div class="table d-nth-4">
+                                <p class="t_cell">80,000원</p>
+                            </div>
+                        </li>
+                        <li class="li-nth-12 ">
+                            <div class="table d-nth-1">
+                                <p class="t_cell">
+                                    <input type="radio" class="t_radio" name="rent" id="t12" value="12^600000^12">
+                                    <span class=""></span>
+                                    <label for="t12">12개월</label>
+                                </p>
+                            </div>
+                            <div class="table d-nth-2">
+                            </div>
+                            <div class="table d-nth-3">
+                                <p class="t_cell">
+                                    <del>1,800,000원</del><span class="sale">66%할인</span><span class="tc_price">600,000원<span class="tc_price_m">(월 5만원)</span></span>
+                                </p>
+                            </div>
+                            <div class="table d-nth-4">
+                                <p class="t_cell">80,000원</p>
+                            </div>
+                        </li>
+                        <li class="li-nth-24 ">
+                            <div class="table d-nth-1">
+                                <p class="t_cell">
+                                    <input type="radio" class="t_radio" name="rent" id="t24" value="24^960000^14">
+                                    <span class=""></span>
+                                    <label for="t24">24개월</label>
+                                </p>
+                            </div>
+                            <div class="table d-nth-2">
+                            </div>
+                            <div class="table d-nth-3">
+                                <p class="t_cell">
+                                    <del>3,600,000원</del><span class="sale">73%할인</span><span class="tc_price">960,000원<span class="tc_price_m">(월 4만원)</span></span>
+                                </p>
+                            </div>
+                            <div class="table d-nth-4">
+                                <p class="t_cell">80,000원</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="option" id="option_of">
+                    <h3>옵션 추가 선택 <span class="sm">&nbsp;&nbsp;&nbsp;옵션 상품의 첫달 이용요금만 결제합니다.</span></h3>
+                    <ul class="clr">
+                        <li>
+                            <p>
+                                <input type="checkbox" name="opt[]" id="opt2" class="o_check" value="2^10000">
+                                <span><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span>
+                                <label for="opt2"></label>
+                            </p>
+                            <p>
+                                우편물 발송 및 등기수취 <span>(발송비 별도)</span> </p>
+                            <p>
+                                월<span>10,000원</span>
+                            </p>
+                        </li>
+                        <li class="disabled">
+                            <p>
+                            </p>
+                            <p>
+                                4인 회의실 이용 <span>(현장결제)</span> </p>
+                            <p>
+                                시간<span>10,000원</span>
+                            </p>
+                        </li>
+                        <li class="disabled">
+                            <p>
+                            </p>
+                            <p>
+                                8인 회의실 이용 <span>(현장결제)</span> </p>
+                            <p>
+                                시간<span>20,000원</span>
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            <aside class="price">
+                <div class="container">
+                    <h3>결제하실 금액 (강남점)</h3>
+                    <ul class="p_startDate">
+                        <li class="lt">
+                            <label for="startDate"><span>•</span>임대개시일</label>
+                            <div class="selectBox">
+                                <input type="button" id="startDate" class="s_btn hasDatepicker" value="2021-03-29"><i class="calandar_icon"><img src="http://img.onbiz.co.kr/calandar_icon.png" alt="날짜선택"></i>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="p_term">
+                        <li>
+                            <p>•임대 기간</p>
+                            <p id="edate" style="width: 190px;">2021.03.29 ~ 2021.09.28 (6개월)</p>
+                        </li>
+                        <li class="lt">
+                            <p>•옵션 추가</p>
+                            <p>
+                                <span id="option2" style="display: none;">우편물 발송 및 등기수취 <span>(발송비 별도)</span></span>
+                                <span id="option1" style="display: none;">4인 회의실 이용 <span>(현장결제)</span></span>
+                                <span id="option3" style="display: none;">8인 회의실 이용 <span>(현장결제)</span></span>
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="p_price">
+                        <li>
+                            <p>•예치금(보증금)</p>
+                            <p>80,000원</p>
+                        </li>
+                        <li>
+                            <p>•수수료</p>
+                            <p>2,500원</p>
+                        </li>
+                        <li>
+                            <p>•임대정상가</p>
+                            <p id="blank1">360,000원</p>
+                        </li>
+                        <li class="lt">
+                            <p>•옵션</p>
+                            <p id="options">0원</p>
+                        </li>
+                    </ul>
+                    <ul class="p_total">
+                        <li><span>총 결제금액</span></li>
+                        <li class="lt">
+                            <p id="total">442,500원<span>(VAT별도)</span></p>
+                        </li>
+                    </ul>
+                </div>
+
+                <section class="pay-way">
+                    <h3>결제수단 선택</h3>
+                    <div class="pay-card">
+                        <input type="radio" name="p_method" value="manualcard" id="manualcard" class="t_radio" checked="checked">
+                        <span class="on"></span>
+                        <label for="manualcard">신용카드 결제</label>
+                    </div>
+                </section>
+
+                <!-- 결제하기 버튼 sun-->
+                <p class="btn_wrap scroll-target-btn">
+                    <a href="#none" class="btn-inquiry">
+                        <img src="http://img.onbiz.co.kr/icon-call.png" alt="문의하기 버튼 아이콘">
+                        <span>문의</span>
+                    </a>
+                    <a class="p_btn" href="javascript:pay.payment2();">결제하기</a>
+                </p>
+                <!-- //결제하기 버튼 -->
+
+
+                <div class="btn-payment-area" style="display: none;">
+                    <a href="#none" class="btn-tel">
+                        <div class="img-box">
+                            <!-- tel이미지 변경 및 문구추가 -->
+                            <img src="http://img.onbiz.co.kr/icon-call.png" alt="아이콘">
+                            문의
+                        </div>
+                    </a>
+                    <a class="btn-payment" href="javascript:pay.payment2();">결제하기</a>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        // $("#post_opt").click();
+
+                        function pay_scroll() {
+                            let btnObj = $(".btn-payment-area");
+                            let scrollPos = $(window).scrollTop();
+                            let targetPos = $(".scroll-target-btn").offset().top - $(window).height() + 50;
+                            if (scrollPos > targetPos) {
+                                btnObj.hide();
+                            } else {
+                                btnObj.show();
+                            }
+                        };
+
+                        pay_scroll();
+
+                        $(window).scroll(function() {
+                            pay_scroll();
+                        });
+                    });
+                </script>
+
+                <div class="agree-area">
+                    <div class="btn-agree-box">
+                        <div class="btn-check-box">
+                            <input type="checkbox" id="agree-all" class="o_check" checked="checked"><span class="on"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="agree-all" class="agree-all">구매내역 및 이용약관에 모두 동의</label>
+                        </div>
+
+                        <div class="icon-arrow btn-show-agree">
+                            <img src="http://img.onbiz.co.kr/f_icons.png" alt="아래로">
+                        </div>
+                    </div>
+                    <div class="agree-cont">
+                        <div class="in-check-top">
+                            <input type="checkbox" id="agree-top" class="o_check" checked="checked"><span class="on"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span><label for="agree-top">구매내역 정보에 동의 및 주의사항 및 약관 동의</label>
+                        </div>
+                        <div class="txt-area">
+                            <ul class="txt-area-ul">
+                                <li class="idt">※ 비상주계약서상 계약내용 및 특약사항</li>
+                                <li class="idt">■ (사용의무기간)최소 사용기간은1개월이다.</li>
+                                <li>(정상가:월150,000원 VAT별도)</li>
+                                <li class="idt">■ (계약연장)계약종료일 14일전 재계약여부를</li>
+                                <li>결정하여, 당사에 통보하여야하며, 해당 </li>
+                                <li>예고기간은 사용기간으로 간주된다.</li>
+                                <li class="idt">■(연장결제)별도의 종료 또는 취소의사가 없는</li>
+                                <li>경우 (서면 또는 문자 의사표현), 최초결제</li>
+                                <li>수단을 이용하여 매월 자동 연장된다.(자동연장시,</li>
+                                <li>옵션서비스 제외됨/1개월 정상금액으로 연장됨)</li>
+                                <li></li>
+                                <li class="idt">■(중도해지)계약중도해지 시, 사용기간동안 정상가</li>
+                                <li>금액으로 정산 후 반환된다.</li>
+                                <li class="idt">■계약서에 기재한 전화번호 등 연락처는 계약진행에</li>
+                                <li> 대한 중요한 사항이 전달된다.</li>
+                                <li>변경될 경우, 반드시 당사로 통보하여야 하며 </li>
+                                <li>미통보로 인해 발생하는 불이익에 대한 책임은</li>
+                                <li>임차인에게 있다.</li>
+                                <li class="idt">■(임대료미납) 입대료지급 없이 무단으로 주소</li>
+                                <li>사용시 [부가가치세법 제8조 및 같은 법</li>
+                                <li>시행령15조]에 따라 세무서에 직권폐업신청이</li>
+                                <li>진행되며, 이로 인한 불이익에 대한 책임은</li>
+                                <li> 임차인에게 있다.</li>
+                                <li class="idt">■(문서위조)임대차계약서의 내용을 임대인의</li>
+                                <li>동의없이 작성하여 사용시, 위조문서 작성 및</li>
+                                <li>위조문서 행사와 관련한 형사처분을 받을 수 있다.</li>
+                                <li></li>
+                                <li class="idt">■(운영규칙 등 변경)운영규칙의 상세내용과 </li>
+                                <li>변경되는 규칙은 언제든지 인터넷 홈페이지</li>
+                                <li> (www.onbiz.co.kr)내 이용약관을 통해</li>
+                                <li>확인할 수 있으며, 고지한 날로부터 2주이내</li>
+                                <li>이의가 없는 경우, 변경된 사항에대하여</li>
+                                <li>동의한것으로 간주된다.</li>
+                                <li class="idt">■(보증금반환)보증금 반환은 종료일(또는
+                                </li>
+                                <li> 취소일)익월초에 진행되며, 주소 이전 완료한</li>
+                                <li>사업자 등록증(또는 폐업사실 증명서)</li>
+                                <li>를 제출 완료한 경우에만 반환이 </li>
+                                <li>가능하다.제출하지 않은 경우 제출일까지</li>
+                                <li>임대료는 일할 계산된다.</li>
+                                <li class="idt">■(특약사항)위에 언급되지 않은 사항은 특약</li>
+                                <li>으로 정한다.(아래 이어짐)</li>
+                                <li class="idt">■ 특약사항</li>
+                                <li>1.아래의 사유발생 시, 별도의 통보없이 계약</li>
+                                <li>해지로 인해 발생하는 일체의 민형사상책임을 </li>
+                                <li>임대인에게 제기할 수 없다. 잔여 임대료는 손해</li>
+                                <li>배상금으로 간주한다.</li>
+                                <li>1)2회이상 임대료 미납시(임차인 사정으로</li>
+                                <li>자동연장결제가 진행안되는 경우도 포함)</li>
+                                <li>2)사업자등록 후, 3개월 이상 사업영위하지</li>
+                                <li>않음을 확인시</li>
+                                <li>3)해당 주소지를 자료상의 목적으로 사용시</li>
+                                <li>4)세금체납 등의 사유로 인해, 임대인에</li>
+                                <li> 피해가 발생할시</li>
+                                <li>5)관할 관청 및 세무서 등에서 민원 2회 발생시</li>
+                                <li>2.해당 사업자주소지(호수)를 수신한 우편물은 </li>
+                                <li>각 호수 우편함에 보관 하며, 수령하지 않음으 </li>
+                                <li>로써 발생하는 일체의 민형사상책임을 관할</li>
+                                <li>관청 또는 임대인에게 제기 할 수 없다.</li>
+                                <li>3.등기 및 내용증명 등의 우편물은 안내문자</li>
+                                <li>발송일로부터 2주이내 수령하지 않을 시, 폐기</li>
+                                <li>처리한다. 수령하지 않음으로써 발생하는</li>
+                                <li>일체의 민형사상책임을 관할관청 또는 임대인</li>
+                                <li>에게 제기할 수 없다.</li>
+                                <li>4.임대기간 중 또는 연장 중 임대인은 임차인에</li>
+                                <li>14일전 사전 이메일 또는 문자를 통해 증액조정</li>
+                                <li>을 할 수 있으며, 변경 연락처 미전달로</li>
+                                <li>인한 피해는 임대인에게 제기 할 수 없다.</li>
+                                <li>5.임차인은 제3자에게 계약상의 권리를 양도</li>
+                                <li>하거나, 전대할 수 없다.</li>
+                                <li>6.2과세기간에 걸쳐 관할 세무서에 무신고</li>
+                                <li>하실경우, 또는 해당기간 이내라도 실제 사업이</li>
+                                <li> 확인 되지 않을 경우 관할 세무서에서 직권폐업</li>
+                                <li> 되실 수 있습니다. 이 경우 실제 사용한</li>
+                                <li> 기간은 1개월의 사용요금 기준으로 정산되어</li>
+                                <li> 환불 됩니다.</li>
+                                <li>혜택, 이벤트, 다양한 정보를 SMS나 이메일로 받아보실 수 있습니다.</li>
+                                <li>계약진행 정보 및 주요 정책과 관련된 내용은 수신동의 여부와 관계없이 발송됩니다. </li>
+                                <li class="lt">선택 약관에 동의하지 않으셔도 계약진행은 가능합니다. </li>
+                            </ul>
+                        </div>
+                        <ul class="in-check-ul">
+                            <li>
+                                <input type="checkbox" id="agree-b01" class="o_check" checked="checked">
+                                <span class="on"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span>
+                                <label for="agree-b01">전자금융 이용약관</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="agree-b02" class="o_check" checked="checked">
+                                <span class="on"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span>
+                                <label for="agree-b02">개인정보 제공 및 위탁안내</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="agree-b03" class="o_check" checked="checked" name="sms_chk">
+                                <span class="on"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span>
+                                <label for="agree-b03">SMS 수신 동의</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="agree-b04" class="o_check" checked="checked">
+                                <span class="on"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span>
+                                <label for="agree-b04">개인정보의 수집 및 이용안내</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="agree-b05" class="o_check" checked="checked">
+                                <span class="on"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span>
+                                <label for="agree-b05">정기과금 이용약관</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="agree-b06" class="o_check" checked="checked" name="email_chk">
+                                <span class="on"><img src="http://img.onbiz.co.kr/onb_picto.png" alt="체크"></span>
+                                <label for="agree-b06">이메일 수신 동의</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <script>
+                    $(document).ready(function() {
+
+                        $("#contents .term ul li").on("click", function() {
+                            if ($(this).hasClass("dis_month") != true) {
+                                $(this).closest("ul").children().removeClass("on");
+                                $(this).addClass("on");
+                                $(this).closest("ul").find(".t_radio + span").removeClass("on");
+                                $(this).find(".t_radio + span").addClass("on");
+                                $(this).find("input").prop("checked", true);
+                                pay.calc4();
+                            }
+                        });
+
+                        $("#contents .option li").on("click", function() {
+                            if ($(this).hasClass("disabled") != true) {
+                                var isChecked = $(this).find("input[type=checkbox]").prop('checked');
+                                $(this).toggleClass("on");
+                                $(this).find(".o_check + span").toggleClass("on");
+                                isChecked = !isChecked;
+                                $(this).find("input[type=checkbox]").prop('checked', isChecked);
+                                pay.calc4();
+                            }
+                        });
+
+                        //체크박스 온 오프
+                        $(".agree-area .o_check+span").on("click", function() {
+                            let spanOn = $(this);
+                            if (spanOn.hasClass("on") == true) {
+                                spanOn.removeClass("on");
+                                spanOn.prev().attr("checked", false);
+                            } else {
+                                spanOn.addClass("on");
+                                spanOn.prev().attr("checked", true);
+                            }
+
+                        });
+                        $(".agree-area .o_check").on("click", function() {
+                            let spanOn = $(this).next();
+                            if (spanOn.hasClass("on") == true) {
+                                spanOn.removeClass("on");
+                                spanOn.prev().attr("checked", false);
+                            } else {
+                                spanOn.addClass("on");
+                                spanOn.prev().attr("checked", true);
+                            }
+
+                        });
+                        //보이기 - 슬라이드 다운
+                        $(".agree-area .btn-show-agree").on("click", function() {
+                            let iconArrow = $(this);
+                            if (iconArrow.hasClass("up") == true) {
+                                iconArrow.removeClass("up");
+                            } else {
+                                iconArrow.addClass("up");
+                            }
+                            //슬라이드 토글
+                            $(".agree-area .agree-cont").slideToggle();
+                        });
+
+                        //전체동의 관련
+                        $(".agree-area .btn-check-box *").on("click", function() {
+
+                            let spanOn = $(".agree-area .btn-check-box span");
+                            if (spanOn.hasClass("on") == true) {
+                                $(".agree-area .agree-cont .o_check+span").addClass("on");
+                                $(".agree-area .agree-cont .o_check").attr("checked", true);
+
+                            } else {
+                                $(".agree-area .agree-cont .o_check+span").removeClass("on");
+                                $(".agree-area .agree-cont .o_check").attr("checked", false);
+                            }
+
+                        });
+
+
+                        $(".agree-area .agree-cont *").on("click", function() {
+                            let spanOn = $(".agree-area .agree-cont .o_check+span");
+                            let maxLength = spanOn.length;
+                            console.log(maxLength);
+                            let count = 0;
+                            spanOn.each(function(index, item) {
+                                if ($(item).hasClass("on")) {
+                                    count++;
+                                };
+                            });
+                            if (count == maxLength) {
+                                $(".agree-area .btn-check-box span").addClass("on");
+                                $(".agree-area .btn-check-box .o_ckeck").attr("checked", true);
+                            } else {
+                                $(".agree-area .btn-check-box span").removeClass("on");
+                                $(".agree-area .btn-check-box .o_ckeck").attr("checked", false);
+                            }
+                        });
+                    });
+                </script>
+            </aside>
+
+            <section class="guide-info-area">
+                <p class="guide-title">※ 안내사항</p>
+                <ul class="guide-info-ul">
+                    <li>예치금은 계약종료 시,증빙서류를 제출하시면 반환되는 금액입니다.</li>
+                    <li>가상오피스 임대는 1개월 의무사용기간이 있으며, 중도취소시 1개월 임대료로 정산됩니다.</li>
+                    <li>옵션 상품의 계약기간은 임대기간과 동일하며, 본 결제에서는 첫달 이용요금만 결제합니다.</li>
+                    <li>회의실이용 월 4시간 무료 제공됩니다.</li>
+                    <li>사업자등록의 최종 책임은 신청인 본인에게 있음을 당부드립니다.</li>
+                </ul>
+            </section>
+
+            <!--자주묻는 질문-->
+            <div class="faq_btn" onclick="javascript: $('#reviewPop').show();">
+                <p>자주묻는 질문FAQ 바로가기 </p><span>&gt;</span>
+            </div>
+
+            <div class="faq_btn">
+                <p>다른 지점으로 이동하기</p>
+                <select name="location" id="location" style="width:75px; line-height:25px;">
+                    <option>지점선택</option>
+                    <option value="http://m.onbiz.co.kr/rent/guide_new.php" selected="selected">강남</option>
+                    <option value="http://m.hobiz.co.kr/rent/guide_new.php">성수</option>
+                    <option value="http://m.onbiz3.co.kr/rent/guide_new.php">역삼</option>
+                    <option value="http://m.onbiz1.co.kr/rent/guide_new.php">구로</option>
+                    <option value="http://m.onbiz2.co.kr/rent/guide_new.php">아산</option>
+                    <option value="http://m.onbiz4.co.kr/rent/guide_new.php">강릉</option>
+                </select>
+            </div>
+            <script type="text/javascript">
+                $("#location").change(function() {
+                    location.href = $(this).val();
+                });
+            </script>
+
+            <footer class="footer">
+                <ul class="info">
+                    <li>(주)이비즈네트웍스 / 대표이사:박기범</li>
+                    <li>사업자등록번호:220-87-30865</li>
+                    <li>서울특별시 강남구 테헤란로82길 15, (대치동, 디아이타워)</li>
+                    <li>TEL : 010-4429-3013 / EMAIL : onbiz@ebiznetworks.co.kr</li>
+
+                    <li><small>Copyright ⓒ Ebiznetworks, All Rights Reserved.</small></li>
+                </ul>
+            </footer>
+        </form>
+
+    </div>
+    <div id="criteo-tags-div" style="display: none;"></div>
+
+    <!--커스터마이징-->
+    <script src="http://static.onbiz.co.kr/js/m/sign/signature_pad.min.js"></script>
+    <script src="http://static.onbiz.co.kr/js/m/sign/app.js"></script>
+    <script src="http://static.onbiz.co.kr/js/m/sign/sign_m.js"></script>
+
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+    </div><iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe><iframe height="0" width="0" title="Criteo DIS iframe" style="display: none;"></iframe>
+    <div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}">
+    </div>
+</body>
+
+</html>
